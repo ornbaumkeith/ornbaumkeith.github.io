@@ -11,7 +11,8 @@ Website: https://ornbaumkeith.github.io/
 - `projects/clearworth/index.html` — ClearWorth overview and availability
 - `about/index.html` — professional background
 - `projects.json` — project catalog and optional demo, download, and source links
-- `assets/` — shared stylesheet, search behavior, and favicon
+- `assets/` — shared stylesheet, search behavior, favicon, and original ClearWorth screenshots/logo
+- `content/clearworth.html` — editable ClearWorth page content preserved during regeneration
 - `scripts/build.py` — generates static pages from the catalog
 
 ## Run locally (PowerShell)
@@ -57,11 +58,11 @@ The home currently presents the full published catalog. The `featured` field is 
 ## Downloads, demos, and documentation
 
 - Publish Windows installers and ZIPs as GitHub Release assets in a project repository, then add their real URLs to `download_url`.
-- For ClearWorth, update the dedicated availability section in `scripts/build.py` when a public release is ready, including actual version and installation instructions.
+- For ClearWorth, update the dedicated availability section in `content/clearworth.html` when a public release is ready, including actual version and installation instructions.
 - Static web demos can live under a project folder. Link them using `demo_url`.
 - Add public guides under a project folder and link them from its page.
 - Application source remains separate unless a `source_url` is intentionally provided. This portfolio does not contain ClearWorth source code or financial data.
-- Illustrations are explicitly labeled product concepts, not application screenshots.
+- Home-page illustrations are explicitly labeled product concepts. The ClearWorth page uses original app screenshots supplied by the owner and original logo artwork from the Phase 27.3 release package.
 
 ## GitHub Pages
 
