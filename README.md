@@ -71,3 +71,16 @@ In repository Settings → Pages, use **Deploy from a branch**, branch **master*
 Changes to that branch are published by GitHub Pages when that configuration is enabled.
 
 The existing repository history retains the original starter site for rollback.
+
+## Blog
+
+`blog/index.html` is the blog landing page, linked from the navigation across the site. It starts with an honest empty state; no posts are published until content is provided.
+
+To publish a post:
+
+1. Write the article body as HTML in `content/blog/<id>.html`, using headings, paragraphs, lists, and local images as needed.
+2. Add an entry to `posts.json` with `id` (lowercase letters, numbers, hyphens), `title`, `date` (YYYY-MM-DD), `category`, and `summary`.
+3. Run `py -3 .\scripts\build.py` and review the generated blog index and article page.
+4. Commit the post content, catalog, and generated pages to publish.
+
+Posts are ordered newest first. Use only information you intend to publish publicly. The blog is a static publishing workflow managed through the repository.

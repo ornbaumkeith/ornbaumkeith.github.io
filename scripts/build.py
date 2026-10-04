@@ -9,9 +9,9 @@ def esc(s): return escape(str(s), quote=True)
 def page(title, description, content, active='home', depth=0):
     prefix = '../' * depth
     def link(path): return prefix + path
-    nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('about','about/index.html','About')])
+    nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('blog','blog/index.html','Blog'),('about','about/index.html','About')])
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#132d26"><link rel="icon" href="{link('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css')}"><script src="{link('assets/app.js')}" defer></script></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css')}"><script src="{link('assets/app.js')}" defer></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="{link('index.html')}" aria-label="Keith Ornbaum home"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation">{nav}<a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
 <main id="main" class="wrap">{content}</main><footer class="footer"><div class="wrap footer-inner"><span>© 2026 Keith Ornbaum. Built with purpose.</span><div class="footer-links"><a href="{link('projects/index.html')}">Explore projects</a><a href="https://github.com/ornbaumkeith">GitHub ↗</a></div></div></footer></body></html>'''
 
@@ -52,3 +52,20 @@ for p in projects:
     body+='</div><p class="back"><a class="text-link" href="../index.html">← All projects</a></p></section>'
     (folder/'index.html').write_text(page(p['name'],p['summary'],body,'projects',2))
 print(f'Built portfolio with {len(projects)} project(s).')
+
+# Blog entries are published only when the owner supplies finished post content.
+posts = json.loads((ROOT / 'posts.json').read_text())
+post_cards = []
+for post in sorted(posts, key=lambda p: p['date'], reverse=True):
+    slug = post['id']
+    if not slug or any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-' for c in slug):
+        raise ValueError('Post IDs must use lowercase letters, numbers, and hyphens.')
+    body = (ROOT / 'content/blog' / (slug + '.html')).read_text()
+    folder = ROOT / 'blog' / slug
+    folder.mkdir(parents=True, exist_ok=True)
+    article = f'<div class="crumb"><a href="../index.html">Blog</a> / {esc(post["title"])}</div><article class="blog-article"><header class="page-hero"><div class="eyebrow">{esc(post["category"])}</div><h1>{esc(post["title"])}</h1><p class="post-meta">Keith Ornbaum · <time datetime="{esc(post["date"])}">{esc(post["date"])}</time></p></header><div class="article-body">{body}</div><p class="back"><a class="text-link" href="../index.html">← All posts</a></p></article>'
+    (folder / 'index.html').write_text(page(post['title'], post['summary'], article, 'blog', 2))
+    post_cards.append(f'<article class="doc"><span class="pill">{esc(post["category"])}</span><p class="post-meta"><time datetime="{esc(post["date"])}">{esc(post["date"])}</time></p><h3><a href="{esc(slug)}/index.html">{esc(post["title"])}</a></h3><p>{esc(post["summary"])}</p><a class="text-link" href="{esc(slug)}/index.html">Read post ↗</a></article>')
+intro = (ROOT / 'content/blog.html').read_text()
+collection = '<div class="docs">' + ''.join(post_cards) + '</div>' if posts else '<div class="blog-empty"><span class="pill">Getting started</span><h3>The first post is still ahead.</h3><p>There are no published posts yet. In the meantime, explore ClearWorth and the work behind this portfolio.</p><a class="button" href="../projects/index.html">Explore projects ↗</a></div>'
+(ROOT / 'blog/index.html').write_text(page('Blog', 'Project stories, practical lessons, and perspectives on software, enterprise GIS, data, and automation from Keith Ornbaum.', intro + '<section class="section blog-posts" aria-labelledby="posts-heading"><div class="section-head"><div><div class="eyebrow">From the notebook</div><h2 id="posts-heading">Latest posts.</h2></div></div>' + collection + '</section>', 'blog', 1))
