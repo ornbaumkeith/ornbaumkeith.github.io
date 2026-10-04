@@ -1,0 +1,15 @@
+[
+  {
+    "id": "clearworth",
+    "name": "ClearWorth",
+    "category": "Desktop application",
+    "status": "In development",
+    "summary": "A local-first Windows application for bringing income, expenses, savings, debt, and financial planning into one place.",
+    "tags": ["Windows", "Personal finance", "Local-first"],
+    "stack": ["Electron", "React", "TypeScript", "SQLite"],
+    "featured": true,
+    "download_url": null,
+    "demo_url": null,
+    "source_url": null
+  }
+]
