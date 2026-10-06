@@ -5,8 +5,36 @@
     "category": "Desktop application",
     "status": "In development",
     "summary": "A local-first Windows application for bringing income, expenses, savings, debt, and financial planning into one place.",
-    "tags": ["Windows", "Personal finance", "Local-first"],
-    "stack": ["Electron", "React", "TypeScript", "SQLite"],
+    "tags": [
+      "Windows",
+      "Personal finance",
+      "Local-first"
+    ],
+    "stack": [
+      "Electron",
+      "React",
+      "TypeScript",
+      "SQLite"
+    ],
+    "featured": true,
+    "download_url": null,
+    "demo_url": null,
+    "source_url": null
+  },
+  {
+    "id": "tandem",
+    "name": "Tandem",
+    "category": "Mobile application",
+    "status": "In development",
+    "summary": "A couples goal-planning project combining SMART goals, shared progress, and game-inspired encouragement.",
+    "tags": [
+      "Couples",
+      "SMART goals",
+      "Shared progress"
+    ],
+    "stack": [
+      "React"
+    ],
     "featured": true,
     "download_url": null,
     "demo_url": null,

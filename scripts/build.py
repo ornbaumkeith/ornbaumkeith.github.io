@@ -43,7 +43,11 @@ about = (ROOT / 'content/about.html').read_text()
 (ROOT/'about/index.html').write_text(page('About','About Keith Ornbaum: enterprise GIS, data, automation, and personal software projects.',about,'about',1))
 # New entries receive a project page automatically. ClearWorth has the richer custom page above.
 for p in projects:
-    if p['id']=='clearworth': continue
+    if (ROOT / 'content' / (p['id'] + '.html')).exists():
+        if p['id'] != 'clearworth':
+            folder = ROOT / 'projects' / p['id']; folder.mkdir(parents=True, exist_ok=True)
+            (folder / 'index.html').write_text(page(p['name'], p['summary'], (ROOT / 'content' / (p['id'] + '.html')).read_text(), 'projects', 2))
+        continue
     folder=ROOT/'projects'/p['id']; folder.mkdir(parents=True,exist_ok=True)
     body=f'<div class="crumb"><a href="../index.html">Projects</a> / {esc(p["name"])}</div><section class="page-hero"><div class="eyebrow">{esc(p["category"])} · {esc(p["status"])}</div><h1>{esc(p["name"])}</h1><p>{esc(p["summary"])}</p><div class="chips">'+''.join(f'<span class="pill">{esc(t)}</span>' for t in p['tags'])+'</div></section><section class="section"><h2>Project resources</h2><div class="actions">'
     for field,label in [('demo_url','Open live demo'),('download_url','Download project'),('source_url','View source')]:
