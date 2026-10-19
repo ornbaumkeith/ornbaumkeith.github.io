@@ -62,7 +62,7 @@ The home currently presents the full published catalog. The `featured` field is 
 - Static web demos can live under a project folder. Link them using `demo_url`.
 - Add public guides under a project folder and link them from its page.
 - Application source remains separate unless a `source_url` is intentionally provided. This portfolio does not contain ClearWorth source code or financial data.
-- Home-page illustrations are explicitly labeled product concepts. The ClearWorth page uses original app screenshots supplied by the owner and original logo artwork from the Phase 27.3 release package.
+- The home page uses supplied ClearWorth and Tandem previews. ClearWorth's current images are labeled as October 3, 2026 development captures; replace them with reviewed release media when supplied.
 
 ## GitHub Pages
 
@@ -84,3 +84,9 @@ To publish a post:
 4. Commit the post content, catalog, and generated pages to publish.
 
 Posts are ordered newest first. Use only information you intend to publish publicly. The blog is a static publishing workflow managed through the repository.
+
+## ClearWorth 1.0.0 release preparation
+
+See [the publishing guide](docs/ClearWorth-1.0.0-Publishing.md) for source findings, Windows validation, release assets, GitHub publication and media sharing. The planned public version is 1.0.0; the reviewed source remains Phase 30.5 Rev 10 / 0.30.5. No download URL is set before a verified public release exists.
+
+`content/home.html` preserves the detailed ClearWorth and Tandem home showcases during regeneration. Update it with the home page when editing featured copy. `content/clearworth.html` remains authoritative for the dedicated ClearWorth page. Existing screenshots are October 3, 2026 development captures, awaiting current release media.

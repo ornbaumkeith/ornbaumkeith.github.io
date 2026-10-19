@@ -3,8 +3,8 @@
     "id": "clearworth",
     "name": "ClearWorth",
     "category": "Desktop application",
-    "status": "In development",
-    "summary": "A local-first Windows application for bringing income, expenses, savings, debt, and financial planning into one place.",
+    "status": "1.0.0 planned",
+    "summary": "A local-first Windows finance workspace with configurable dashboards, Planning Studio, calendar workspaces, budgets, imports, and transaction tracking.",
     "tags": [
       "Windows",
       "Personal finance",
