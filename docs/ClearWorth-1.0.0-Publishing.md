@@ -98,7 +98,7 @@ $mediaZip = Join-Path ([Environment]::GetFolderPath('Desktop')) 'ClearWorth-Webs
 Compress-Archive -Path $mediaFolder -DestinationPath $mediaZip
 ~~~
 If you prefer cloud sharing, connect the storage provider and share the dedicated folder through that connected service; do not make personal desktop folders public. ZIP upload is the simplest route available now.
-Videos and images have not yet been supplied for this update. Existing site captures are labeled earlier development screenshots.
+Media update: four silent walkthroughs (Budget, Allocations, Calculator, Calendar) and three Calendar/Budget screenshots were supplied October 19 and added to the website. Earlier screenshots remain labeled separately. Additional release media can follow using the same process.
 
 ## References
 - GitHub release publishing: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
