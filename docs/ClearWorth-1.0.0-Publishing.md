@@ -98,7 +98,7 @@ $mediaZip = Join-Path ([Environment]::GetFolderPath('Desktop')) 'ClearWorth-Webs
 Compress-Archive -Path $mediaFolder -DestinationPath $mediaZip
 ~~~
 If you prefer cloud sharing, connect the storage provider and share the dedicated folder through that connected service; do not make personal desktop folders public. ZIP upload is the simplest route available now.
-Media update: four silent walkthroughs (Budget, Allocations, Calculator, Calendar) and three Calendar/Budget screenshots were supplied October 19 and added to the website. Earlier screenshots remain labeled separately. Additional release media can follow using the same process.
+Media update: the October 19 batches now provide nine silent walkthroughs, covering Dashboard creation, dashboard analytics, widget appearance, Planning Studio, Help, Budget, Allocations, Calculator and Calendar, plus current Planning, income, login, Calendar and Budget screenshots. The widget GIF is presented as a controlled video; the single-frame login GIF is presented as an image. The Help clip shows an earlier transaction location, explained in its caption. Earlier screenshots remain labeled separately. Additional release media can follow using the same process.
 
 ## References
 - GitHub release publishing: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
