@@ -1,106 +1,90 @@
-# ClearWorth 1.0.0 — Windows release publishing guide
+# ClearWorth Version 1.0.0 — Windows publishing guide
 
-Prepared 2026-10-19 from ClearWorth_Phase30_5_Rev10_Source.zip.
-The attached source is 0.30.5, not a compiled or signed 1.0.0 installer.
-This guide prepares publication; it does not publish an application release.
+The portfolio identifies ClearWorth as Version 1.0.0. Website edits do not change the application package, generate an installer, sign an executable, or establish release acceptance. Link a public download only after the final artifact is available and checked.
 
-## 1. Findings to resolve before calling this 1.0.0
-- package.json and both package-lock.json root version fields are 0.30.5; browser-companion/manifest.json is also 0.30.5.
-- Validate_Phase30_5.ps1 and scripts/verify-phase305.mjs plus verify-phase305rev2.mjs through verify-phase305rev10.mjs explicitly assert 0.30.5. Update release-identity assertions and expected artifact names deliberately; retain the behavioral assertions. Do not globally replace historical phase references.
-- package.json declares Electron 44.2.0 as a dev dependency but build.electronVersion requests 44.3.0. Select and test one runtime, update the lockfile consistently, and rebuild native dependencies against the packaged Electron runtime.
-- The attached verification report records source checks only. Full dependency-backed typecheck, native smoke tests, Windows build, signed installer, financial integration and visual UAT remain pending.
-- security/audit-baseline.json accepts temporary ExcelJS and UUID UAT risks until 2026-10-31. The strict production audit rejects moderate-or-higher runtime findings regardless of those exceptions. Re-run current audits; resolve findings rather than extending UAT exceptions as production approval.
-- Review PHASE30_5_REV9_LICENSE_AUDIT.md and ASSET_PROVENANCE.md, generated installed-package license texts, packaged runtime notices, and rights to distributed artwork. These source reports explicitly leave clearance incomplete.
-- Confirm actual/planned/projected reconciliation, goal funding, duplicate-import handling, corrections/void/restore, account isolation, clean installation, upgrade, backup/restore and uninstall using the packaged app. Confirm supported Windows editions and CPU architecture from tested machines before advertising them.
+## Prepare the application release
 
-## 2. Prepare the release identity in a separate working copy
-Use Node 24.21.x and npm 11.19.x, the project's stated release baseline.
-After dependency/runtime alignment:
-1. Run npm version 1.0.0 --no-git-tag-version in the app source root; verify package.json and both lockfile identities.
-2. Update browser-companion/manifest.json to 1.0.0 if shipping it with the same release identity.
-3. Update the validator and current version assertions listed above; create a clearly named 1.0.0 release validator and update any assertion referring to its path. Preserve all meaningful tests.
-4. Explicitly set build.nsis.artifactName to "ClearWorth Setup ${version}.exe" for predictable installer naming.
-5. Refresh README, release status, release notes, notices and Help captures. Preserve accurate historical records.
-6. Tag the exact reviewed application source commit v1.0.0 only after release validation; a renamed 0.30.5 installer is not 1.0.0.
+Use a separate application working copy. Confirm:
+- package.json, both root package-lock.json version fields, the shipped browser companion and executable version metadata agree on 1.0.0.
+- Update version-sensitive validation assertions and expected output filenames to 1.0.0 while retaining behavioral and financial checks.
+- Align the Electron development dependency and packaging runtime; rebuild native dependencies against the chosen packaged runtime.
+- Set build.nsis.artifactName to "ClearWorth Setup ${version}.exe" for a predictable installer filename.
+- Refresh application README, release notes, software inventory, required notices, installed license texts and Help images.
+- Complete Windows typecheck, smoke tests, financial reconciliation, clean-install, upgrade, account-isolation, backup/restore, visual and keyboard acceptance using the packaged app.
+- Resolve strict production dependency-audit findings. Temporary UAT exceptions are not production approval.
+- Verify distribution rights for the application, brand artwork and bundled third-party material. Keep customer data, backups, credentials and signing files out of public source and media.
 
-Current candidate validation command (valid for the UNMODIFIED 0.30.5 attachment only):
+The attached application source requires version-identity and runtime alignment before it can be represented as a built 1.0.0 installer. Renaming an older executable is insufficient. No production certification is implied by the website.
+
+## Validate and package on Windows
+
+The project's stated release baseline is Node 24.21.x with npm 11.19.x. Use the final release validator after updating its version checks; no new validator is supplied by this website update.
+
+Existing application scripts include:
 ~~~powershell
-Unblock-File .\Validate_Phase30_5.ps1; & .\Validate_Phase30_5.ps1 -StrictBuildBaseline -RequireCodeSigning
+npm ci
+npm run compliance:licenses:strict
+npm run security:audit:strict
+npm run security:signatures
+npm run verify
+npm run build
+npm run security:sbom
+npm run package:win
 ~~~
-This requires configured signing credentials, valid final signatures, strict license collection and strict runtime auditing. It is expected to stop on unmet gates. It does not run the app or complete manual acceptance.
-After promotion, use the updated 1.0.0 validator, not the unchanged phase validator.
+Check each command's exit code and stop on failure. Signing credentials must already be configured before packaging a production installer. Do not bypass failing security or license gates.
 
-## 3. Package and verify on Windows
-The existing package scripts include npm run verify, npm run build, npm run security:sbom and npm run package:win.
-Use the updated validator to orchestrate these with dependency installation, audits and signing checks. Do not publish by bypassing a failed check.
-Keep signing certificates, tokens and passwords outside Git.
-Expected release outputs after version promotion:
-- dist\ClearWorth Setup 1.0.0.exe — signed Windows installer
-- dist\win-unpacked\ClearWorth.exe — local packaged-app test target
-- dist\ClearWorth-1.0.0-SBOM.cdx.json — component inventory
-- release notes, installation instructions, third-party notices and license texts
-- sanitized source ZIP only if intentionally distributing source
+Expected artifacts after promotion:
+- dist\ClearWorth Setup 1.0.0.exe
+- dist\win-unpacked\ClearWorth.exe
+- dist\ClearWorth-1.0.0-SBOM.cdx.json
+- installation guide, release notes, checksum file and required notices
+- optional sanitized source ZIP if source distribution is intended
 
-Verify and test:
+Verify signatures and launch:
 ~~~powershell
 Get-AuthenticodeSignature ".\dist\ClearWorth Setup 1.0.0.exe" | Format-List Status,StatusMessage,SignerCertificate
 Get-AuthenticodeSignature ".\dist\win-unpacked\ClearWorth.exe" | Format-List Status,StatusMessage,SignerCertificate
 & ".\dist\win-unpacked\ClearWorth.exe"
 & ".\dist\ClearWorth Setup 1.0.0.exe"
-# Alternative installer launch:
+# Alternative:
 Start-Process -FilePath ".\dist\ClearWorth Setup 1.0.0.exe"
 ~~~
-Both signatures should report Valid and the intended publisher. Capture Windows UAT results.
-Hash the final signed artifact, after all signing changes:
+Both signatures should report Valid and the intended publisher. For source development, use npm run dev after dependency installation.
+
+Hash the final signed installer:
 ~~~powershell
 Get-FileHash -Algorithm SHA256 -LiteralPath ".\dist\ClearWorth Setup 1.0.0.exe" |
   ForEach-Object { "$($_.Hash.ToLower())  $([IO.Path]::GetFileName($_.Path))" } |
   Set-Content -Encoding ASCII ".\dist\SHA256SUMS.txt"
 ~~~
-A hash verifies matching bytes; it does not replace publisher signing.
-For source development: npm run dev from the extracted source root after dependencies are installed.
+A checksum verifies matching bytes and does not replace publisher signing.
 
-## 4. Choose the GitHub repository
-Recommended new application repository: ornbaumkeith/ClearWorth (proposed name; not created or verified here).
-Keep ornbaumkeith.github.io for the portfolio. Store installer binaries as GitHub Release assets, not as files in the website Git history.
-- Public application source: publish a sanitized, reviewed source tree and its intended license.
-- Downloads only: use a public distribution repository with README, release notes and notices; keep development source private.
-A private repository's release assets are not anonymous public downloads.
-Do not upload live databases, backups, account exports, credentials, signing files or screenshots showing private financial information. Review tracked files as well as .gitignore; ignoring a file does not remove an existing tracked copy.
-GitHub's automatically generated source archives contain the release repository, not the compiled installer.
+## Publish through GitHub Releases
 
-## 5. Create the release in GitHub
-1. Open the chosen repository → Releases → Draft a new release.
-2. Choose tag v1.0.0 and the exact reviewed application release commit (or distribution commit for a downloads-only repository; record the private source commit internally).
+Keep the portfolio repository for the website and use an application or downloads repository for release assets. For public downloads with private application source, use a public distribution repository containing documentation and notices. Automatically generated source archives do not contain the compiled installer unless intentionally included.
+
+1. Open the release repository → Releases → Draft a new release.
+2. Select tag v1.0.0 and the reviewed release commit.
 3. Title: ClearWorth 1.0.0 — Windows.
-4. Paste reviewed release notes, known limitations, tested Windows/architecture details, install/upgrade/backup guidance, support route and license information.
-5. Attach the signed installer, SHA256SUMS.txt, SBOM, installation guide and notices; optionally attach a sanitized source ZIP.
-6. Save as draft while verifying every asset and its checksum. Use pre-release if Windows acceptance is unfinished. Publish as a stable latest release only when ready.
-7. Test an anonymous download and a clean Windows install using the downloaded file. Compare SHA-256 and Authenticode against the release.
-8. Send the actual published release URL so the portfolio can link the verified installer. No speculative download URL is live on the site.
+4. Describe features, tested Windows editions and CPU architecture, installation and upgrade steps, backup guidance, known limitations, support route and licensing.
+5. Attach the signed installer, SHA256SUMS.txt, SBOM, installation guide and notices. Add source only if intended.
+6. Save a draft until checks are complete. Use pre-release if acceptance is unfinished.
+7. When ready, publish, then test an anonymous download and clean Windows installation. Verify the downloaded signature and checksum.
+8. Provide the actual public release URL before enabling a website download link.
 
-Proposed release notes to review after validation:
-"ClearWorth 1.0.0 brings income, expenses, budgets, configurable financial dashboards, Planning Studio, calendar workspaces, transaction imports and reporting into a local-first Windows application. Planning keeps actual records, planned schedules and projected scenarios distinct. Savings goal allocations reduce projected available cash without becoming ordinary ledger expenses. Transactions & Expense Tracking is available under Import. Optional integrations require configuration."
-Add the actual tested platforms, installer filename, known limitations and support details. Do not claim a security certification or complete offline operation for optional integrations.
+Suggested product description:
+"ClearWorth Version 1.0.0 brings configurable financial dashboards, Planning Studio, income and expense schedules, calendar workspaces, transaction imports, reports and local security controls into a Windows workspace. Actual, planned and projected values remain distinct. Projected savings allocations reduce future available cash without becoming ordinary ledger expenses. Optional integrations require configuration."
 
-## 6. Share website media from your desktop
-This chat cannot open C:\Users\... or a Windows network share by path.
-Create a dedicated ClearWorth-Website-Media folder containing only intended website material:
-- screenshots: dashboard, Planning Studio, Budget, Calendar, Import, Settings, light/dark views
-- videos: short focused demonstrations
-- media-notes.txt: filename, page/feature, suggested caption, theme and app version; identify any example values
-Use synthetic financial records and remove visible private information before sharing.
-Right-click the folder → Compress to ZIP (Windows 11) or Send to → Compressed (zipped) folder (Windows 10), then attach the ZIP here. Split into smaller ZIPs if the interface rejects the size.
-PowerShell alternative for a modest folder:
-~~~powershell
-$mediaFolder = Join-Path ([Environment]::GetFolderPath('Desktop')) 'ClearWorth-Website-Media'
-$mediaZip = Join-Path ([Environment]::GetFolderPath('Desktop')) 'ClearWorth-Website-Media.zip'
-Compress-Archive -Path $mediaFolder -DestinationPath $mediaZip
-~~~
-If you prefer cloud sharing, connect the storage provider and share the dedicated folder through that connected service; do not make personal desktop folders public. ZIP upload is the simplest route available now.
-Media update: the October 19 batches now provide nine silent walkthroughs, covering Dashboard creation, dashboard analytics, widget appearance, Planning Studio, Help, Budget, Allocations, Calculator and Calendar, plus current Planning, income, login, Calendar and Budget screenshots. The widget GIF is presented as a controlled video; the single-frame login GIF is presented as an image. The Help clip shows an earlier transaction location, explained in its caption. Earlier screenshots remain labeled separately. Additional release media can follow using the same process.
+## Website media and validation
 
-## References
-- GitHub release publishing: https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
-- GitHub release links: https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases
-- electron-builder NSIS artifact naming: https://www.electron.build/docs/nsis/
+The page contains fourteen silent controlled walkthroughs and nine current screenshots, plus an expandable earlier-image archive. Captions describe the supplied recordings and note older menu locations. The clip supplied under a backup filename demonstrates Import/Sync and is labeled accordingly; the separate Backup/Restore screenshot illustrates backup settings. Public excerpts omit profile contact fields, populated user lists and OS save dialogs.
+
+These images show the captured workspace and are not proof of final runtime correctness, installer signing, security certification or reconciliation. A visible application audit log is distinct from an independent security audit.
+
+For more media, ZIP a dedicated desktop folder and attach it in chat. Do not share a local Windows path as if it were remotely accessible. Include feature names and suggested captions, and use data intended for public display.
+
+## Official references
+
+- https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository
+- https://docs.github.com/en/repositories/releasing-projects-on-github/linking-to-releases
+- https://www.electron.build/docs/nsis/

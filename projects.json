@@ -3,7 +3,7 @@
     "id": "clearworth",
     "name": "ClearWorth",
     "category": "Desktop application",
-    "status": "1.0.0 planned",
+    "status": "Version 1.0.0",
     "summary": "A local-first Windows finance workspace with configurable dashboards, Planning Studio, calendar workspaces, budgets, imports, and transaction tracking.",
     "tags": [
       "Windows",
