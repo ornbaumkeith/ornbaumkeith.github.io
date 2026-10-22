@@ -14,7 +14,7 @@ Use a separate application working copy. Confirm:
 - Resolve strict production dependency-audit findings. Temporary UAT exceptions are not production approval.
 - Verify distribution rights for the application, brand artwork and bundled third-party material. Keep customer data, backups, credentials and signing files out of public source and media.
 
-The attached application source requires version-identity and runtime alignment before it can be represented as a built 1.0.0 installer. Renaming an older executable is insufficient. No production certification is implied by the website.
+The newer review package identifies the application manifest as 1.0.0. Confirm the complete source, lockfile, browser companion and final executable agree before publishing; a partial review package is not evidence of a built installer. Renaming an older executable is insufficient. No production certification is implied by the website.
 
 ## Validate and package on Windows
 
@@ -77,7 +77,7 @@ Suggested product description:
 
 ## Website media and validation
 
-The page contains fourteen silent controlled walkthroughs and nine current screenshots, plus an expandable earlier-image archive. Captions describe the supplied recordings and note older menu locations. The clip supplied under a backup filename demonstrates Import/Sync and is labeled accordingly; the separate Backup/Restore screenshot illustrates backup settings. Public excerpts omit profile contact fields, populated user lists and OS save dialogs.
+The page contains fourteen silent controlled walkthroughs and ten current screenshots, plus an expandable earlier-image archive. Captions describe the supplied recordings and note older menu locations. The clip supplied under a backup filename demonstrates Import/Sync and is labeled accordingly; the separate Backup/Restore screenshot illustrates backup settings. Public excerpts omit profile contact fields, populated user lists and OS save dialogs.
 
 These images show the captured workspace and are not proof of final runtime correctness, installer signing, security certification or reconciliation. A visible application audit log is distinct from an independent security audit.
 
