@@ -97,4 +97,11 @@ The current page contains fourteen controlled, silent MP4 walkthroughs, includin
 
 The final media batch adds Reports, Global Search, Security controls, Settings/themes and Import/Sync clips, plus Reports, Security Audit and Backup/Restore screenshots. Public excerpts omit profile contacts, populated user lists and Windows save dialogs. The misleadingly named backup recording is labeled Import/Sync based on its content. Website text and publishing guidance use Version 1.0.0 with no development-stage labels. The application source archive has not been relabeled or rebuilt by website edits.
 
-The home-card ClearWorth actions use consistent purple buttons with wrapping between buttons, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
+The home-card ClearWorth and Tandem actions share one purple primary button and green underlined supporting links, with wrapping between whole actions, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
+
+## Website accessibility
+
+The [October 22, 2026 accessibility report](docs/Website-Accessibility-Audit-2026-10-22.md) records WCAG 2.2 AA review scope, changes, automated results, score methodology, contrast measurements, and remaining human/assistive-technology checks. The automated score is not a conformance certificate.
+
+After regeneration, run `python scripts/check_accessibility.py` for dependency-free structural and internal-link checks. Recheck keyboard navigation, responsive layouts, text spacing, and media alternatives after changes to shared styles or content.
+

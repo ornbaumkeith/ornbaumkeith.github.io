@@ -1,3 +1,7 @@
+// Move keyboard focus to the skip-link destination in every supported browser.
+document.querySelector('.skip')?.addEventListener('click', () => {
+  document.querySelector('#main')?.focus({ preventScroll: true });
+});
 (() => {
   const search = document.querySelector('#project-search');
   const filter = document.querySelector('#project-category');
@@ -21,3 +25,4 @@
   document.querySelector('#reset-search').addEventListener('click', () => { search.value = ''; filter.value = 'all'; update(); search.focus(); });
   update();
 })();
+
