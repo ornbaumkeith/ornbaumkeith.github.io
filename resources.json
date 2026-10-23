@@ -5,9 +5,9 @@
     "category": "Personal finance",
     "format": "Microsoft Excel (.xlsx)",
     "file_name": "Personal_Finance_Planner_v1.xlsx",
-    "download_url": null,
-    "media_published": false,
-    "media_directory": "../assets/resources/personal-finance-planner",
+    "download_url": "https://github.com/ornbaumkeith/resource-templates/releases/download/personal-finance-planner-v1/Personal_Finance_Planner_v1.xlsx",
+    "media_published": true,
+    "media_directory": "https://raw.githubusercontent.com/ornbaumkeith/resource-templates/main/media/originals/personal-finance-planner",
     "summary": "An original, standalone Excel workbook for tracking income, expenses, annual totals, assets, debts and accounts.",
     "description": "Keep month-by-month financial history to review expenses and plan ahead. Published exactly as supplied, without spreadsheet modifications.",
     "features": [
@@ -60,6 +60,7 @@
         "file": "Summary_Demo(1).mp4",
         "label": "Original financial summary video"
       }
-    ]
+    ],
+    "status": "Published"
   }
 ]
