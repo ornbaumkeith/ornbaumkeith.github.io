@@ -64,10 +64,12 @@
     .then(function (release) {
       if (release.draft || release.prerelease || !release.published_at) return;
       var items = Array.isArray(release.assets) ? release.assets : [];
-      var installer = items.find(function (item) { return item.name === 'ClearWorth Setup 1.0.0.exe' && item.state === 'uploaded' && item.size > 0; });
+      /* GitHub normalizes spaces to dots in release asset filenames. */
+      var names = ['ClearWorth.Setup.1.0.0.exe', 'ClearWorth Setup 1.0.0.exe'];
+      var installer = items.find(function (item) { return names.indexOf(item.name) !== -1 && item.state === 'uploaded' && item.size > 0; });
       if (!installer) return;
-      var expected = 'https://github.com/ornbaumkeith/ClearWorth-Releases/releases/download/v1.0.0/ClearWorth%20Setup%201.0.0.exe';
-      if (decodeURIComponent(installer.browser_download_url || '') !== decodeURIComponent(expected)) return;
+      var expected = 'https://github.com/ornbaumkeith/ClearWorth-Releases/releases/download/v1.0.0/' + encodeURIComponent(installer.name);
+      if ((installer.browser_download_url || '').toLowerCase() !== expected.toLowerCase()) return;
       box.innerHTML = '<strong>ClearWorth 1.0.0 is available</strong>' +
         '<a class="button" href="' + expected + '">Download for Windows (unsigned)</a>' +
         '<span>No verified publisher signature. Windows may warn about this installer.</span>' +
