@@ -1,10 +1,65 @@
 [
   {
-    "id": "personal-finance-planner-2026",
-    "name": "Personal Finance Planner — 2026",
-    "category": "Personal Finance",
-    "format": "xlsx",
+    "id": "personal-finance-planner",
+    "name": "Personal Finance Planner",
+    "category": "Personal finance",
+    "format": "Microsoft Excel (.xlsx)",
+    "file_name": "Personal_Finance_Planner_v1.xlsx",
     "download_url": null,
-    "status": "Preparing public download"
+    "media_published": false,
+    "media_directory": "../assets/resources/personal-finance-planner",
+    "summary": "An original, standalone Excel workbook for tracking income, expenses, annual totals, assets, debts and accounts.",
+    "description": "Keep month-by-month financial history to review expenses and plan ahead. Published exactly as supplied, without spreadsheet modifications.",
+    "features": [
+      "Annual summary and charts",
+      "Monthly income and expenses",
+      "Assets, debt and accounts views",
+      "Historical financial tracking"
+    ],
+    "blog_url": "../blog/personal-finance-planner-story/index.html",
+    "images": [
+      {
+        "file": "Dashboad.png",
+        "alt": "Original financial summary screenshot"
+      },
+      {
+        "file": "Monthly_View(1).png",
+        "alt": "Original monthly spreadsheet screenshot"
+      },
+      {
+        "file": "Monthly_View_All(1).png",
+        "alt": "Original full monthly spreadsheet screenshot"
+      },
+      {
+        "file": "Month(1).png",
+        "alt": "Original monthly income and expense screenshot"
+      },
+      {
+        "file": "Accounts(1).png",
+        "alt": "Original accounts spreadsheet screenshot"
+      },
+      {
+        "file": "Assets(1).png",
+        "alt": "Original assets spreadsheet screenshot"
+      },
+      {
+        "file": "Debt(1).png",
+        "alt": "Original debt spreadsheet screenshot"
+      },
+      {
+        "file": "Summary_Temp(1).gif",
+        "alt": "Original animated summary"
+      }
+    ],
+    "videos": [
+      {
+        "file": "Dashboard(1).mp4",
+        "label": "Original dashboard video"
+      },
+      {
+        "file": "Summary_Demo(1).mp4",
+        "label": "Original financial summary video"
+      }
+    ]
   }
 ]
