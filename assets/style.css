@@ -131,3 +131,64 @@ main:focus{outline:none}
 .resource-collection .resource-shot img{height:auto;aspect-ratio:16/9;object-fit:contain}
 .resource-collection .resource-shot figcaption{padding:13px 16px}
 @media(max-width:720px){.resource-collection .resource-features,.resource-collection .resource-gallery{grid-template-columns:1fr}.resource-collection .resource-entry{padding:24px}.resource-collection .resource-entry>.resource-summary,.resource-collection .resource-entry>.resource-description{font-size:15px}}
+
+/* Resources page — spacious, full-width, compact vertical rhythm. Other pages are unchanged. */
+.resource-page-hero.page-hero{
+  display:grid;
+  grid-template-columns:minmax(0,1.18fr) minmax(300px,.82fr);
+  align-items:center;
+  gap:clamp(26px,5vw,72px);
+  max-width:none;
+  padding:36px 0 30px;
+}
+.resource-page-hero h1{
+  max-width:720px;
+  margin:0;
+  font-size:clamp(38px,4.5vw,62px);
+  line-height:1.11;
+}
+.resource-page-hero .eyebrow{margin-bottom:18px}
+.resource-page-hero .resource-hero-copy{max-width:450px}
+.resource-page-hero .resource-hero-copy p{
+  font-size:clamp(16px,1.55vw,19px);
+  line-height:1.75;
+  margin:0;
+  max-width:none;
+}
+.resource-section.section{padding:18px 0 52px}
+.resource-section>.section-head,
+.resource-section>.resource-lead{
+  max-width:none;
+  margin-left:0;
+  margin-right:0;
+}
+.resource-section>.section-head{margin-bottom:15px}
+.resource-section>.section-head .eyebrow{margin-bottom:12px}
+.resource-section>.section-head h2{font-size:clamp(26px,3.4vw,40px)}
+.resource-section>.resource-lead{
+  max-width:980px;
+  font-size:16px;
+  line-height:1.75;
+  margin:0 0 25px;
+}
+.resource-collection.docs{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  width:100%;
+  max-width:none;
+  margin:0;
+}
+.resource-collection .resource-entry{
+  width:100%;
+  min-width:0;
+  padding:clamp(26px,3.5vw,44px);
+}
+.resource-collection .resource-entry>.resource-summary,
+.resource-collection .resource-entry>.resource-description{max-width:980px}
+.resource-collection .resource-media{margin-top:28px;padding-top:24px}
+.resource-collection .resource-gallery{gap:22px;margin-top:18px}
+@media(max-width:780px){
+  .resource-page-hero.page-hero{grid-template-columns:1fr;gap:15px;padding:32px 0 16px}
+  .resource-page-hero .resource-hero-copy{max-width:720px}
+  .resource-section.section{padding-top:20px}
+}
