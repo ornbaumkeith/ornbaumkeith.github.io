@@ -27,20 +27,9 @@
         "file": "Monthly_View(1).png",
         "alt": "Personal Finance Planner monthly worksheet showing income and expenses by pay period",
         "caption": "Monthly income and expense tracking"
-      },
-      {
-        "file": "Assets(1).png",
-        "alt": "Personal Finance Planner Assets worksheet showing asset tracking fields",
-        "caption": "Assets overview"
       }
     ],
-    "videos": [
-      {
-        "file": "Dashboard(1).mp4",
-        "label": "Dashboard walkthrough",
-        "description": "A short original recording of the spreadsheet dashboard."
-      }
-    ],
+    "videos": [],
     "status": "Published"
   }
 ]
