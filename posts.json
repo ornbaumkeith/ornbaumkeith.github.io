@@ -5,5 +5,12 @@
     "date": "2026-10-03",
     "category": "Experience & Projects",
     "summary": "How more than ten years of technical work, continued learning, and personal and financial growth came together in ClearWorth."
+  },
+  {
+    "id": "from-spreadsheet-to-clearworth",
+    "title": "From a spreadsheet to ClearWorth",
+    "date": "2026-10-23",
+    "category": "Projects & Personal Finance",
+    "summary": "How years of refining a personal finance Excel workbook laid the foundation for ClearWorth."
   }
 ]
