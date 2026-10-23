@@ -112,3 +112,22 @@ main:focus{outline:none}
 
 /* Finance template media: editorial widths, consistent original-only gallery. */
 .resource-lead{max-width:760px;color:var(--muted);font-size:17px;margin-bottom:24px}.resource-entry ul{margin:15px 0 22px;padding-left:24px}.resource-entry .actions{display:flex;align-items:center;flex-wrap:wrap;gap:16px}.resource-entry .actions .button{min-height:44px}.resource-note{color:var(--muted);font-size:13px;margin:22px 0}.resource-media{margin-top:36px}.resource-media>p{color:var(--muted);max-width:720px}.resource-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px;margin:22px 0 26px}.resource-shot,.resource-video{margin:0;min-width:0;background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden}.resource-shot img{display:block;width:100%;height:260px;object-fit:contain;background:#23252a}.resource-shot figcaption,.resource-video figcaption{font-size:13px;color:var(--muted);padding:12px 14px}.resource-videos{display:grid;grid-template-columns:minmax(0,760px);gap:20px}.resource-video video{display:block;width:100%;height:auto;max-height:460px;background:#151619}.article-lead{font-size:19px;line-height:1.7}.blog-media{max-width:820px}.resource-shot-featured{max-width:760px;margin:20px 0}.resource-shot-featured img{height:auto;max-height:500px}.resource-video-featured{max-width:760px;margin:20px 0}@media(max-width:680px){.resource-gallery{grid-template-columns:1fr}.resource-shot img{height:auto;max-height:340px}.resource-videos{grid-template-columns:1fr}}
+
+/* Full-width Personal Finance Planner card: preserve other two-column .docs grids. */
+.resource-section>.section-head,.resource-section>.resource-lead{max-width:1020px;margin-left:auto;margin-right:auto}
+.resource-collection.docs{display:grid;grid-template-columns:minmax(0,1fr);max-width:1020px;margin:0 auto;gap:28px}
+.resource-collection .resource-entry{min-width:0;padding:clamp(28px,4.5vw,56px);border-radius:22px}
+.resource-collection .resource-entry>.chips{margin-bottom:15px}
+.resource-collection .resource-entry>h3{font-size:clamp(25px,3vw,34px);line-height:1.2;margin:0 0 20px;letter-spacing:-.025em}
+.resource-collection .resource-entry>.resource-summary,.resource-collection .resource-entry>.resource-description{max-width:820px;font-size:16px;line-height:1.75;margin:0 0 18px;color:var(--muted)}
+.resource-collection .resource-features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 36px;margin:26px 0 32px;padding:0;list-style:none}
+.resource-collection .resource-features li{position:relative;padding:14px 0 0 22px;border-top:1px solid var(--line);font-size:15px;line-height:1.5;color:var(--ink)}
+.resource-collection .resource-features li:before{content:"";position:absolute;left:1px;top:23px;width:9px;height:9px;border-radius:50%;background:var(--green)}
+.resource-collection .resource-actions{display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;margin:16px 0 26px}
+.resource-collection .resource-note{max-width:780px;line-height:1.6}
+.resource-collection .resource-media{border-top:1px solid var(--line);padding-top:32px;margin-top:30px}
+.resource-collection .resource-media h4{font-family:Manrope,system-ui,sans-serif;font-size:clamp(20px,2.2vw,25px);letter-spacing:-.025em;margin:0 0 8px}
+.resource-collection .resource-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:24px 0 0}
+.resource-collection .resource-shot img{height:auto;aspect-ratio:16/9;object-fit:contain}
+.resource-collection .resource-shot figcaption{padding:13px 16px}
+@media(max-width:720px){.resource-collection .resource-features,.resource-collection .resource-gallery{grid-template-columns:1fr}.resource-collection .resource-entry{padding:24px}.resource-collection .resource-entry>.resource-summary,.resource-collection .resource-entry>.resource-description{font-size:15px}}
