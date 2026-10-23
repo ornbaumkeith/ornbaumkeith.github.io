@@ -9,7 +9,7 @@ def esc(s): return escape(str(s), quote=True)
 def page(title, description, content, active='home', depth=0):
     prefix = '../' * depth
     def link(path): return prefix + path
-    nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('blog','blog/index.html','Blog'),('about','about/index.html','About')])
+    nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('resources','resources/index.html','Resources'),('blog','blog/index.html','Blog'),('about','about/index.html','About')])
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css?v=20261022-a11y2')}"><script src="{link('assets/app.js?v=20261022-a11y2')}" defer></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="{link('index.html')}"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation">{nav}<a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
@@ -76,3 +76,17 @@ intro = (ROOT / 'content/blog.html').read_text()
 collection = '<div class="docs">' + ''.join(post_cards) + '</div>' if posts else '<div class="blog-empty"><span class="pill">Getting started</span><h3>The first post is still ahead.</h3><p>There are no published posts yet. In the meantime, explore ClearWorth and the work behind this portfolio.</p><a class="button" href="../projects/index.html">Explore projects ↗</a></div>'
 (ROOT / 'blog/index.html').write_text(page('Blog', 'Project stories, practical lessons, and perspectives on software, enterprise GIS, data, and automation from Keith Ornbaum.', intro + '<section class="section blog-posts" aria-labelledby="posts-heading"><div class="section-head"><div><div class="eyebrow">From the notebook</div><h2 id="posts-heading">Latest posts.</h2></div></div>' + collection + '</section>', 'blog', 1))
 
+
+# Resource library: provide an extensible catalog-driven page without broken downloads.
+resources=json.loads((ROOT/'resources.json').read_text())
+cards=[]
+for r in resources:
+    link=('<a class="button" href="'+esc(r['download_url'])+'">Download Excel workbook ↓</a>') if r.get('download_url') else '<span class="pill">Download being prepared</span>'
+    cards.append('<article class="doc"><h3>'+esc(r['name'])+'</h3><p>Annual summary, monthly income and expenses, assets, debts, and accounts.</p><div class="actions">'+link+'<a class="text-link" href="../blog/from-spreadsheet-to-clearworth/index.html">Read the story ↗</a></div></article>')
+body=(ROOT/'content/resources.html').read_text()
+start=body.find('<article class="doc">')
+stop=body.find('</article>',start)
+if start!=-1 and stop!=-1:
+    body=body[:start]+'<div class="docs">'+''.join(cards)+'</div>'+body[stop+len('</article>'):]
+folder=ROOT/'resources';folder.mkdir(parents=True,exist_ok=True)
+(folder/'index.html').write_text(page('Excel templates & resources','Personal finance Excel templates and resources.',body,'resources',1))
