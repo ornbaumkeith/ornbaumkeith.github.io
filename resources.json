@@ -8,57 +8,37 @@
     "download_url": "https://github.com/ornbaumkeith/resource-templates/releases/download/personal-finance-planner-v1/Personal_Finance_Planner_v1.xlsx",
     "media_published": true,
     "media_directory": "../assets/resources/personal-finance-planner",
-    "summary": "An original, standalone Excel workbook for tracking income, expenses, annual totals, assets, debts and accounts.",
-    "description": "Keep month-by-month financial history to review expenses and plan ahead. Published exactly as supplied, without spreadsheet modifications.",
+    "summary": "An independent Excel workbook for understanding income, expenses, monthly financial activity and the bigger picture through an updating dashboard.",
+    "description": "Track what comes in and what goes out, use drop-down menus when entering income and expenses, review monthly metrics that update with your entries, and build a history for future planning.",
     "features": [
-      "Annual summary and charts",
-      "Monthly income and expenses",
-      "Assets, debt and accounts views",
-      "Historical financial tracking"
+      "Monthly financial metrics that update as information is entered",
+      "An automatically updating dashboard",
+      "Drop-down menus for income and expense tracking",
+      "Monthly and annual reviews plus assets, debts, and accounts"
     ],
     "blog_url": "../blog/personal-finance-planner-story/index.html",
     "images": [
       {
         "file": "Dashboad.png",
-        "alt": "Original financial summary screenshot"
+        "alt": "Personal Finance Planner dashboard showing an annual financial summary and charts",
+        "caption": "Dashboard and annual summary"
       },
       {
         "file": "Monthly_View(1).png",
-        "alt": "Original monthly spreadsheet screenshot"
-      },
-      {
-        "file": "Monthly_View_All(1).png",
-        "alt": "Original full monthly spreadsheet screenshot"
-      },
-      {
-        "file": "Month(1).png",
-        "alt": "Original monthly income and expense screenshot"
-      },
-      {
-        "file": "Accounts(1).png",
-        "alt": "Original accounts spreadsheet screenshot"
+        "alt": "Personal Finance Planner monthly worksheet showing income and expenses by pay period",
+        "caption": "Monthly income and expense tracking"
       },
       {
         "file": "Assets(1).png",
-        "alt": "Original assets spreadsheet screenshot"
-      },
-      {
-        "file": "Debt(1).png",
-        "alt": "Original debt spreadsheet screenshot"
-      },
-      {
-        "file": "Summary_Temp(1).gif",
-        "alt": "Original animated summary"
+        "alt": "Personal Finance Planner Assets worksheet showing asset tracking fields",
+        "caption": "Assets overview"
       }
     ],
     "videos": [
       {
         "file": "Dashboard(1).mp4",
-        "label": "Original dashboard video"
-      },
-      {
-        "file": "Summary_Demo(1).mp4",
-        "label": "Original financial summary video"
+        "label": "Dashboard walkthrough",
+        "description": "A short original recording of the spreadsheet dashboard."
       }
     ],
     "status": "Published"
