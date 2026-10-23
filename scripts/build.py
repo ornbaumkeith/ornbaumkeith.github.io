@@ -77,19 +77,19 @@ collection = '<div class="docs">' + ''.join(post_cards) + '</div>' if posts else
 (ROOT / 'blog/index.html').write_text(page('Blog', 'Project stories, practical lessons, and perspectives on software, enterprise GIS, data, and automation from Keith Ornbaum.', intro + '<section class="section blog-posts" aria-labelledby="posts-heading"><div class="section-head"><div><div class="eyebrow">From the notebook</div><h2 id="posts-heading">Latest posts.</h2></div></div>' + collection + '</section>', 'blog', 1))
 
 
-# Resource library: only show verified downloads and published original media.
-resources=json.loads((ROOT/'resources.json').read_text())
+# Resource library, driven by resources.json for future template additions.
+resources=json.loads((ROOT/'resources.json').read_text(encoding='utf-8'))
 cards=[]
 for r in resources:
     down=('<a class="button" href="'+esc(r['download_url'])+'">Download original Excel workbook ↓</a>' if r.get('download_url') else '<span class="pill">Download being prepared</span>')
     features=''.join('<li>'+esc(i)+'</li>' for i in r.get('features',[]))
-    original_media=''
+    media=''
     if r.get('media_published'):
         prefix=r['media_directory'].rstrip('/')+'/'
-        shots=''.join('<figure class="resource-shot"><a href="'+esc(prefix+x['file'])+'"><img src="'+esc(prefix+x['file'])+'" alt="'+esc(x['alt'])+'" loading="lazy"></a><figcaption>'+esc(x['alt'])+'</figcaption></figure>' for x in r.get('images',[]))
-        videos=''.join('<figure class="resource-video"><video controls preload="none" aria-label="'+esc(x['label'])+'"><source src="'+esc(prefix+x['file'])+'" type="video/mp4">Video playback is not supported.</video><figcaption>'+esc(x['label'])+'</figcaption></figure>' for x in r.get('videos',[]))
-        original_media='<section class="resource-media" aria-label="Original template screenshots and videos"><h3>Original screenshots and videos</h3><p>Provided by the author, without generated replacements.</p><div class="resource-gallery">'+shots+'</div><div class="resource-videos">'+videos+'</div></section>'
-    cards.append('<article class="doc resource-entry"><div class="chips"><span class="pill">'+esc(r.get('category','Template'))+'</span><span class="pill">'+esc(r.get('format','Excel'))+'</span></div><h3>'+esc(r['name'])+'</h3><p>'+esc(r.get('summary',''))+'</p><p>'+esc(r.get('description',''))+'</p><ul>'+features+'</ul><div class="actions">'+down+'<a class="text-link" href="'+esc(r.get('blog_url','#'))+'">Read its story ↗</a></div><p class="resource-note">Distributed exactly as supplied. Example data and password fields may be included; do not store real passwords in this workbook.</p>'+original_media+'</article>')
-html=(ROOT/'content/resources.html').read_text().replace('<!-- RESOURCE_CARDS -->','<div class="docs">'+''.join(cards)+'</div>')
+        shots=''.join('<figure class="resource-shot"><a href="'+esc(prefix+x['file'])+'" aria-label="View '+esc(x.get('caption',x['alt']))+'"><img src="'+esc(prefix+x['file'])+'" alt="'+esc(x['alt'])+'" loading="lazy"></a><figcaption>'+esc(x.get('caption',x['alt']))+'</figcaption></figure>' for x in r.get('images',[]))
+        videos=''.join('<figure class="resource-video"><video controls playsinline preload="metadata" aria-label="'+esc(x['label'])+'" poster="'+esc(prefix+r['images'][0]['file'])+'"><source src="'+esc(prefix+x['file'])+'" type="video/mp4">Your browser does not support this video.</video><figcaption>'+esc(x.get('description',x['label']))+'</figcaption></figure>' for x in r.get('videos',[]))
+        media='<section class="resource-media" aria-label="Original template screenshots and video"><h3>See how it works</h3><p>Original screenshots and dashboard walkthrough, provided without generated replacements.</p><div class="resource-gallery">'+shots+'</div><div class="resource-videos">'+videos+'</div></section>'
+    cards.append('<article class="doc resource-entry"><div class="chips"><span class="pill">'+esc(r.get('category','Template'))+'</span><span class="pill">'+esc(r.get('format','Excel'))+'</span></div><h3>'+esc(r['name'])+'</h3><p>'+esc(r.get('summary',''))+'</p><p>'+esc(r.get('description',''))+'</p><ul>'+features+'</ul><div class="actions">'+down+'<a class="text-link" href="'+esc(r.get('blog_url','#'))+'">Read its story ↗</a></div><p class="resource-note">Distributed exactly as supplied. Example data and password fields may be included; do not store real passwords in this workbook.</p>'+media+'</article>')
+html=(ROOT/'content/resources.html').read_text(encoding='utf-8').replace('<!-- RESOURCE_CARDS -->','<div class="docs">'+''.join(cards)+'</div>')
 folder=ROOT/'resources';folder.mkdir(parents=True,exist_ok=True)
-(folder/'index.html').write_text(page('Excel templates & resources','Independent original Excel templates for financial organization and planning.',html,'resources',1))
+(folder/'index.html').write_text(page('Excel templates & resources','Personal Finance Planner: automatically updating monthly metrics, dashboard, income and expense tracking.',html,'resources',1),encoding='utf-8')
