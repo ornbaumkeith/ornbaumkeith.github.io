@@ -25,15 +25,21 @@
     "id": "tandem",
     "name": "Tandem",
     "category": "Mobile application",
-    "status": "In development",
-    "summary": "A couples goal-planning project combining SMART goals, shared progress, and game-inspired encouragement.",
+    "status": "Coming soon",
+    "summary": "Goals, habits, and shared accountability for couples, with SMART planning, XP, levels, and friendly competition. Planned for Apple and Android phones and tablets.",
     "tags": [
       "Couples",
       "SMART goals",
-      "Shared progress"
+      "Phones & tablets"
     ],
     "stack": [
-      "React"
+      "React Native",
+      "Expo",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "SQLite"
     ],
     "featured": true,
     "download_url": null,

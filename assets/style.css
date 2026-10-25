@@ -192,3 +192,7 @@ main:focus{outline:none}
   .resource-page-hero .resource-hero-copy{max-width:720px}
   .resource-section.section{padding-top:20px}
 }
+
+
+/* Supplied Tandem product screenshots: retain originals and expose full-size links. */
+.tandem-gallery-group{margin-top:40px}.tandem-gallery-group>h3{font-size:25px;margin-bottom:22px}.tandem-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start}.tandem-shot{width:100%;min-width:0}.tandem-shot img{object-fit:contain}.tandem-phone{max-width:430px;justify-self:center}.tandem-gallery .tandem-phone>a{background:#f0e9fc}.tandem-shot figcaption{font-size:14px}.tandem-shot.hero-shot{max-width:100%}@media(max-width:700px){.tandem-gallery{grid-template-columns:1fr}.tandem-gallery-group{margin-top:30px}}
