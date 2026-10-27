@@ -14,3 +14,10 @@
 @media(max-width:1000px){.tandem-page .tandem-mobile-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:700px){.tandem-page .tandem-gallery{grid-template-columns:1fr}.tandem-page .tandem-mobile-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:420px){.tandem-page .tandem-mobile-gallery{grid-template-columns:1fr}.tandem-page .tandem-mobile-gallery .tandem-shot{max-width:320px;justify-self:center}}
+
+/* Testing downloads: wrap service addresses and keep card content within narrow screens. */
+.tandem-page #resources .doc{min-width:0}
+.tandem-page #resources code{overflow-wrap:anywhere;word-break:break-word}
+.tandem-page #resources li+li{margin-top:8px}
+.tandem-page #resources .docs+.docs{margin-top:18px}
+.tandem-page #resources .actions{margin-bottom:14px}
