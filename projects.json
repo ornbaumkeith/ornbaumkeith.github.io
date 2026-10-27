@@ -24,13 +24,13 @@
   {
     "id": "tandem",
     "name": "Tandem",
-    "category": "Mobile application",
+    "category": "Goal-planning application",
     "status": "Coming soon",
-    "summary": "Goals, habits, and shared accountability for couples, with SMART planning, XP, levels, and friendly competition. Planned for Apple and Android phones and tablets.",
+    "summary": "Personal and shared goals with editable planning steps, dated actions, calendar export, XP, connected circles, and monthly reflections. Initial releases prioritize Windows and Android.",
     "tags": [
-      "Couples",
+      "Windows & Android planned",
       "SMART goals",
-      "Phones & tablets"
+      "Shared accountability"
     ],
     "stack": [
       "React Native",
