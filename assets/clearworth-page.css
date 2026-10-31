@@ -1,0 +1,51 @@
+/* ClearWorth-only media sizing and compact page spacing. */
+.clearworth-page .cw-hero{padding:30px 0 22px;max-width:960px}
+.clearworth-page .cw-heading{margin-bottom:14px}
+.clearworth-page .cw-hero h2{margin-bottom:14px}
+.clearworth-page .cw-intro{margin-bottom:16px}
+.clearworth-page .actions{margin-top:18px;align-items:center}
+.clearworth-page>.section{padding:30px 0}
+.clearworth-page>#features{padding:12px 0 20px}
+.clearworth-page>.section-nav{padding:12px 0;gap:4px 22px}
+.clearworth-page .section-head{margin-bottom:16px}
+.clearworth-page .eyebrow{margin-bottom:12px}
+.clearworth-page .gallery-intro{max-width:960px;margin-bottom:18px}
+.clearworth-page .detail-grid{gap:28px}
+.clearworth-page .feature-grid{gap:10px 22px}
+.clearworth-page .feature{padding:14px 0}
+.clearworth-page .feature h3{margin-bottom:10px}
+.clearworth-page .doc,.clearworth-page .facts{padding:22px}
+.clearworth-page .screenshot-grid,.clearworth-page .cw-video-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
+.clearworth-page .screenshot-grid .app-shot{grid-column:auto;width:100%;max-width:none}
+.clearworth-page .screenshot-grid .app-shot>a{display:flex;align-items:center;justify-content:center;aspect-ratio:16/10;background:#111114;max-height:360px}
+.clearworth-page .screenshot-grid img{width:100%;height:100%;max-height:360px;object-fit:contain}
+.clearworth-page .app-shot figcaption{padding:14px 16px;font-size:14px;line-height:1.6}
+.clearworth-page .app-shot figcaption strong{margin-bottom:6px}
+.clearworth-page .cw-video-card{align-self:start}
+.clearworth-page .cw-video-heading{padding:14px 16px;gap:10px;flex-wrap:wrap}
+.clearworth-page .cw-video-heading h3{font-size:20px;line-height:1.35;flex:1 1 240px}
+.clearworth-page .cw-video-heading .pill{flex-shrink:0}
+.clearworth-page .cw-video-card video{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:#111114}
+.clearworth-page .cw-video-card video:fullscreen{width:100%;height:100%;max-height:none;aspect-ratio:auto}
+.clearworth-page .cw-video-caption{padding:14px 16px}
+.clearworth-page .cw-video-caption>p{margin-bottom:10px;line-height:1.6}
+.clearworth-page .video-alternative{margin:8px 0}
+.clearworth-page .video-alternative summary{min-height:44px;padding:10px 0}
+.clearworth-page .cw-video-caption>.text-link{display:inline-flex;align-items:center;min-height:44px}
+.clearworth-page .release-panel{padding:24px;gap:24px}
+.clearworth-page .back{margin-top:22px}
+.clearworth-page .architecture-strip{padding:22px;margin-bottom:20px}
+.clearworth-page .tech-table th,.clearworth-page .tech-table td{padding:12px 16px}
+@media(max-width:760px){
+ .clearworth-page .screenshot-grid,.clearworth-page .cw-video-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+ .clearworth-page>.section{padding:24px 0}
+ .clearworth-page .screenshot-grid .app-shot>a{aspect-ratio:auto;max-height:360px}
+ .clearworth-page .screenshot-grid img{width:100%;height:auto;max-height:360px;object-fit:contain}
+ .clearworth-page .cw-video-heading h3{font-size:19px;flex-basis:210px}
+ .clearworth-page .cw-video-card video{max-height:none}
+}
+@media(max-width:420px){
+ .clearworth-page .cw-hero{padding-top:24px}
+ .clearworth-page .release-panel,.clearworth-page .doc,.clearworth-page .facts{padding:18px}
+ .clearworth-page .section-nav{column-gap:16px}
+}
