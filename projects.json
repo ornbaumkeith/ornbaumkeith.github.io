@@ -3,8 +3,8 @@
     "id": "clearworth",
     "name": "ClearWorth",
     "category": "Desktop application",
-    "status": "Version 1.0.1",
-    "summary": "A local-first Windows finance workspace with configurable dashboards, Planning Studio, calendar workspaces, budgets, imports, and transaction tracking.",
+    "status": "Version 1.2.0 \u00b7 testing pre-release",
+    "summary": "A local-first Windows finance workspace with planned/actual cash-flow diagrams, configurable dashboards, Planning Studio, budgets, imports, and transaction tracking. Version 1.2.0 is an unsigned testing pre-release.",
     "tags": [
       "Windows",
       "Personal finance",
@@ -17,7 +17,7 @@
       "SQLite"
     ],
     "featured": true,
-    "download_url": "https://github.com/ornbaumkeith/clearworth-releases/releases/download/v1.0.1/ClearWorth.Setup.1.0.1.exe",
+    "download_url": "https://github.com/ornbaumkeith/clearworth-releases/releases/download/v1.2.0/ClearWorth.Setup.1.2.0.exe",
     "demo_url": null,
     "source_url": null
   },

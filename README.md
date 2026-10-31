@@ -85,17 +85,11 @@ To publish a post:
 
 Posts are ordered newest first. Use only information you intend to publish publicly. The blog is a static publishing workflow managed through the repository.
 
-## ClearWorth 1.0.0 release preparation
+## ClearWorth 1.2.0 website release
 
-See [the publishing guide](docs/ClearWorth-1.0.0-Publishing.md) for source findings, Windows validation, release assets, GitHub publication and media sharing. The website references ClearWorth Version 1.0.0 throughout. Application binaries and final validation are handled in the application release workflow. No download URL is set before a verified public release exists.
+The primary download points to the public 1.2.0 testing pre-release and its SHA-256 checksum. The installer is unsigned and full source validation remains blocked by dependency audit findings. Do not describe this candidate as production-ready or as a completed security remediation.
 
-`content/home.html` preserves the detailed ClearWorth and Tandem home showcases during regeneration. Update it with the home page when editing featured copy. `content/clearworth.html` remains authoritative for the dedicated ClearWorth page. The ClearWorth page includes fourteen silent MP4 walkthroughs, ten current screenshots and generated poster frames under `assets/clearworth/latest/`. Earlier October 3 captures remain in an expandable archive. Current supplied media documents development behavior; the 1.0.0 installer remains planned. Videos use native controls, full-screen support and `preload="none"`.
-
-## Additional ClearWorth media
-
-The current page contains fourteen controlled, silent MP4 walkthroughs, including Dashboard creation, dashboard analytics, widget customization (converted from the supplied animated GIF), Planning Studio, and Help. The supplied login GIF is a single-frame image and is presented as a PNG. Current screenshots include Planning, income schedules, login, Calendar, and Budget. The Help clip retains an earlier transaction location; its caption points readers to Import in the latest reviewed source. Development captures do not establish final 1.0.0 validation.
-
-The final media batch adds Reports, Global Search, Security controls, Settings/themes and Import/Sync clips, plus Reports, Security Audit and Backup/Restore screenshots. Public excerpts omit profile contacts, populated user lists and Windows save dialogs. The misleadingly named backup recording is labeled Import/Sync based on its content. Website text and publishing guidance use Version 1.0.0 with no development-stage labels. The application source archive has not been relabeled or rebuilt by website edits.
+Update `content/clearworth.html`, `content/home.html`, and `projects.json`, then run `python scripts/build.py`. The generated ClearWorth page, homepage, and project directory must remain consistent. Earlier supplied screenshots and silent videos remain development examples, not proof of 1.2.0 acceptance. Historical 1.0.0 documents under `docs/` describe that earlier release only.
 
 The home-card ClearWorth and Tandem actions share one purple primary button and green underlined supporting links, with wrapping between whole actions, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
 
