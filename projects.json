@@ -1,9 +1,9 @@
 [
   {
     "id": "clearworth",
-    "name": "ClearWorth",
+    "name": "ClearWorthPlanner",
     "category": "Desktop application",
-    "status": "Version 1.2.1 \u00b7 testing pre-release",
+    "status": "Version 1.2.1 · testing pre-release",
     "summary": "A local-first Windows finance workspace with dashboards, budgets, Planning Studio, the Help & Learning Center and guided Alerts. Version 1.2.1 adds 3Y Planning and an About website link; unsigned testing pre-release available.",
     "tags": [
       "Windows",
