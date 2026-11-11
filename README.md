@@ -8,11 +8,11 @@ Website: https://ornbaumkeith.github.io/
 
 - `index.html` — home and featured projects
 - `projects/index.html` — searchable project directory
-- `projects/clearworth/index.html` — ClearWorth overview and availability
+- `projects/clearworth/index.html` — ClearWorthPlanner overview and availability
 - `about/index.html` — professional background
 - `projects.json` — project catalog and optional demo, download, and source links
-- `assets/` — shared stylesheet, search behavior, favicon, and original ClearWorth screenshots/logo
-- `content/clearworth.html` — editable ClearWorth page content preserved during regeneration
+- `assets/` — shared stylesheet, search behavior, favicon, and original ClearWorthPlanner screenshots/logo
+- `content/clearworth.html` — editable ClearWorthPlanner page content preserved during regeneration
 - `scripts/build.py` — generates static pages from the catalog
 
 ## Run locally (PowerShell)
@@ -58,11 +58,11 @@ The home currently presents the full published catalog. The `featured` field is 
 ## Downloads, demos, and documentation
 
 - Publish Windows installers and ZIPs as GitHub Release assets in a project repository, then add their real URLs to `download_url`.
-- For ClearWorth, update the dedicated availability section in `content/clearworth.html` when a public release is ready, including actual version and installation instructions.
+- For ClearWorthPlanner, update the dedicated availability section in `content/clearworth.html` when a public release is ready, including actual version and installation instructions.
 - Static web demos can live under a project folder. Link them using `demo_url`.
 - Add public guides under a project folder and link them from its page.
-- Application source remains separate unless a `source_url` is intentionally provided. This portfolio does not contain ClearWorth source code or financial data.
-- The home page uses supplied ClearWorth and Tandem previews. ClearWorth's current images are labeled as October 3, 2026 development captures; replace them with reviewed release media when supplied.
+- Application source remains separate unless a `source_url` is intentionally provided. This portfolio does not contain ClearWorthPlanner source code or financial data.
+- The home page uses supplied ClearWorthPlanner and Tandem previews. ClearWorthPlanner's current images are labeled as October 3, 2026 development captures; replace them with reviewed release media when supplied.
 
 ## GitHub Pages
 
@@ -85,13 +85,13 @@ To publish a post:
 
 Posts are ordered newest first. Use only information you intend to publish publicly. The blog is a static publishing workflow managed through the repository.
 
-## ClearWorth 1.2.0 website release
+## ClearWorthPlanner 1.2.0 website release
 
 The primary download points to the public 1.2.0 testing pre-release and its SHA-256 checksum. The installer is unsigned and full source validation remains blocked by dependency audit findings. Do not describe this candidate as production-ready or as a completed security remediation.
 
-Update `content/clearworth.html`, `content/home.html`, and `projects.json`, then run `python scripts/build.py`. The generated ClearWorth page, homepage, and project directory must remain consistent. Earlier supplied screenshots and silent videos remain development examples, not proof of 1.2.0 acceptance. Historical 1.0.0 documents under `docs/` describe that earlier release only.
+Update `content/clearworth.html`, `content/home.html`, and `projects.json`, then run `python scripts/build.py`. The generated ClearWorthPlanner page, homepage, and project directory must remain consistent. Earlier supplied screenshots and silent videos remain development examples, not proof of 1.2.0 acceptance. Historical 1.0.0 documents under `docs/` describe that earlier release only.
 
-The home-card ClearWorth and Tandem actions share one purple primary button and green underlined supporting links, with wrapping between whole actions, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
+The home-card ClearWorthPlanner and Tandem actions share one purple primary button and green underlined supporting links, with wrapping between whole actions, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
 
 ## Website accessibility
 

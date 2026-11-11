@@ -49,3 +49,6 @@
  .clearworth-page .release-panel,.clearworth-page .doc,.clearworth-page .facts{padding:18px}
  .clearworth-page .section-nav{column-gap:16px}
 }
+
+/* Approved two-line ClearWorthPlanner identity; preserve full artwork. */
+.clearworth-page .cw-logo{width:min(100%,520px);height:auto;object-fit:contain}
