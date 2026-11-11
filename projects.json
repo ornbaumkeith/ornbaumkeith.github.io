@@ -25,7 +25,7 @@
     "id": "pairvoy",
     "name": "Pairvoy",
     "category": "Goal-planning application",
-    "status": "0.5.15 rebrand \u00b7 installers being verified",
+    "status": "0.5.15 · Testing downloads available",
     "summary": "A couples goal-planning app for personal goals, shared ambitions, dated actions, calendar planning, XP and reflections. Pairvoy continues the latest 0.5.14 functionality with a new identity.",
     "tags": [
       "Windows & Android",
@@ -42,9 +42,10 @@
       "SQLite"
     ],
     "featured": true,
-    "download_url": null,
+    "download_url": "https://github.com/ornbaumkeith/pairvoy-releases/releases/download/pairvoy-v0.5.15/Pairvoy_0.5.15_Windows_x64_Setup.exe",
     "demo_url": null,
-    "source_url": null
+    "source_url": null,
+    "android_download_url": "https://github.com/ornbaumkeith/pairvoy-releases/releases/download/pairvoy-v0.5.15/Pairvoy_0.5.15_Android.apk"
   },
   {
     "id": "study-companions",
