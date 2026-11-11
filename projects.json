@@ -22,13 +22,13 @@
     "source_url": null
   },
   {
-    "id": "tandem",
-    "name": "Tandem",
+    "id": "pairvoy",
+    "name": "Pairvoy",
     "category": "Goal-planning application",
-    "status": "Coming soon",
-    "summary": "Personal and shared goals with editable planning steps, dated actions, calendar export, XP, connected circles, and monthly reflections. Initial releases prioritize Windows and Android.",
+    "status": "0.5.15 rebrand \u00b7 installers being verified",
+    "summary": "A couples goal-planning app for personal goals, shared ambitions, dated actions, calendar planning, XP and reflections. Pairvoy continues the latest 0.5.14 functionality with a new identity.",
     "tags": [
-      "Windows & Android planned",
+      "Windows & Android",
       "SMART goals",
       "Shared accountability"
     ],

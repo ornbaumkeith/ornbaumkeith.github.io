@@ -9,7 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = ['index.html', 'projects/index.html', 'projects/clearworth/index.html',
-         'projects/tandem/index.html', 'about/index.html', 'blog/index.html',
+         'projects/pairvoy/index.html', 'about/index.html', 'blog/index.html',
          'blog/the-journey-to-clearworth/index.html', '404.html']
 
 
