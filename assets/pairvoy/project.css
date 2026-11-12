@@ -1,2 +1,28 @@
-.pairvoy-hero{padding:54px 0 40px;max-width:960px}.pairvoy-wordmark{display:block;max-width:390px;margin:16px 0 24px}.pairvoy-wordmark img{display:block;width:100%;height:auto}.pairvoy-hero h1{font-size:clamp(40px,6.4vw,76px);letter-spacing:-.055em;line-height:1.08;margin:22px 0}.pairvoy-hero h1 span{color:#b79aff}.pairvoy-intro{font-size:20px;max-width:700px;color:var(--muted)}.pairvoy-update{font-size:13px;color:var(--muted);margin-top:18px}.pairvoy-brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.pairvoy-brand{margin:0;padding:28px;border-radius:18px;border:1px solid #5553;min-width:0}.pairvoy-brand img{width:100%;height:auto;display:block}.pairvoy-brand.light{background:#fff;color:#111}.pairvoy-brand.dark{background:#111;color:#fff}.pairvoy-brand figcaption{margin-top:20px;font-size:13px}.pairvoy-page code{overflow-wrap:anywhere}.pairvoy-page .feature{border-radius:18px}.pairvoy-page .release-status a{white-space:normal}@media(prefers-color-scheme:light){.pairvoy-hero h1 span{color:#7c3aed}}@media(max-width:650px){.pairvoy-brand-grid{grid-template-columns:1fr}.pairvoy-hero{padding-top:34px}.pairvoy-intro{font-size:17px}.pairvoy-brand{padding:18px}}
+.pairvoy-hero{display:flex;flex-direction:column;align-items:flex-start;gap:24px;padding:54px 0 44px;max-width:960px}.pairvoy-wordmark{display:block;width:min(100%,390px);margin:0}.pairvoy-wordmark img{display:block;width:100%;height:auto}.pairvoy-hero h1{display:flex;flex-direction:column;gap:8px;width:100%;font-size:clamp(36px,5.6vw,68px);letter-spacing:-.01em;word-spacing:.08em;line-height:1.2;margin:0}.pairvoy-title-line{display:block;overflow-wrap:normal}.pairvoy-title-accent{color:#b79aff}.pairvoy-intro{font-size:20px;line-height:1.75;max-width:700px;color:var(--muted);margin:0}.pairvoy-update{font-size:13px;color:var(--muted);margin-top:18px}.pairvoy-brand-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:24px}.pairvoy-brand{margin:0;padding:28px;border-radius:18px;border:1px solid #5553;min-width:0}.pairvoy-brand img{width:100%;height:auto;display:block}.pairvoy-brand.light{background:#fff;color:#111}.pairvoy-brand.dark{background:#111;color:#fff}.pairvoy-brand figcaption{margin-top:20px;font-size:13px}.pairvoy-page code{overflow-wrap:anywhere}.pairvoy-page .feature{border-radius:18px}.pairvoy-page .release-status a{white-space:normal}@media(prefers-color-scheme:light){.pairvoy-title-accent{color:#7c3aed}}@media(max-width:650px){.pairvoy-brand-grid{grid-template-columns:1fr}.pairvoy-hero{padding-top:34px}.pairvoy-intro{font-size:17px}.pairvoy-brand{padding:18px}}
 .pairvoy-page .release-status{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0}.pairvoy-page .release-status .button{display:inline-flex;justify-content:center}.pairvoy-page .release-status .text-link{display:block;line-height:1.5}
+
+/* Keep hero rows separate; do not let inherited margins collapse their spacing. */
+.pairvoy-hero>.eyebrow,.pairvoy-hero>.actions,.pairvoy-hero>.chips,.pairvoy-hero>.pairvoy-update{margin:0}
+.pairvoy-hero>.eyebrow{line-height:1.6}
+.pairvoy-hero>.actions{display:flex;flex-wrap:wrap;gap:12px 16px;align-items:center}
+.pairvoy-hero .button{min-height:48px;line-height:1.5;padding:12px 22px}
+.pairvoy-hero>.chips{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.pairvoy-hero .pill{font-size:12px;line-height:1.5;padding:6px 12px}
+.pairvoy-hero>.pairvoy-update{line-height:1.7}
+.pairvoy-page .section-nav{row-gap:16px;line-height:1.6}
+.pairvoy-page .section-head{align-items:flex-start}
+.pairvoy-page h2{line-height:1.25;letter-spacing:-.02em}
+.pairvoy-page .feature h3,.pairvoy-page .doc h3{line-height:1.4}
+.pairvoy-page .feature p,.pairvoy-page .doc p{line-height:1.75}
+.pairvoy-page .pairvoy-brand-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.pairvoy-page .release-panel{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.pairvoy-page .release-panel>*,.pairvoy-page .feature-grid>*{min-width:0}
+.pairvoy-page .release-status{gap:16px}
+@media(max-width:650px){
+ .pairvoy-hero{gap:22px;padding:34px 0}
+ .pairvoy-wordmark{width:min(100%,320px)}
+ .pairvoy-page .pairvoy-brand-grid{grid-template-columns:minmax(0,1fr)}
+ .pairvoy-intro{font-size:17px}
+ .pairvoy-page .release-panel{grid-template-columns:minmax(0,1fr)}
+ .pairvoy-page .release-status{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}
+}
