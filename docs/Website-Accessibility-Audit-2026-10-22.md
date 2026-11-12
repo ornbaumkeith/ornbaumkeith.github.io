@@ -2,17 +2,17 @@
 
 ## Outcome and score
 
-ClearWorth now follows the Tandem home-card pattern: one purple Explore button, followed by green supporting links. Watch demos, Technology, and Security are green links. Both cards use the same styling, spacing, underlines, hover states, and keyboard focus treatment.
+ClearWorth now follows the Pairvoy home-card pattern: one purple Explore button, followed by green supporting links. Watch demos, Technology, and Security are green links. Both cards use the same styling, spacing, underlines, hover states, and keyboard focus treatment.
 
 **Automated accessibility score: 100/100.** This is the axe-core rule pass rate, calculated as `100 × passed rule evaluations / (passed + failed rule evaluations)`. The final run produced **873 passed rule evaluations and zero failed rule evaluations across 24 page/layout scans**. Repeated evaluations at different layouts are counted separately. Not-applicable rules and checks needing human review are excluded from this score. This is **not a Lighthouse score, a percentage of WCAG criteria satisfied, a desktop-app score, or a certification**.
 
 The initial eight-page, two-layout scan had 554 passed and 16 failed rule evaluations, giving **97.2/100** under the same formula. There were eight failing rule/page combinations per layout: seven visible-label/accessibility-name mismatches and one heading-order issue. The later text-spacing configuration was added after remediation, so the final scan has eight additional configurations.
 
-**Target: WCAG 2.2 Level AA.** All detected automated violations were fixed. The review also addressed keyboard usability, media alternatives, contrast, responsive layouts, and structural quality. A complete conformance claim remains pending the assistive-technology and human evaluation described below. WCAG AAA criteria, jurisdiction-specific legal certification, external sites, and the installed ClearWorth/Tandem applications are outside this website audit.
+**Target: WCAG 2.2 Level AA.** All detected automated violations were fixed. The review also addressed keyboard usability, media alternatives, contrast, responsive layouts, and structural quality. A complete conformance claim remains pending the assistive-technology and human evaluation described below. WCAG AAA criteria, jurisdiction-specific legal certification, external sites, and the installed ClearWorth/Pairvoy applications are outside this website audit.
 
 ## Scope and methods
 
-All eight published HTML pages were reviewed: Home, Projects, ClearWorth, Tandem, About, Blog, The journey to ClearWorth, and the 404 page. The website has no sign-in, checkout, or data-submission workflow; application login screenshots are informational images.
+All eight published HTML pages were reviewed: Home, Projects, ClearWorth, Pairvoy, About, Blog, The journey to ClearWorth, and the 404 page. The website has no sign-in, checkout, or data-submission workflow; application login screenshots are informational images.
 
 - axe-core **4.14.0**, using WCAG 2 A/AA, WCAG 2.1 A/AA, WCAG 2.2 AA, and best-practice rule tags.
 - Chromium browser scans at 1280 CSS pixels and 320 CSS pixels, plus 320 pixels with text-spacing overrides. Each iframe had a 960-pixel height. Expanded disclosures were included in scans.
@@ -26,7 +26,7 @@ All eight published HTML pages were reviewed: Home, Projects, ClearWorth, Tandem
 
 | Area | Before | Update |
 | --- | --- | --- |
-| ClearWorth actions | Four purple actions | Purple Explore button; green Watch demos, Technology, and Security links, matching Tandem |
+| ClearWorth actions | Four purple actions | Purple Explore button; green Watch demos, Technology, and Security links, matching Pairvoy |
 | Link visibility | Supporting links largely identified by color | Persistent underlines, thicker hover underlines, and identical styles across both projects |
 | Accessible home link | Its ARIA name omitted part of the visible brand text | Removed the redundant label; the visible name supplies the accessible name |
 | Directory headings | Project titles jumped from h1 to h3 | Project titles and the collection heading use h2 with the existing visual sizes |
@@ -53,7 +53,7 @@ Each row represents three configurations: desktop, narrow, and narrow with incre
 | Home | 41 | 0 | None |
 | Projects | 42 | 0 | None |
 | ClearWorth | 46 | 0 | None |
-| Tandem | 42 | 0 | None |
+| Pairvoy | 42 | 0 | None |
 | About | 35 | 0 | None |
 | Blog | 32 | 0 | None |
 | The journey to ClearWorth | 34 | 0 | None |

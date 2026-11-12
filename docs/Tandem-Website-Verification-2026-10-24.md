@@ -1,8 +1,8 @@
-# Tandem website update — October 24, 2026
+# Pairvoy website update — October 24, 2026
 
 ## Scope
 
-Updated the existing Tandem project page, its homepage showcase, and the project directory/catalog. Other current projects, spreadsheet resources, and study-companion pages are preserved. The source ZIP is reviewed locally; application source, credentials, and binaries are not published as part of this website update.
+Updated the existing Pairvoy project page, its homepage showcase, and the project directory/catalog. Other current projects, spreadsheet resources, and study-companion pages are preserved. The source ZIP is reviewed locally; application source, credentials, and binaries are not published as part of this website update.
 
 ## Evidence and product claims
 
@@ -24,6 +24,6 @@ Groups: Home (3), Goals/Journey (5), Calendar/Activity (5), Circles/Profile (3),
 
 ## Accessibility verification
 
-axe-core 4.14.0 checked the homepage, Tandem page, and directory at 1280, 768, 390 and 320 CSS pixels (12 scans), using WCAG 2 A/AA, 2.1 A/AA, 2.2 AA and best-practice tags. Results: zero detected violations, zero duplicate IDs and no horizontal document overflow. Each Tandem scan passed 42 applicable rules, with no incomplete rules. The homepage retains 22 gradient-contrast review nodes; these are engine limitations, not automatic passes. Existing shared color choices remain unchanged.
+axe-core 4.14.0 checked the homepage, Pairvoy page, and directory at 1280, 768, 390 and 320 CSS pixels (12 scans), using WCAG 2 A/AA, 2.1 A/AA, 2.2 AA and best-practice tags. Results: zero detected violations, zero duplicate IDs and no horizontal document overflow. Each Pairvoy scan passed 42 applicable rules, with no incomplete rules. The homepage retains 22 gradient-contrast review nodes; these are engine limitations, not automatic passes. Existing shared color choices remain unchanged.
 
 Keyboard checks verified the visible skip link, focus transfer to main, and Enter activation of a linked original screenshot. Native links, focus indicators, logical headings, navigation landmarks, table captions/scoped headers and visible image descriptions are retained. This website review does not certify the app or full WCAG conformance; NVDA/VoiceOver, native OS modes, and device-level app accessibility still require human testing.

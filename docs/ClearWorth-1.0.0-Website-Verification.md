@@ -29,4 +29,4 @@ This is website content and media validation, not Windows installer acceptance, 
 
 The newer supplied hardening review manifest identifies application Version 1.0.0 and retains Electron, React, TypeScript, SQLite, Vite, ExcelJS, Argon2 and Nodemailer. Its runtime-audit report still contains dependency findings, so the website does not claim a completed production security audit. The public releases repository has no published release at the time of review. The first-run screenshot shows blank Administrator account-creation fields and is distinct from returning-user login.
 
-All four ClearWorth home-card actions now use the same purple button class as Tandem. The action row wraps complete buttons and prevents internal label wrapping.
+All four ClearWorth home-card actions now use the same purple button class as Pairvoy. The action row wraps complete buttons and prevents internal label wrapping.

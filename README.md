@@ -62,7 +62,7 @@ The home currently presents the full published catalog. The `featured` field is 
 - Static web demos can live under a project folder. Link them using `demo_url`.
 - Add public guides under a project folder and link them from its page.
 - Application source remains separate unless a `source_url` is intentionally provided. This portfolio does not contain ClearWorthPlanner source code or financial data.
-- The home page uses supplied ClearWorthPlanner and Tandem previews. ClearWorthPlanner's current images are labeled as October 3, 2026 development captures; replace them with reviewed release media when supplied.
+- The home page uses supplied ClearWorthPlanner and Pairvoy previews. ClearWorthPlanner's current images are labeled as October 3, 2026 development captures; replace them with reviewed release media when supplied.
 
 ## GitHub Pages
 
@@ -91,7 +91,7 @@ The primary download points to the public 1.2.0 testing pre-release and its SHA-
 
 Update `content/clearworth.html`, `content/home.html`, and `projects.json`, then run `python scripts/build.py`. The generated ClearWorthPlanner page, homepage, and project directory must remain consistent. Earlier supplied screenshots and silent videos remain development examples, not proof of 1.2.0 acceptance. Historical 1.0.0 documents under `docs/` describe that earlier release only.
 
-The home-card ClearWorthPlanner and Tandem actions share one purple primary button and green underlined supporting links, with wrapping between whole actions, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
+The home-card ClearWorthPlanner and Pairvoy actions share one purple primary button and green underlined supporting links, with wrapping between whole actions, and the gallery now includes first-time Administrator setup alongside returning-user sign-in. The newer review manifest confirms 1.0.0; website security wording preserves the unresolved audit and release-validation limits.
 
 ## Website accessibility
 
