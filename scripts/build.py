@@ -10,9 +10,10 @@ def page(title, description, content, active='home', depth=0):
     prefix = '../' * depth
     def link(path): return prefix + path
     nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('resources','resources/index.html','Resources'),('blog','blog/index.html','Blog'),('about','about/index.html','About')])
+    favicon = 'assets/pairvoy/icon.svg' if title == 'Pairvoy' else 'assets/favicon.svg'
     pairvoy_style = '<link rel="stylesheet" href="' + link('assets/pairvoy/project.css?v=20261111-release') + '">' if title == 'Pairvoy' else ''
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link('assets/favicon.svg')}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css?v=20261024-pairvoy-compact')}">{pairvoy_style}<script src="{link('assets/app.js?v=20261022-a11y2')}" defer></script></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link(favicon)}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css?v=20261024-pairvoy-compact')}">{pairvoy_style}<script src="{link('assets/app.js?v=20261022-a11y2')}" defer></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="{link('index.html')}"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation">{nav}<a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
 <main id="main" class="wrap{' pairvoy-page' if title == 'Pairvoy' else ''}" tabindex="-1">{content}</main><footer class="footer"><div class="wrap footer-inner"><span>© 2026 Keith Ornbaum. Built with purpose.</span><div class="footer-links"><a href="{link('projects/index.html')}">Explore projects</a><a href="https://github.com/ornbaumkeith">GitHub ↗</a></div></div></footer></body></html>'''
 
@@ -23,10 +24,14 @@ def cards(prefix=''):
         chips=''.join(f'<span class="pill">{esc(t)}</span>' for t in p['tags'])
         # Editorial product illustration, never represented as an application screenshot.
         art = '<div class="abstract" role="img" aria-label="ClearWorthPlanner concept illustration: income, expenses, and goals"><div class="mark">ClearWorthPlanner<span style="color:#81ba93">.</span></div><div class="row"><span>Income</span><b>Plan ahead</b></div><div class="row"><span>Expenses</span><b>Stay organized</b></div><div class="row"><span>Goals</span><b>Track progress</b></div><p class="visual-label">Product concept · not an app screenshot</p></div>' if p['id']=='clearworth' else f'<div class="abstract"><div class="mark">{esc(p["name"])}</div><p>{esc(p["category"])}</p></div>'
+        if p['id'] == 'pairvoy':
+            art = f'<div class="abstract"><img src="{prefix}assets/pairvoy/pairvoy-logo-dark.svg" width="900" height="220" alt="Pairvoy" style="width:100%;height:auto"><p>{esc(p["category"])}</p></div>'
         search=esc(' '.join([p['name'],p['summary'],p['category'],*p['tags'],*p['stack']]).lower())
         links=f'<a class="button" href="{path}">Explore project <span aria-hidden="true">↗</span></a>'
         for field,label in [('demo_url','Live demo'),('download_url','Download'),('source_url','Source')]:
             if p.get(field): links+=f'<a class="text-link" href="{esc(p[field])}">{label} ↗</a>'
+        if p.get('android_download_url'):
+            links += f'<a class="text-link" href="{esc(p["android_download_url"])}">Download for Android ↗</a>'
         out.append(f'<article class="project-card" data-project data-category="{esc(p["category"])}" data-search="{search}"><div class="project-art">{art}</div><div class="project-copy"><div class="chips"><span class="pill">{esc(p["category"])}</span><span class="pill">{esc(p["status"])}</span></div><h2 class="project-title"><a href="{path}">{esc(p["name"])}</a></h2><p>{esc(p["summary"])}</p><div class="chips">{chips}</div><div class="card-links">{links}</div></div></article>')
     return '<div id="project-results" style="display:grid;gap:24px">'+''.join(out)+'</div>'
 
