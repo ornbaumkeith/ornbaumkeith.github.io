@@ -47,3 +47,20 @@
 .cf-lightbox p { color:#dad2e5; margin:14px 0 0; font-size:13px; }
 @media(max-width:850px) { .claimfield-page .detail-grid { grid-template-columns:1fr; } .cf-architecture { grid-template-columns:1fr; } .cf-home-card { grid-template-columns:1fr; } }
 @media(max-width:600px) { .cf-hero { padding-top:30px; } .cf-intro { font-size:18px; } .cf-wordmark { width:240px; } .claimfield-page .section { padding:32px 0; } .cf-steps,.cf-gallery,.claimfield-page .release-panel { grid-template-columns:1fr; } .cf-gallery .app-shot:first-child { grid-column:auto; } .cf-architecture { padding:22px; } .cf-lightbox { padding:12px; } .cf-lightbox-head h2 { font-size:16px; } }
+
+/* Directory concept tile mirrors the existing portfolio artwork. */
+.cf-directory-card .project-art {
+  padding:38px;
+  background:linear-gradient(135deg,#e4f6ed,#efe7fc);
+}
+.cf-directory-card .cf-directory-concept {
+  max-width:340px;
+  color:#fff;
+  box-shadow:10px 16px 0 #d8c8f4;
+}
+.cf-directory-concept .row { gap:16px; }
+.cf-directory-concept .row b { text-align:right; }
+@media(max-width:600px) {
+  .cf-directory-card .project-art { padding:28px; }
+  .cf-directory-concept .mark { font-size:clamp(26px,8vw,36px); }
+}
