@@ -1,0 +1,49 @@
+/* ClaimField additions are scoped to this page and its cards. */
+.claimfield-page, .cf-home-card { overflow-wrap:anywhere; }
+.claimfield-page section { scroll-margin-top:110px; }
+.cf-hero { padding:54px 0 34px; }
+.cf-hero-copy { max-width:840px; }
+.cf-wordmark { display:block; width:min(100%,290px); height:auto; margin-bottom:24px; }
+.cf-hero h1 { font-size:clamp(38px,5.4vw,66px); line-height:1.12; margin:0 0 24px; }
+.cf-hero h1 span { color:#6d28d9; }
+.cf-intro { max-width:700px; font-size:21px; color:var(--muted); }
+.cf-status { border-left:3px solid #7b3ff2; padding:12px 18px; margin:28px 0; color:var(--muted); background:#f0e9fc; border-radius:0 10px 10px 0; }
+.cf-status strong { display:block; color:var(--ink); }
+.cf-hero-image { display:block; margin-top:34px; border:1px solid var(--line); border-radius:18px; overflow:hidden; background:#19191c; }
+.cf-hero-image img { display:block; width:100%; height:auto; }
+.claimfield-page .section { padding:48px 0; }
+.claimfield-page .detail-grid { grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:36px; }
+.claimfield-page .section-nav { gap:12px 24px; }
+.cf-steps { list-style:decimal-leading-zero; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 50px; padding-left:30px; }
+.cf-steps li { padding:12px 0 12px 8px; border-top:1px solid var(--line); }
+.cf-steps li::marker { font-weight:bold; color:#6d28d9; }
+.cf-steps h3 { font-size:21px; margin-bottom:10px; }
+.cf-steps p { color:var(--muted); margin:0; }
+.cf-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.cf-gallery .app-shot:first-child { grid-column:1/-1; }
+.cf-gallery img { width:100%; height:auto; object-fit:contain; }
+.cf-gallery .app-shot figcaption { min-height:0; }
+.cf-architecture { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:25px 0; background:#19171f; color:white; border-radius:18px; padding:28px; }
+.cf-architecture article { min-width:0; }
+.cf-architecture span { color:#cfb8ff; font-size:12px; }
+.cf-architecture h3 { margin:12px 0; font-size:21px; }
+.cf-architecture p { font-size:14px; color:#ded8e8; margin:0; }
+.cf-technical-notes { margin-top:24px; }
+.claimfield-page .tech-table th, .claimfield-page .tech-table td { overflow-wrap:anywhere; }
+.claimfield-page .release-panel { grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); }
+.claimfield-page .release-panel h2 { font-size:32px; }
+.claimfield-page .release-status a { display:inline-block; margin-top:18px; }
+.cf-home-card .project-art { min-width:0; background:#19191c; padding:24px; }
+.cf-home-card .project-art img { display:block; width:100%; height:auto; border-radius:10px; }
+.cf-home-card .project-copy { min-width:0; }
+.cf-home-card ul { padding-left:20px; color:var(--muted); font-size:14px; }
+.cf-card-note { font-size:13px; }
+.cf-home-card .card-links { flex-wrap:wrap; }
+.cf-lightbox { width:min(96vw,1700px); max-width:none; max-height:95dvh; padding:20px; border:1px solid #726584; border-radius:16px; background:#1b191f; color:#fff; overflow:auto; }
+.cf-lightbox::backdrop { background:rgba(0,0,0,.87); }
+.cf-lightbox-head { display:flex; justify-content:space-between; gap:18px; align-items:center; margin-bottom:16px; }
+.cf-lightbox-head h2 { font-size:20px; margin:0; }
+.cf-lightbox img { display:block; width:100%; height:auto; }
+.cf-lightbox p { color:#dad2e5; margin:14px 0 0; font-size:13px; }
+@media(max-width:850px) { .claimfield-page .detail-grid { grid-template-columns:1fr; } .cf-architecture { grid-template-columns:1fr; } .cf-home-card { grid-template-columns:1fr; } }
+@media(max-width:600px) { .cf-hero { padding-top:30px; } .cf-intro { font-size:18px; } .cf-wordmark { width:240px; } .claimfield-page .section { padding:32px 0; } .cf-steps,.cf-gallery,.claimfield-page .release-panel { grid-template-columns:1fr; } .cf-gallery .app-shot:first-child { grid-column:auto; } .cf-architecture { padding:22px; } .cf-lightbox { padding:12px; } .cf-lightbox-head h2 { font-size:16px; } }

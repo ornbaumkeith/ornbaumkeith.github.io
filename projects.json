@@ -48,6 +48,29 @@
     "android_download_url": "https://github.com/ornbaumkeith/pairvoy-releases/releases/download/pairvoy-v0.5.16/Pairvoy_0.5.16_Android.apk"
   },
   {
+    "id": "claimfield",
+    "name": "ClaimField",
+    "category": "GIS & field planning",
+    "summary": "A map-centered workspace for mining claim planning, terrain review, crew routing, scheduling and preparation documents. Public beta access is coming soon.",
+    "status": "Beta coming soon",
+    "tags": [
+      "Claim planning",
+      "Field coordination",
+      "Browser-based"
+    ],
+    "stack": [
+      "React",
+      "TypeScript",
+      "MapLibre GL",
+      "Node.js",
+      "Turf",
+      "GeographicLib"
+    ],
+    "demo_url": "",
+    "download_url": "",
+    "source_url": ""
+  },
+  {
     "id": "study-companions",
     "name": "Study Companions",
     "category": "Study resource",
