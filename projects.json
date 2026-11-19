@@ -51,8 +51,8 @@
     "id": "claimfield",
     "name": "ClaimField",
     "category": "GIS & field planning",
-    "summary": "A browser workspace for prospect land review, claim planning, terrain-aware crew tracks, scheduling, filing preparation and encrypted sharing.",
-    "status": "Early access",
+    "summary": "ClaimField Beta: a browser workspace for prospect land review, claim planning, terrain-aware crew tracks, scheduling, filing preparation and encrypted sharing.",
+    "status": "Beta",
     "tags": [
       "Prospect planning",
       "Land Review",
