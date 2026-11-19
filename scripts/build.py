@@ -12,8 +12,8 @@ def page(title, description, content, active='home', depth=0):
     nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('resources','resources/index.html','Resources'),('blog','blog/index.html','Blog'),('about','about/index.html','About')])
     favicon = 'assets/pairvoy/icon.svg' if title == 'Pairvoy' else 'assets/favicon.svg'
     pairvoy_style = '<link rel="stylesheet" href="' + link('assets/pairvoy/project.css?v=20261111-spacing') + '">' if title == 'Pairvoy' else ''
-    claimfield_style = '<link rel="stylesheet" href="' + link('assets/claimfield/project.css?v=20261115-beta') + '">' if title in ['ClaimField', 'Projects & practical tools', 'Project directory'] else ''
-    claimfield_head = '<link rel="canonical" href="https://ornbaumkeith.github.io/projects/claimfield/index.html"><script src="../../assets/claimfield/gallery.js?v=20261115-beta" defer></script>' if title == 'ClaimField' else ''
+    claimfield_style = '<link rel="stylesheet" href="' + link('assets/claimfield/project.css?v=20261118-live') + '">' if title in ['ClaimField', 'Projects & practical tools', 'Project directory'] else ''
+    claimfield_head = '<link rel="canonical" href="https://ornbaumkeith.github.io/projects/claimfield/index.html"><script src="../../assets/claimfield/gallery.js?v=20261118-live" defer></script><meta property="og:type" content="website"><meta property="og:title" content="ClaimField | Prospect planning &amp; field coordination"><meta property="og:description" content="Open the live app. Explore land review, crew tracks, maps, scheduling and the current architecture."><meta property="og:url" content="https://ornbaumkeith.github.io/projects/claimfield/index.html"><meta property="og:image" content="https://ornbaumkeith.github.io/assets/claimfield/prospect-workspace.webp">' if title == 'ClaimField' else ''
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link(favicon)}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css?v=20261024-pairvoy-compact')}">{pairvoy_style}{claimfield_style}{claimfield_head}<script src="{link('assets/app.js?v=20261022-a11y2')}" defer></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="{link('index.html')}"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation">{nav}<a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
@@ -105,6 +105,7 @@ for r in resources:
 html=(ROOT/'content/resources.html').read_text(encoding='utf-8').replace('<!-- RESOURCE_CARDS -->','<div class="docs resource-collection">'+''.join(cards)+'</div>')
 folder=ROOT/'resources';folder.mkdir(parents=True,exist_ok=True)
 (folder/'index.html').write_text(page('Excel templates & resources','Personal Finance Planner: automatically updating monthly metrics, dashboard, income and expense tracking.',html,'resources',1),encoding='utf-8')
+
 
 
 
