@@ -1,4 +1,28 @@
 /* ClaimField additions are scoped to this page and its cards. */
+.claimfield-page { --ink:#202126; --muted:#535461; --line:#dcdbe2; --white:#fff; color:var(--ink); }
+.claimfield-page .eyebrow { color:#6035a6; font-size:.875rem; }
+.claimfield-page .eyebrow::before { display:none; }
+.claimfield-page .pill { font-size:.875rem; color:#563286; background:#f0eafa; }
+.claimfield-page .button,.claimfield-page .section-nav { font-size:1rem; }
+.claimfield-page .feature p,.claimfield-page .doc p,.claimfield-page .doc li,.claimfield-page .release-panel p { font-size:1rem; }
+.claimfield-page .facts dt { font-size:.875rem; }
+.claimfield-page .facts dd,.claimfield-page .tech-table { font-size:1rem; }
+.claimfield-page .tech-table thead th { font-size:.875rem; }
+.claimfield-page .app-shot figcaption { font-size:1rem; }
+.claimfield-page .app-shot figcaption span { font-size:.875rem; }
+.claimfield-page .release-status strong,.claimfield-page .release-status span { font-size:1rem; }
+.cf-note { font-size:1rem; color:var(--muted); margin:24px 0 0; }
+.cf-hero-figure { margin:0; }
+.cf-hero-figure figcaption { margin-top:14px; font-size:.875rem; color:var(--muted); }
+.cf-faq { border-top:1px solid var(--line); }
+.cf-faq details { border-bottom:1px solid var(--line); padding:22px 0; }
+.cf-faq summary { cursor:pointer; font-weight:700; font-size:1.125rem; padding:4px 0; }
+.cf-faq details p { color:var(--muted); max-width:900px; margin:18px 0 0; }
+.cf-lightbox-actions { display:flex; flex-wrap:wrap; gap:10px; }
+.cf-lightbox-media { overflow:auto; max-height:72dvh; background:#1b191f; }
+.cf-lightbox.cf-actual-size .cf-lightbox-media img { width:1912px; max-width:none; }
+.cf-home-card .project-art .cf-card-note { font-size:.875rem; margin:16px 0 0; color:#dad6e3; }
+.cf-home-card ul,.cf-home-card .cf-card-note { font-size:1rem; }
 .claimfield-page, .cf-home-card { overflow-wrap:anywhere; }
 .claimfield-page section { scroll-margin-top:110px; }
 .cf-hero { padding:54px 0 34px; }
@@ -14,7 +38,7 @@
 .claimfield-page .section { padding:48px 0; }
 .claimfield-page .detail-grid { grid-template-columns:minmax(0,1.6fr) minmax(0,1fr); gap:36px; }
 .claimfield-page .section-nav { gap:12px 24px; }
-.cf-steps { list-style:decimal-leading-zero; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 50px; padding-left:30px; }
+.cf-steps { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 50px; padding-left:30px; }
 .cf-steps li { padding:12px 0 12px 8px; border-top:1px solid var(--line); }
 .cf-steps li::marker { font-weight:bold; color:#6d28d9; }
 .cf-steps h3 { font-size:21px; margin-bottom:10px; }
@@ -25,9 +49,9 @@
 .cf-gallery .app-shot figcaption { min-height:0; }
 .cf-architecture { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:25px 0; background:#19171f; color:white; border-radius:18px; padding:28px; }
 .cf-architecture article { min-width:0; }
-.cf-architecture span { color:#cfb8ff; font-size:12px; }
+.cf-architecture span { color:#cfb8ff; font-size:.875rem; }
 .cf-architecture h3 { margin:12px 0; font-size:21px; }
-.cf-architecture p { font-size:14px; color:#ded8e8; margin:0; }
+.cf-architecture p { font-size:1rem; color:#ded8e8; margin:0; }
 .cf-technical-notes { margin-top:24px; }
 .claimfield-page .tech-table th, .claimfield-page .tech-table td { overflow-wrap:anywhere; }
 .claimfield-page .release-panel { grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); }
@@ -44,7 +68,9 @@
 .cf-lightbox-head { display:flex; justify-content:space-between; gap:18px; align-items:center; margin-bottom:16px; }
 .cf-lightbox-head h2 { font-size:20px; margin:0; }
 .cf-lightbox img { display:block; width:100%; height:auto; }
-.cf-lightbox p { color:#dad2e5; margin:14px 0 0; font-size:13px; }
+.cf-lightbox p { color:#dad2e5; margin:14px 0 0; font-size:.875rem; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+@media(max-width:600px) { .cf-lightbox-head { flex-wrap:wrap; } .cf-lightbox-actions .button { min-height:44px; padding:9px 14px; } .claimfield-page .feature-grid,.claimfield-page .docs { grid-template-columns:1fr; } .claimfield-page .tech-table th,.claimfield-page .tech-table td { padding:12px; } .claimfield-page .tech-table tbody th { width:34%; } .claimfield-page .release-status { border-left:0; border-top:1px solid #c8b4ed; padding:20px 0 0; } }
 @media(max-width:850px) { .claimfield-page .detail-grid { grid-template-columns:1fr; } .cf-architecture { grid-template-columns:1fr; } .cf-home-card { grid-template-columns:1fr; } }
 @media(max-width:600px) { .cf-hero { padding-top:30px; } .cf-intro { font-size:18px; } .cf-wordmark { width:240px; } .claimfield-page .section { padding:32px 0; } .cf-steps,.cf-gallery,.claimfield-page .release-panel { grid-template-columns:1fr; } .cf-gallery .app-shot:first-child { grid-column:auto; } .cf-architecture { padding:22px; } .cf-lightbox { padding:12px; } .cf-lightbox-head h2 { font-size:16px; } }
 
@@ -64,3 +90,10 @@
   .cf-directory-card .project-art { padding:28px; }
   .cf-directory-concept .mark { font-size:clamp(26px,8vw,36px); }
 }
+
+
+.cf-home-card .project-art .cf-card-note{font-size:.875rem;}
+
+body:has(.claimfield-page){background:#fff;color-scheme:light;}
+.cf-home-card ul,.cf-home-card .cf-card-note{font-size:1rem;}
+.cf-lightbox-head h2{color:#fff;}

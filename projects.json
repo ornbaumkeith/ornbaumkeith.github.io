@@ -51,22 +51,24 @@
     "id": "claimfield",
     "name": "ClaimField",
     "category": "GIS & field planning",
-    "summary": "A map-centered workspace for mining claim planning, terrain review, crew routing, scheduling and preparation documents. Public beta access is coming soon.",
-    "status": "Beta coming soon",
+    "summary": "A browser workspace for prospect land review, claim planning, terrain-aware crew tracks, scheduling, filing preparation and encrypted sharing.",
+    "status": "Early access",
     "tags": [
-      "Claim planning",
-      "Field coordination",
+      "Prospect planning",
+      "Land Review",
+      "Crew tracks",
       "Browser-based"
     ],
     "stack": [
       "React",
       "TypeScript",
       "MapLibre GL",
-      "Node.js",
+      "Cloudflare Workers",
+      "SQLite",
       "Turf",
       "GeographicLib"
     ],
-    "demo_url": "",
+    "demo_url": "https://claimfield.ornbaum-keith.workers.dev/",
     "download_url": "",
     "source_url": ""
   },
