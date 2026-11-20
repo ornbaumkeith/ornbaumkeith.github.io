@@ -97,3 +97,10 @@
 body:has(.claimfield-page){background:#fff;color-scheme:light;}
 .cf-home-card ul,.cf-home-card .cf-card-note{font-size:1rem;}
 .cf-lightbox-head h2{color:#fff;}
+
+
+/* Recorded Beta walkthrough: preserve the full frame at every screen size. */
+.claimfield-page .cf-video-figure { margin: 1.5rem 0; }
+.claimfield-page .cf-demo-video { display: block; width: 100%; height: auto; aspect-ratio: 1912 / 918; object-fit: contain; background: #111114; border: 1px solid #d6c9ed; border-radius: 16px; }
+.claimfield-page .cf-video-figure figcaption { margin-top: .75rem; font-size: .9375rem; line-height: 1.6; }
+.claimfield-page .cf-demo-video:focus-visible { outline: 3px solid #6d28d9; outline-offset: 4px; }
