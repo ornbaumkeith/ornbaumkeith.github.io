@@ -1,0 +1,180 @@
+{
+  "title": "ClaimField presentation",
+  "count": 29,
+  "slides": [
+    {
+      "number": 1,
+      "title": "From the map to the ground",
+      "image": "slides/slide-01.webp",
+      "text": "01\nFrom the map\nto the ground\nA simpler way to plan mining claims\nand prepare the people doing the work.\nKeith Ornbaum\nProject overview · Development build 0.27.22\nHAPPY NATIONAL GEOGRAPHY AWARENESS WEEK, NOV 16 – 20 2026"
+    },
+    {
+      "number": 2,
+      "title": "Why ClaimField exists",
+      "image": "slides/slide-02.webp",
+      "text": "Why ClaimField exists\n02\nOne changed corner can mean\nseveral things to fix.\nThe map\nWhere are the claim edges?\nThe crew\nWhich stops belong to each person?\nThe papers\nDo the names and locations agree?"
+    },
+    {
+      "number": 3,
+      "title": "Who ClaimField is for",
+      "image": "slides/slide-03.webp",
+      "text": "Who ClaimField is for\n03\nLand reviewers\nCheck records and prepare\nclaim information.\nGIS & exploration teams\nWork with maps and\nproposed claim shapes.\nField leaders & crews\nPlan visits and bring back\nwhat actually happened.\nOne prospect keeps the plan and its records together."
+    },
+    {
+      "number": 4,
+      "title": "The claim-staking workflow",
+      "image": "slides/slide-04.webp",
+      "text": "04\nThe claim-staking workflow\n1\nProspect (AOI)\nDraw the area. Build the proposed grid.\n2\nLand Review/Search\nCompare land records and review gaps.\n3\nTrack Map\nPrepare NOLs and plan the field stops.\n4\nCounty Filing\nCOLs and Map\nReview field facts and record the papers.\n5\nBLM Filing\nSubmit the reviewed filing materials.\n6\nProspect Summary\nKeep the maps, records and open items.\nPeople complete the fieldwork, verify requirements and submit the county and BLM filings."
+    },
+    {
+      "number": 5,
+      "title": "Land review: the map has layers",
+      "image": "slides/slide-05.webp",
+      "text": "Land review: the map has layers\n05\nLike clear sheets laid\non top of one another\nTerrain\nWhat does the ground look like?\nLand & survey references\nWhere do the records place it?\nMLRS case information\nWhat recorded cases need review?\nMLRS = BLM’s Mineral & Land Records System\nClaimField can query the project area and open MLRS research tools."
+    },
+    {
+      "number": 6,
+      "title": "A proposed grid makes the plan visible",
+      "image": "slides/slide-06.webp",
+      "text": "06\nA proposed grid makes the plan visible\nThe AOI is the area\nwe want to study\nSix proposed claims\nCorners and discovery points\nLand status stays unverified\nApp 0.27.18 · Synthetic planning example · The grid does not establish claim availability"
+    },
+    {
+      "number": 7,
+      "title": "The plan can change before the crew leaves",
+      "image": "slides/slide-07.webp",
+      "text": "The plan can change before the crew leaves\n07\nMove a shape. Turn it.\nFit its edge to the plan.\nCL-01\nCL-02\nCL-03\nIllustrative plan, not a land-status map\nCutouts, snapping and review flags help expose layout problems."
+    },
+    {
+      "number": 8,
+      "title": "The claim table keeps the records visible",
+      "image": "slides/slide-08.webp",
+      "text": "The claim table keeps the records visible\nSix records, with one claim selected\nApp 0.27.18 · Light mode · Complete six-row table detail, selected columns\n08"
+    },
+    {
+      "number": 9,
+      "title": "The staking table separates plans and field facts",
+      "image": "slides/slide-09.webp",
+      "text": "The staking table separates plans and field facts\nPlanned coordinates for four complete corner rows\nActual X/Y, Staked date and Staked By\nrecord the work returned from the field.\nApp 0.27.18 · Dark mode · Selected columns and rows · WGS84 decimal degrees\n09"
+    },
+    {
+      "number": 10,
+      "title": "Interactive terrain makes hills easier to understand",
+      "image": "slides/slide-10.webp",
+      "text": "10\nInteractive terrain makes hills easier to understand\nLow ground\nHigh ground\nApp 0.27.18 · Dark mode · Live Terrain3D samples · Color scale and model shown in full"
+    },
+    {
+      "number": 11,
+      "title": "The color map connects height to a place",
+      "image": "slides/slide-11.webp",
+      "text": "11\nThe color map connects height to a place\nA colored square\nhas a real map position\nHover or inspect a sample to compare\nits location with its elevation.\nThe colors describe height.\nLand review answers a different question.\nApp 0.27.18 · Light mode · Complete elevation model, color scale and display controls"
+    },
+    {
+      "number": 12,
+      "title": "Worker tracks divide the fieldwork",
+      "image": "slides/slide-12.webp",
+      "text": "12\nWorker tracks divide the fieldwork\nApp 0.27.18 · Workers A and B · Generated estimates require access and ground checks"
+    },
+    {
+      "number": 13,
+      "title": "The timeline shows who goes when",
+      "image": "slides/slide-13.webp",
+      "text": "13\nThe timeline shows who goes when\nA crew visit also appears in the worker lane\nDrag a bar to move the visit.\nResize an edge to change its planned duration.\nApp 0.27.18 · November 18, 2026 demonstration · Selected lanes and hours, with complete bars"
+    },
+    {
+      "number": 14,
+      "title": "The calendar makes the plan familiar",
+      "image": "slides/slide-14.webp",
+      "text": "14\nThe calendar makes the plan familiar\nApp 0.27.18 · Dark mode · November 1–28 shown · Fictional visits on November 18–20"
+    },
+    {
+      "number": 15,
+      "title": "Field notes turn a plan into a record",
+      "image": "slides/slide-15.webp",
+      "text": "Field notes turn a plan into a record\n15\nBefore the visit\nProposed points\nWorker checklist\nPlanned dates\nOn the ground\nPeople check locations\nPlace required markers\nRecord observations\nAfter the visit\nReview actual coordinates\nConfirm names and dates\nUpdate the project\n“We plan to go Tuesday” and “We staked it Tuesday” are different facts."
+    },
+    {
+      "number": 16,
+      "title": "Notice of Location in the app",
+      "image": "slides/slide-16.webp",
+      "text": "16\nNotice of Location in the app\nComplete generated PDF\nPage 1\nPage 2\nClaim and locator detail\nMissing facts stay visible\nuntil a person verifies them.\nApp 0.27.18 · Two complete PDF pages and an enlarged preview detail · Unsigned sample draft"
+    },
+    {
+      "number": 17,
+      "title": "Certificate of Location in the app",
+      "image": "slides/slide-17.webp",
+      "text": "17\nCertificate of Location in the app\nComplete generated PDF\nPage 1\nPage 2\nClaim and locator detail\nMissing facts stay visible\nuntil a person verifies them.\nApp 0.27.18 · Two complete PDF pages and an enlarged preview detail · Unsigned sample draft"
+    },
+    {
+      "number": 18,
+      "title": "Land Review extends beyond the AOI",
+      "image": "slides/slide-18.webp",
+      "text": "18\nLand Review extends beyond the AOI\nThe printed map frame\nSurface-management context\nMapped active claims\nTownships and sections\nNorth arrow and scale\nstay with the map.\nApp 0.27.18 · Complete review map · Colors describe source records and review context"
+    },
+    {
+      "number": 19,
+      "title": "Filing Map and Track Map",
+      "image": "slides/slide-19.webp",
+      "text": "19\nFiling Map and Track Map\nFiling Map\nTrack Map\nBlack-and-white claim references\nColor context and saved worker tracks\nApp 0.27.18 · Complete map frames · Gray shading marks excluded or unreviewed planning areas"
+    },
+    {
+      "number": 20,
+      "title": "Map detail: labels, corners and tracks",
+      "image": "slides/slide-20.webp",
+      "text": "Map detail: labels, corners and tracks\nFiling Map detail\nTrack Map detail\nApp 0.27.18 · Enlarged upper-row details · Names follow the claim length; gray areas require review\n20"
+    },
+    {
+      "number": 21,
+      "title": "Map creation stays beside a live preview",
+      "image": "slides/slide-21.webp",
+      "text": "21\nMap creation stays beside a live preview\nOne output for each task\nLand Search / Review Map\nTrack Map\nBLM / filing map\nApp 0.27.18 · Real Map Layout pane and complete selector detail · Paper choice still needs review"
+    },
+    {
+      "number": 22,
+      "title": "Prospect Summary keeps the record together",
+      "image": "slides/slide-22.webp",
+      "text": "22\nProspect Summary keeps the record together\nPrepared files have an index. Actual work has a register.\nApp 0.27.18 · All six register rows shown · Reported dates do not certify filing acceptance"
+    },
+    {
+      "number": 23,
+      "title": "Light and dark views of the same records",
+      "image": "slides/slide-23.webp",
+      "text": "23\nLight and dark views of the same records\nLight mode\nDark mode\nApp 0.27.18 · Same selected claim · Complete two-row details in both interface themes"
+    },
+    {
+      "number": 24,
+      "title": "Under the hood: a helpful workbench",
+      "image": "slides/slide-24.webp",
+      "text": "Under the hood: a helpful workbench\n24\nThe screen\nReact + TypeScript\nThe map & math\nMapLibre / Leaflet\nTurf + GeographicLib\nOnline reference desks\nBLM, USGS, Terrain3D\nBackground helpers\nWeb Workers handle\nheavier terrain tasks\nThe saved-project shelf\nNode.js API\nPrivate project files\nThe browser organizes the work. Small services supply data and save projects."
+    },
+    {
+      "number": 25,
+      "title": "The languages behind ClaimField",
+      "image": "slides/slide-25.webp",
+      "text": "The languages behind ClaimField\nPart\nImplementation\nScreen and GIS logic\nTypeScript + React\nAccount / prospect API\nNode.js JavaScript\nPage and map drawing\nHTML/CSS + SVG\nOptional native shell\nRust + Tauri\nA real TypeScript definition\nexport type CrewSettings = {\naccess?: XY;\nstart?: XY;\nfinish?: XY;\nreturnToStart: boolean;\nworkers: string[];\nmaxSlope: number;\nstakeMinutes: number;\n};\nTypes give each piece of information a clear label.\nDevelopment hours: not recorded in the release documentation\n25"
+    },
+    {
+      "number": 26,
+      "title": "Security: a key for your project notebook",
+      "image": "slides/slide-26.webp",
+      "text": "Security: a key for your project notebook\n01\nYour account is the key\nSign in before opening saved projects.\n02\nPasswords get a one-way fingerprint\nSalted scrypt hashes protect stored passwords.\n03\nThe server checks the owner\nEach saved project belongs to an account.\n04\nSafer document previews\nSandboxed previews block document scripts.\nYour device, exported files and backups still need protection.\nVerified in 0.27.18 source · Public hosting requires further security review\n26"
+    },
+    {
+      "number": 27,
+      "title": "Four state profiles today. More coverage ahead.",
+      "image": "slides/slide-27.webp",
+      "text": "Four state profiles today. More coverage ahead.\n27\nNV\nNevada\nID\nIdaho\nUT\nUtah\nAZ\nArizona\nExpansion goal\nAdd states after checking their rules, data sources and document needs.\nNext states and release dates remain to be decided."
+    },
+    {
+      "number": 28,
+      "title": "What remains before wider use",
+      "image": "slides/slide-28.webp",
+      "text": "What remains before wider use\n28\n1\nField proof\nRun end-to-end pilots with real reviewers and crews.\n2\nDocument checks\nConfirm state and county outputs against current requirements.\n3\nReliable handoffs\nTest map scale, labels, ZIP contents, backups and source failures.\n4\nPublic beta readiness\nReview deployment security and resolve the reported development dependency advisory."
+    },
+    {
+      "number": 29,
+      "title": "A clearer plan for the next field day",
+      "image": "slides/slide-29.webp",
+      "text": "A clearer plan for the next field day\n29\nWhat would make your\nnext field day easier?\nProject page\nornbaumkeith.github.io/projects/claimfield\nGitHub repository  ·  Private access required\ngithub.com/ornbaumkeith/ClaimField\nSource and app views: supplied ClaimField 0.27.18 build"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+.cf-deck { border:1px solid var(--line); border-radius:18px; background:#fff; padding:20px; }
+.cf-deck:focus-visible { outline:3px solid #6d28d9; outline-offset:5px; }
+.cf-deck-controls { display:flex; flex-wrap:wrap; align-items:end; gap:12px; margin-bottom:16px; }
+.cf-deck [hidden] { display:none!important; }
+.cf-deck .button { cursor:pointer; border-radius:10px; min-height:46px; }
+.cf-deck button:disabled { opacity:.48; cursor:default; }
+.cf-deck-select { flex:1 1 280px; min-width:0; display:grid; gap:6px; font-size:.875rem; font-weight:700; }
+.cf-deck-select select { width:100%; min-width:0; max-width:100%; min-height:46px; font-size:1rem; padding:10px 36px 10px 12px; color:#292532; background-color:#fff; border:1px solid #b9b2c6; border-radius:10px; appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23563586' stroke-width='2'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; }
+.cf-deck-stage { display:block; border:1px solid #e1dde8; border-radius:10px; overflow:hidden; background:#fff; }
+.cf-deck-stage img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:contain; }
+.cf-deck-caption { margin:16px 0 10px; font-size:1rem; font-weight:700; }
+.cf-deck-help,.cf-deck-error { font-size:.875rem; color:#535461; margin:10px 0; }
+.cf-deck-error { border-left:3px solid #6d28d9; padding:10px 14px; background:#f3eefc; }
+.cf-deck details { border-top:1px solid #e1dde8; padding:14px 0 0; }
+.cf-deck summary { cursor:pointer; min-height:32px; font-size:1rem; font-weight:600; }
+.cf-deck-transcript { white-space:pre-wrap; line-height:1.7; font-size:1rem; color:#393641; margin:16px 0 0; }
+.cf-deck-downloads { align-items:center; margin-top:22px; }
+.cf-deck:fullscreen { background:#fff; color:#202126; padding:20px; overflow:auto; border-radius:0; }
+.cf-deck:fullscreen .cf-deck-stage img { max-height:calc(100dvh - 220px); min-height:180px; }
+@media(max-width:600px) { .cf-deck { padding:12px; } .cf-deck-controls { gap:10px; } .cf-deck-select { flex-basis:100%; order:-1; } .cf-deck-controls .button { padding:10px 14px; font-size:.875rem; } .cf-deck-downloads { align-items:stretch; } .cf-deck-downloads .button { flex:1 1 100%; } }
