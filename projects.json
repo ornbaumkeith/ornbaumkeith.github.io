@@ -48,6 +48,28 @@
     "android_download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.19/Pairvoy_0.5.19_Android.apk"
   },
   {
+    "id": "pairvoy-family",
+    "name": "Pairvoy for Family",
+    "category": "Goal-planning application",
+    "status": "Public beta coming soon",
+    "summary": "Plan personal and shared family goals, give everyone a next step, and celebrate progress together. The 0.1.3 preview stores family profiles and progress on one device.",
+    "tags": [
+      "Family goals",
+      "Local profiles",
+      "Progress tracking"
+    ],
+    "stack": [
+      "Expo",
+      "React Native",
+      "TypeScript",
+      "AsyncStorage"
+    ],
+    "featured": true,
+    "download_url": null,
+    "demo_url": null,
+    "source_url": null
+  },
+  {
     "id": "claimfield",
     "name": "ClaimField",
     "category": "GIS & field planning",

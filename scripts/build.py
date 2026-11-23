@@ -10,33 +10,51 @@ def page(title, description, content, active='home', depth=0):
     prefix = '../' * depth
     def link(path): return prefix + path
     nav = ''.join(f'<a href="{link(path)}"'+(' aria-current="page"' if key == active else '')+f'>{label}</a>' for key,path,label in [('home','index.html','Home'),('projects','projects/index.html','Projects'),('resources','resources/index.html','Resources'),('blog','blog/index.html','Blog'),('about','about/index.html','About')])
-    favicon = 'assets/pairvoy/icon.svg' if title == 'Pairvoy' else 'assets/favicon.svg'
+    favicon = {
+        'Pairvoy': 'assets/pairvoy/icon.svg',
+        'Pairvoy for Family': 'assets/pairvoy-family/logo.png',
+    }.get(title, 'assets/favicon.svg')
+    favicon_type = 'image/png' if favicon.endswith('.png') else 'image/svg+xml'
     pairvoy_style = '<link rel="stylesheet" href="' + link('assets/pairvoy/project.css?v=20261122-gallery') + '">' if title == 'Pairvoy' else ''
+    family_head = ''
+    if title == 'Pairvoy for Family':
+        canonical = 'https://keithornbaum.com/projects/pairvoy-family/index.html'
+        family_head = (
+            f'<link rel="stylesheet" href="{link("assets/pairvoy-family/project.css")}">'
+            f'<link rel="canonical" href="{canonical}">'
+            f'<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">'
+            f'<meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{canonical}">'
+            '<meta property="og:image" content="https://keithornbaum.com/assets/pairvoy-family/orbit-home.webp">'
+            '<meta property="og:image:alt" content="The Pairvoy for Family workspace with example goals and tasks.">'
+        )
     claimfield_style = '<link rel="stylesheet" href="' + link('assets/claimfield/project.css?v=20261119-video') + '">' if title in ['ClaimField', 'Projects & practical tools', 'Project directory'] else ''
     claimfield_head = '<link rel="canonical" href="https://ornbaumkeith.github.io/projects/claimfield/index.html"><script src="../../assets/claimfield/gallery.js?v=20261118-live" defer></script><link rel="stylesheet" href="../../assets/claimfield/presentation.css?v=20261119"><script src="../../assets/claimfield/presentation.js?v=20261119" defer></script><meta property="og:type" content="website"><meta property="og:title" content="ClaimField | Prospect planning &amp; field coordination"><meta property="og:description" content="Open the live app. Explore land review, crew tracks, maps, scheduling and the current architecture."><meta property="og:url" content="https://ornbaumkeith.github.io/projects/claimfield/index.html"><meta property="og:image" content="https://ornbaumkeith.github.io/assets/claimfield/prospect-workspace.webp">' if title == 'ClaimField' else ''
     about_assets = (f'<link rel="stylesheet" href="{link("assets/profile/about.css?v=20261123")}">'
                     f'<script src="{link("assets/profile/about.js?v=20261123")}" defer></script>') if title == 'About' else ''
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link(favicon)}" type="image/svg+xml"><link rel="stylesheet" href="{link('assets/style.css?v=20261024-pairvoy-compact')}">{pairvoy_style}{claimfield_style}{claimfield_head}{about_assets}<script src="{link('assets/app.js?v=20261022-a11y2')}" defer></script></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{esc(title)} | Keith Ornbaum</title><meta name="description" content="{esc(description)}"><meta name="theme-color" content="#111114"><link rel="icon" href="{link(favicon)}" type="{favicon_type}"><link rel="stylesheet" href="{link('assets/style.css?v=20261024-pairvoy-compact')}">{pairvoy_style}{family_head}{claimfield_style}{claimfield_head}{about_assets}<script src="{link('assets/app.js?v=20261022-a11y2')}" defer></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="{link('index.html')}"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation">{nav}<a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
 <main id="main" class="wrap{' pairvoy-page' if title == 'Pairvoy' else ' claimfield-page' if title == 'ClaimField' else ' about-profile' if title == 'About' else ''}" tabindex="-1">{content}</main><footer class="footer"><div class="wrap footer-inner"><span>© 2026 Keith Ornbaum. Built with purpose.</span><div class="footer-links"><a href="{link('projects/index.html')}">Explore projects</a><a href="https://github.com/ornbaumkeith">GitHub ↗</a></div></div></footer></body></html>'''
 
 PROJECT_TILE_ROWS = {
     'clearworth': [('Income', 'Plan ahead'), ('Expenses', 'Stay organized'), ('Goals', 'Track progress')],
     'pairvoy': [('Goals', 'Plan together'), ('Habits', 'Build momentum'), ('Progress', 'Celebrate wins')],
+    'pairvoy-family': [('Goals', 'Plan together'), ('Actions', 'Share the work'), ('Progress', 'Celebrate effort')],
     'claimfield': [('Land review', 'Check records'), ('Fieldwork', 'Plan crew tracks'), ('Filing', 'Prepare drafts')],
     'study-companions': [('Study', 'Review exam topics'), ('Practice', 'Quiz yourself'), ('Progress', 'Pick up where you left off')],
 }
 
-def project_tile_art(project):
+def project_tile_art(project, prefix=''):
     rows = PROJECT_TILE_ROWS.get(project['id'])
     if rows is None:
         return f'<div class="abstract"><div class="mark">{esc(project["name"])}</div><p>{esc(project["category"])}</p></div>'
     name = esc(project['name'])
     if project['id'] == 'clearworth':
         name = name.replace('ClearWorthPlanner', 'ClearWorth<wbr>Planner')
+    logo = (f'<img src="{prefix}assets/pairvoy-family/logo.png" width="64" height="64" alt="" loading="lazy">'
+            if project['id'] == 'pairvoy-family' else '')
     details = ''.join(f'<div class="row"><span>{esc(label)}</span><b>{esc(action)}</b></div>' for label, action in rows)
-    return (f'<div class="abstract" style="box-shadow:none"><div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
+    return (f'<div class="abstract" style="box-shadow:none">{logo}<div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
             f'{name}<span style="color:#81ba93" aria-hidden="true">.</span></div>{details}</div>')
 
 def cards(prefix=''):
@@ -47,7 +65,7 @@ def cards(prefix=''):
             continue
         path=f"{prefix}projects/{p['id']}/index.html"
         chips=''.join(f'<span class="pill">{esc(t)}</span>' for t in p['tags'])
-        art = project_tile_art(p)
+        art = project_tile_art(p, prefix)
         search=esc(' '.join([p['name'],p['summary'],p['category'],*p['tags'],*p['stack']]).lower())
         links=f'<a class="button" href="{path}">Explore project <span aria-hidden="true">↗</span></a>'
         for field,label in [('demo_url','Live demo'),('download_url','Download'),('source_url','Source')]:
@@ -60,7 +78,10 @@ def cards(prefix=''):
 quiet='<aside class="quiet-panel"><div><h2 class="collection-title">A growing collection.</h2><p>This portfolio will expand as more projects are ready to share.</p></div><span class="small-tag">Software · GIS · Automation</span></aside>'
 home='''<section class="hero"><div class="hero-grid"><div><div class="eyebrow">Software, GIS & automation</div><h1>Ideas into tools.<br><span class="accent">Tools into impact.</span></h1><p class="intro">I'm Keith Ornbaum. This is a home for the projects I build, the problems they solve, and the work behind them.</p><div class="actions"><a class="button" href="projects/index.html">Explore projects <span aria-hidden="true">↗</span></a><a class="button secondary" href="about/index.html">Meet the builder</a></div><p class="hero-note">Practical projects. Thoughtful design. Room to grow.</p></div><div class="showcase"><div class="showcase-top"><span>In the spotlight</span><span>Desktop application</span></div><div class="cw-symbol" aria-hidden="true">↗</div><h2>ClearWorthPlanner</h2><p>A clearer view of your finances, built around a local-first Windows experience.</p><div class="chips"><span class="pill">Windows</span><span class="pill">Personal finance</span><span class="pill">In development</span></div><div class="diagram" role="img" aria-label="ClearWorthPlanner brings planning, tracking, and financial review together"><div><span aria-hidden="true">◷</span>Plan</div><div><span aria-hidden="true">▤</span>Track</div><div><span aria-hidden="true">↗</span>Review</div></div><p class="visual-label">An overview of the project, not an app screenshot.</p></div></div></section><div class="strip" aria-label="Areas of interest"><span>Desktop software</span><span>Location intelligence</span><span>Workflow automation</span><span>Data & databases</span></div><section class="section" aria-labelledby="featured-heading"><div class="section-head"><div><div class="eyebrow">Selected work</div><h2 id="featured-heading">Projects with a purpose.</h2></div><a class="text-link" href="projects/index.html">View project directory ↗</a></div>'''+cards()+quiet+'''</section><section class="about-band" aria-labelledby="about-heading"><div><div class="eyebrow">Behind the projects</div><h2 id="about-heading">A builder's mindset.<br>A practical approach.</h2><p>More than ten years of work, learning, and personal growth helped shape ClearWorthPlanner. My interests in GIS, automation, and financial planning come together in apps and tools built to help everyday people.</p><a class="text-link" href="about/index.html">Read my story ↗</a></div><div class="focus-list"><div class="focus-item">Make complex work easier <span aria-hidden="true">01</span></div><div class="focus-item">Connect data and decisions <span aria-hidden="true">02</span></div><div class="focus-item">Build, learn, and improve <span aria-hidden="true">03</span></div></div></section>'''
 if (ROOT / 'content/home.html').exists():
-    home = (ROOT / 'content/home.html').read_text()
+    home = (ROOT / 'content/home.html').read_text().replace(
+        '<!-- PAIRVOY_FAMILY_CARD -->',
+        (ROOT / 'content/pairvoy-family-card.html').read_text(),
+    )
 (ROOT/'index.html').write_text(page('Projects & practical tools','Explore software, GIS, and automation projects by Keith Ornbaum, including ClearWorthPlanner, Pairvoy and ClaimField.',home))
 options=''.join(f'<option value="{esc(c)}">{esc(c)}</option>' for c in sorted({p['category'] for p in projects}))
 directory='''<section class="page-hero"><div class="eyebrow">Project directory</div><h1>Explore the work.</h1><p>Applications, tools, and ideas built to solve practical problems. Each project has its own space for the details, resources, and next steps.</p></section><section aria-label="Project collection"><div class="toolbar"><div class="search"><label for="project-search">Find a project</label><input id="project-search" type="search" aria-controls="project-results" placeholder="Search by name, topic, or technology…"></div><div class="filter"><label for="project-category">Project type</label><select id="project-category" aria-controls="project-results"><option value="all">All projects</option>'''+options+'''</select></div></div><p id="result-count" class="result-count" role="status">'''+str(len(projects))+''' projects shown</p>'''+cards('../')+'''<div id="empty-results" class="empty" hidden><h3>No projects found.</h3><p>Try another search or browse the full collection.</p><button id="reset-search" class="button" type="button">Reset search</button></div>'''+quiet+'''</section>'''
