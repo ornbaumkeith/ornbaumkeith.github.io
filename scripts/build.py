@@ -34,7 +34,7 @@ def project_tile_art(project):
     if project['id'] == 'clearworth':
         name = name.replace('ClearWorthPlanner', 'ClearWorth<wbr>Planner')
     details = ''.join(f'<div class="row"><span>{esc(label)}</span><b>{esc(action)}</b></div>' for label, action in rows)
-    return (f'<div class="abstract"><div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
+    return (f'<div class="abstract" style="box-shadow:none"><div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
             f'{name}<span style="color:#81ba93" aria-hidden="true">.</span></div>{details}</div>')
 
 def cards(prefix=''):
