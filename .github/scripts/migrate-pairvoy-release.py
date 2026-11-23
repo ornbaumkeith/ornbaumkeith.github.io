@@ -44,24 +44,10 @@ with TemporaryDirectory() as directory:
         if size != asset["size"] or "sha256:" + digest.hexdigest() != asset["digest"]:
             raise SystemExit(f"Public source asset failed verification: {name}")
 
-    endpoint = f"repos/{destination}/releases/tags/{tag}"
-    api = lambda: subprocess.run(["gh", "api", endpoint], text=True, capture_output=True)
-    existing = api()
-    if existing.returncode != 0:
-        if "HTTP 404" not in existing.stderr:
-            raise SystemExit(existing.stderr)
-        gh("release", "create", tag, "--draft", "--target", os.environ["GITHUB_SHA"],
-           "--title", release["title"], "--notes-file", str(notes), "--prerelease", "--latest=false")
-        existing = api()
-        if existing.returncode != 0:
-            # The tag endpoint may omit draft releases. Match its tag in the release listing.
-            listing = subprocess.check_output(["gh", "api", f"repos/{destination}/releases",
-                                               "--paginate", "--slurp"], text=True)
-            current, = (item for page in json.loads(listing) for item in page if item["tag_name"] == tag)
-        else:
-            current = json.loads(existing.stdout)
-    else:
-        current = json.loads(existing.stdout)
+    endpoint = f"repos/{destination}/releases/{release['destination_id']}"
+    current = json.loads(subprocess.check_output(["gh", "api", endpoint], text=True))
+    if current["tag_name"] != tag:
+        raise SystemExit("Unexpected destination release tag")
 
     present = {asset["name"]: asset for asset in current["assets"]}
     for asset in release["assets"]:

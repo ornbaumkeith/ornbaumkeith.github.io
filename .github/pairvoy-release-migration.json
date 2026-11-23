@@ -35,7 +35,8 @@
         "digest": "sha256:2b9ef7340e0b8ca19e15e4dcaa850f9a12235e534022df2fe771bcadb6960806",
         "size": 613
       }
-    ]
+    ],
+    "destination_id": 454989393
   },
   {
     "tag": "pairvoy-v0.5.16",
@@ -128,7 +129,8 @@
         "digest": "sha256:e67eba3f6491fa1c9ba609b84dde2178dfb50d6df0d4ba4c6a929917af2cc565",
         "size": 156
       }
-    ]
+    ],
+    "destination_id": 454989464
   },
   {
     "tag": "pairvoy-v0.5.15",
@@ -221,7 +223,8 @@
         "digest": "sha256:18594603178fb695d16ed971fe1df74092cdbd5a6efc6839a0333298753985bb",
         "size": 156
       }
-    ]
+    ],
+    "destination_id": 454989478
   },
   {
     "tag": "tandem-v0.5.14",
@@ -314,6 +317,7 @@
         "digest": "sha256:9eea62edfc1a565c0a2d8e5ca801e14a5dccfb314a56ff81af67553cd7d0aa91",
         "size": 155
       }
-    ]
+    ],
+    "destination_id": 454989448
   }
 ]
