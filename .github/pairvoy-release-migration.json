@@ -1,0 +1,319 @@
+[
+  {
+    "tag": "pairvoy-v0.5.19",
+    "title": "Pairvoy 0.5.19 Windows and Android testing",
+    "prerelease": true,
+    "notes": "# Pairvoy 0.5.19 testing\n\nPairvoy starts with an empty local workspace. Add your own goals and actions. On Home, My checklist shows personal actions, overdue items, and private action notes. Write a reflection opens the current week's reflection.\n\n- **Android.** Download `Pairvoy_0.5.19_Android.apk` and verify it against `Pairvoy_0.5.19_Android.apk.sha256`. The release uses the same signing certificate and app ID as 0.5.16. Installation over 0.5.16 and app launch passed on an Android emulator. Open Android Calendar actions to choose an available device calendar where supported and granted access.\n- **Windows.** Download `Pairvoy_0.5.19_Windows_x64_Setup.exe` and verify it against `SHA256SUMS.txt`. This unsigned testing installer supports Windows 10 and 11 x64. Windows calendar actions export `.ics` files.\n\nSee the Android PowerShell testing guide in the release assets and the [Pairvoy project page](https://ornbaumkeith.github.io/projects/pairvoy/index.html) for downloads.\n",
+    "assets": [
+      {
+        "name": "ANDROID_TESTING.md",
+        "digest": "sha256:d3912527ee80e986fa8e9774e0c4aeb58f9e91e58a61e177c6c137cf26abc9a8",
+        "size": 1865
+      },
+      {
+        "name": "Pairvoy_0.5.19_Android.apk",
+        "digest": "sha256:7ac9f0099ce9fa95aaa318e79a0d27dcab11c5c77c080403d3938ac4297572ba",
+        "size": 65815186
+      },
+      {
+        "name": "Pairvoy_0.5.19_Android.apk.sha256",
+        "digest": "sha256:b08ca9f1313ce9f9bc9a496925e73c8793a2c15e9fc6fb945aa8d9fdb3e48778",
+        "size": 93
+      },
+      {
+        "name": "Pairvoy_0.5.19_Windows_x64_Setup.exe",
+        "digest": "sha256:72c128beb2860fc27f31f5d5e1d14d7505bf9f540fe8685bcff217c6e233ee42",
+        "size": 120976852
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "digest": "sha256:6b2417833e9ff51edcb1ff671c4dcf6a83e6bdb6568d68a7f214270757090078",
+        "size": 103
+      },
+      {
+        "name": "TESTING.md",
+        "digest": "sha256:2b9ef7340e0b8ca19e15e4dcaa850f9a12235e534022df2fe771bcadb6960806",
+        "size": 613
+      }
+    ]
+  },
+  {
+    "tag": "pairvoy-v0.5.16",
+    "title": "Pairvoy 0.5.16 — Windows and Android testing",
+    "prerelease": true,
+    "notes": "# Pairvoy 0.5.16 — testing release\n\nYour goals. Our journey. Pairvoy 0.5.16 completes product naming while retaining the linked-heart logo, light/dark themes, latest goal-planning functionality and compatible data migration. The official connection is labeled Pairvoy cloud; custom-server setup remains available.\n\n## Platforms\n\n- Windows 10/11 x64: NSIS installer, no Node/npm needed. The testing installer is not Authenticode-signed.\n- Android: standalone release APK signed with the original private signing identity. Install only the APK and checksum supplied in the verified release.\n- Apple releases are outside the initial scope.\n\n## Before upgrading\n\nKeep a backup of your data. The internal app IDs, original Android signing identity and existing desktop data location remain stable for upgrade compatibility. Do not delete old application data just to change the name. New Pairvoy storage keys import legacy settings, cached workspaces and sessions; signing out clears both session-key names.\n\n## Verify a Windows download\n\n```powershell\nSet-Location -LiteralPath \"$env:USERPROFILE\\Downloads\"\nGet-FileHash -Algorithm SHA256 -LiteralPath '.\\Pairvoy_0.5.16_Windows_x64_Setup.exe'\n```\n\nCompare the result with the accompanying .sha256 file before opening the installer. Follow Windows security prompts according to your own or your organization's policy. Launch Pairvoy from the Start menu after setup. Choose a local workspace to review the app without an account. Shared-account features require the hosted API.\n\n## Verify an Android download\n\nCompare the APK's SHA256 value to the published .sha256 file. Android may require permission to install a downloaded APK; follow your device or organization policy. Updating the prior app requires the same signing identity, which is retained by this release.\n\n## Verification status\n\nWindows and Android packages were built from private source commit d040d9d8ff95ba327e207813e45fb1cd67aaa7a2. Windows acceptance used the later diagnostics commit cbb85fa132af24a9795a8c8c51ebddf2509292b0 without changing application behavior. The compatible hosted API currently reports Pairvoy 0.5.15.\n\nNative package, installation, emulator, renderer and hosted-API results must be recorded from the matching release files. A JavaScript export is not native-build evidence. Review the release evidence before testing real data. Physical-device UAT, password-recovery email delivery and operational backup/restore remain separate acceptance activities.\n\nSource validation passed TypeScript, release consistency and 71 unit/API tests, with 0 failures and 1 local PostgreSQL fixture skipped. Separate PostgreSQL integration and backend-container checks passed. Windows native packaging, actual installation, API access, clipboard use and Pairvoy cloud/custom-server controls passed. Android signature, package metadata and emulator installation/launch checks passed. The root dependency audit reported 11 findings (1 low, 7 moderate, 3 high); the rebrand does not claim those issues are fixed.\n\n[Project and download status](https://ornbaumkeith.github.io/projects/pairvoy/index.html)\n",
+    "assets": [
+      {
+        "name": "android-launch.txt",
+        "digest": "sha256:d327c54efa58cac384efcf3128252ba71b0eb627ddad891a0bd85cd0a762b3ca",
+        "size": 251
+      },
+      {
+        "name": "android-package.txt",
+        "digest": "sha256:7afeb84d6f539d1aed3c4bcf77bda35b3adefd0c7e20ca91b5703cf10669ac9a",
+        "size": 6452
+      },
+      {
+        "name": "android-permissions.txt",
+        "digest": "sha256:a9f8e7c3479c3893b6195449e2c0a0ab2e26c6d82b50e54421a294a614bca8bb",
+        "size": 2054
+      },
+      {
+        "name": "android-runtime-errors.txt",
+        "digest": "sha256:a427481c7fe2662654df356f32510a395d5efefd9359bab7900a7fadaa0e581f",
+        "size": 119
+      },
+      {
+        "name": "android-signature.txt",
+        "digest": "sha256:de84b36cf14ee98f4b166cd97bb4155ec3728c7481eb17b61bf58279982094b4",
+        "size": 1019
+      },
+      {
+        "name": "android-ui.xml",
+        "digest": "sha256:ae9fdac6c74595fa7939608a1adfbc0450cf2b6c569c3acec5964dc0f5f8df21",
+        "size": 12712
+      },
+      {
+        "name": "LICENSE.txt",
+        "digest": "sha256:0ba45ee8091bca30feb19a6304155a55df117f4dc96aabb6a8ac747ac814b131",
+        "size": 1070
+      },
+      {
+        "name": "pairvoy-release-status.json",
+        "digest": "sha256:7c034997580b1aa2761acb6314acf3f43b3dfa4db9ffff3c740bad57b4b2316d",
+        "size": 818
+      },
+      {
+        "name": "pairvoy-windows-installation.json",
+        "digest": "sha256:c5becf8faff2271c1cf4991497c8f71d06d4d0a675c6452ad613e994a30536b5",
+        "size": 244
+      },
+      {
+        "name": "pairvoy-windows-renderer.json",
+        "digest": "sha256:857115e5ff3d89ff28693357e2dd0ea0faaf27c534d9c81772f38c4753ebbf53",
+        "size": 339
+      },
+      {
+        "name": "Pairvoy_0.5.16_Android.apk",
+        "digest": "sha256:3f915b6240be2aabebaa9dcb554a07c21ea6800fd02210aec7b4819443196426",
+        "size": 65798002
+      },
+      {
+        "name": "Pairvoy_0.5.16_Android.apk.sha256",
+        "digest": "sha256:f4859a203079e0635559f857b41d8413c57702b4ed95ebcf055c1b49ccbefc99",
+        "size": 93
+      },
+      {
+        "name": "Pairvoy_0.5.16_Windows_x64_Setup.exe",
+        "digest": "sha256:87f09fc4cb7dcd9b196d6dd6cd17b920ef969b641f86ca165a5dd404689681a4",
+        "size": 120974294
+      },
+      {
+        "name": "Pairvoy_0.5.16_Windows_x64_Setup.exe.sha256",
+        "digest": "sha256:3b8ca3be405c47d411b8a52e88ff53e58541a2a4c233baec45ca931beb91127b",
+        "size": 104
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "digest": "sha256:6ad43fff339d6a6954c9df8f489fd2b3c34b4b06b4de109d2d25d0950231141d",
+        "size": 1459
+      },
+      {
+        "name": "TESTING.md",
+        "digest": "sha256:a0a13fe21bd335a137831182afd3ffb133b8e2cb73fa928f47f8ae495e92f9f8",
+        "size": 3122
+      },
+      {
+        "name": "windows-smoke.json",
+        "digest": "sha256:e67eba3f6491fa1c9ba609b84dde2178dfb50d6df0d4ba4c6a929917af2cc565",
+        "size": 156
+      }
+    ]
+  },
+  {
+    "tag": "pairvoy-v0.5.15",
+    "title": "Pairvoy 0.5.15 — Windows and Android testing",
+    "prerelease": true,
+    "notes": "# Pairvoy 0.5.15 — testing release\n\nYour goals. Our journey. Pairvoy continues the latest 0.5.14 functionality with a new name, linked-heart branding, charcoal/white themes and migration of saved local settings and cached workspaces.\n\n## Platforms\n\n- Windows 10/11 x64: NSIS installer, no Node/npm needed. The testing installer is not Authenticode-signed.\n- Android: standalone release APK signed with the original private signing identity. Install only the APK and checksum supplied in the verified release.\n- Apple releases are outside the initial scope.\n\n## Before upgrading\n\nKeep a backup of your data. The internal app IDs, original Android signing identity and existing desktop data location remain stable for upgrade compatibility. Do not delete old application data just to change the name. New Pairvoy storage keys import legacy settings, cached workspaces and sessions; signing out clears both session-key names.\n\n## Verify a Windows download\n\n```powershell\nSet-Location -LiteralPath \"$env:USERPROFILE\\Downloads\"\nGet-FileHash -Algorithm SHA256 -LiteralPath '.\\Pairvoy_0.5.15_Windows_x64_Setup.exe'\n```\n\nCompare the result with the accompanying .sha256 file before opening the installer. Follow Windows security prompts according to your own or your organization's policy. Launch Pairvoy from the Start menu after setup. Choose a local workspace to review the app without an account. Shared-account features require the hosted API.\n\n## Verify an Android download\n\nCompare the APK's SHA256 value to the published .sha256 file. Android may require permission to install a downloaded APK; follow your device or organization policy. Updating the prior app requires the same signing identity, which is retained by this release.\n\n## Verification status\n\nNative package, installation, emulator, renderer and hosted-API results must be recorded from the matching release files. A JavaScript export is not native-build evidence. Review the release evidence before testing real data. Physical-device UAT, password-recovery email delivery and operational backup/restore remain separate acceptance activities.\n\nThe source rebrand passed TypeScript, release consistency, local unit/API regressions, web and Android JavaScript exports. PostgreSQL and backend container checks passed in GitHub Actions. The root dependency audit reported 11 findings (1 low, 7 moderate, 3 high); the rebrand does not claim those issues are fixed.\n\n[Project and download status](https://ornbaumkeith.github.io/projects/pairvoy/index.html)\n",
+    "assets": [
+      {
+        "name": "android-launch.txt",
+        "digest": "sha256:5859c8abebd2c0a93de19d558e370abbcf7a91a9b945ea0faf2e610c7a81e3cf",
+        "size": 250
+      },
+      {
+        "name": "android-package.txt",
+        "digest": "sha256:f5f84abbbcd5808be8f822c6ded9cee43e98aff8cb8dcbee3806332f0d4d6c7d",
+        "size": 6452
+      },
+      {
+        "name": "android-permissions.txt",
+        "digest": "sha256:a9f8e7c3479c3893b6195449e2c0a0ab2e26c6d82b50e54421a294a614bca8bb",
+        "size": 2054
+      },
+      {
+        "name": "android-runtime-errors.txt",
+        "digest": "sha256:a427481c7fe2662654df356f32510a395d5efefd9359bab7900a7fadaa0e581f",
+        "size": 119
+      },
+      {
+        "name": "android-signature.txt",
+        "digest": "sha256:de84b36cf14ee98f4b166cd97bb4155ec3728c7481eb17b61bf58279982094b4",
+        "size": 1019
+      },
+      {
+        "name": "android-ui.xml",
+        "digest": "sha256:4051e8323d302b80682bd53830aac5645e423e3618069fa4aa58c7ad41bc1d38",
+        "size": 12712
+      },
+      {
+        "name": "LICENSE.txt",
+        "digest": "sha256:0ba45ee8091bca30feb19a6304155a55df117f4dc96aabb6a8ac747ac814b131",
+        "size": 1070
+      },
+      {
+        "name": "pairvoy-release-status.json",
+        "digest": "sha256:70019b813a67451b5aa72dce42b3f7ada477468ea857ea7cf68d74a07833ce2a",
+        "size": 1073
+      },
+      {
+        "name": "pairvoy-windows-installation.json",
+        "digest": "sha256:ac585036786922af1ee38d68064c185240ccdbffbd2dc9bc3785b15a3378f5fd",
+        "size": 244
+      },
+      {
+        "name": "pairvoy-windows-renderer.json",
+        "digest": "sha256:17b5ce43b218e2b8b83b3460cae1472532825e68a17a687ab882e34e710be9e8",
+        "size": 191
+      },
+      {
+        "name": "Pairvoy_0.5.15_Android.apk",
+        "digest": "sha256:6c7cb2b1fe7eb96ebc009640de928af88ce10db4cafa5313cef828fa07530e73",
+        "size": 65796878
+      },
+      {
+        "name": "Pairvoy_0.5.15_Android.apk.sha256",
+        "digest": "sha256:6b0f9d4056cdac491809fedfd6cce0d438a865536ae1f95ee0de59f639f8d44e",
+        "size": 93
+      },
+      {
+        "name": "Pairvoy_0.5.15_Windows_x64_Setup.exe",
+        "digest": "sha256:4e252c168f67a054c84e2b59565f188e6489376165f0514b66ab1ae57dbce177",
+        "size": 120974058
+      },
+      {
+        "name": "Pairvoy_0.5.15_Windows_x64_Setup.exe.sha256",
+        "digest": "sha256:069c09e953f75a4fbc1ff6a18bfdadc980f0fd62a3a782ca7c82b2695d51e005",
+        "size": 104
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "digest": "sha256:1d9773a8952eadcc58f0ce70cb56fcfdb0adb9e2292a046ba63e1e80d06f6144",
+        "size": 1459
+      },
+      {
+        "name": "TESTING.md",
+        "digest": "sha256:b315f91be4263ed18e32de4da5630f1994364492c8c4da9f3aff226d9dfe0002",
+        "size": 2517
+      },
+      {
+        "name": "windows-smoke.json",
+        "digest": "sha256:18594603178fb695d16ed971fe1df74092cdbd5a6efc6839a0333298753985bb",
+        "size": 156
+      }
+    ]
+  },
+  {
+    "tag": "tandem-v0.5.14",
+    "title": "Pairvoy — archived 0.5.14 predecessor build",
+    "prerelease": true,
+    "notes": "# Pairvoy — archived 0.5.14 predecessor build\r\n\r\nThis historical package archive is superseded. Get the updated name, linked-heart logo, and current Windows/Android installers from the [Pairvoy downloads page](https://ornbaumkeith.github.io/projects/pairvoy/index.html).\r\n\r\nOriginal binary names, signatures, checksums and validation evidence remain unchanged for provenance and upgrade compatibility.\r\n\r\n<details>\r\n<summary>Original 0.5.14 instructions and historical evidence</summary>\r\n\r\n# Tandem 0.5.14 — Windows and Android testing\r\n\r\nYour goals. Our journey.\r\n\r\nDownload from **https://ornbaumkeith.github.io/projects/tandem/index.html** or this repository's `tandem-v0.5.14` prerelease. These are actual standalone testing packages, not source-only ZIPs. No Node, npm, Expo Go, app-store account, or local API is needed to use them.\r\n\r\n## Packages\r\n\r\n- **Windows x64:** `Tandem_0.5.14_Windows_x64_Setup.exe` (120,964,453 bytes).\r\n- **Android:** `Tandem_0.5.14_Android.apk`. Its exact minimum Android version, supported ABIs, package metadata and signing-certificate fingerprint are in the attached `android-package.txt` and `android-signature.txt`.\r\n- Each installer has a matching `.sha256` file. `SHA256SUMS.txt` covers all other release assets.\r\n- Windows is **not Authenticode-signed**. Android uses a dedicated private release-signing identity, not the default debug key. A checksum detects corruption; it does not independently prove publisher identity.\r\n\r\n## Windows: verify and install\r\n\r\nDownload the EXE and its matching `.sha256` into Downloads. If your browser adds a suffix such as `(1)`, select the correct files and update the paths below rather than renaming an older release.\r\n\r\nRun this entire block in PowerShell:\r\n\r\n```powershell\r\n$ErrorActionPreference = \"Stop\"\r\n$TandemDownloads = Join-Path $env:USERPROFILE \"Downloads\"\r\nSet-Location -LiteralPath $TandemDownloads\r\n$TandemInstaller = Join-Path $TandemDownloads \"Tandem_0.5.14_Windows_x64_Setup.exe\"\r\n$TandemSidecar = \"$TandemInstaller.sha256\"\r\nif (-not (Test-Path -LiteralPath $TandemInstaller)) { throw \"Download the Tandem 0.5.14 Windows installer.\" }\r\nif (-not (Test-Path -LiteralPath $TandemSidecar)) { throw \"Download its matching SHA-256 file.\" }\r\n$TandemExpected = ((Get-Content -LiteralPath $TandemSidecar -Raw).Trim() -split '\\s+')[0]\r\nif ($TandemExpected -notmatch '^[a-fA-F0-9]{64}$') { throw \"Invalid checksum file.\" }\r\n$TandemActual = (Get-FileHash -LiteralPath $TandemInstaller -Algorithm SHA256).Hash\r\nif ($TandemActual -ine $TandemExpected) { throw \"Checksum mismatch. Stop and download matching files.\" }\r\nWrite-Host \"Checksum matches Tandem 0.5.14.\"\r\n& \".\\Tandem_0.5.14_Windows_x64_Setup.exe\"\r\n```\r\n\r\nAlternatively, after the same verification: `Start-Process -FilePath $TandemInstaller -Wait`.\r\n\r\nFollow setup, then open Tandem from the Start menu or desktop shortcut. This is an unsigned pilot installer: Windows may display an unknown publisher or SmartScreen warning. Continue only if you trust the download; do not disable system-wide security or bypass organizational policy. Keep your previous app/data and any available export before testing. This desktop package uses a different storage origin from a prior localhost development browser; old local-workspace data is not automatically imported.\r\n\r\n## Android: install the APK\r\n\r\n1. Download the APK from the project page on your Android device.\r\n2. Open it from Downloads. Android may ask you to allow this browser/file manager to install apps. Grant that source permission only if you trust the package, then turn it off after installation.\r\n3. Follow the system prompt and open Tandem. Managed devices may prohibit sideloading. Do not disable device-wide security controls.\r\n4. For future updates, use Tandem APKs signed with the same identity. Keep your data/export before updating; uninstalling may remove local data.\r\n\r\nTo check the Android download from a Windows computer before transfer, download the APK and matching checksum into Downloads and run:\r\n\r\n```powershell\r\n$ErrorActionPreference = \"Stop\"\r\nSet-Location -LiteralPath (Join-Path $env:USERPROFILE \"Downloads\")\r\n$TandemApk = \".\\Tandem_0.5.14_Android.apk\"\r\n$TandemExpected = ((Get-Content -LiteralPath \"$TandemApk.sha256\" -Raw).Trim() -split '\\s+')[0]\r\nif ($TandemExpected -notmatch '^[a-fA-F0-9]{64}$') { throw \"Invalid checksum file.\" }\r\nif ((Get-FileHash -LiteralPath $TandemApk -Algorithm SHA256).Hash -ine $TandemExpected) { throw \"Checksum mismatch.\" }\r\nWrite-Host \"Android APK checksum matches.\"\r\n```\r\n\r\n## First launch and pairing\r\n\r\nBoth packages include the public API address: **https://tandem-api-ornbaumkeith.onrender.com**. It is an API, not a web-client download. Register a disposable test account and sign in. If the free service is waking, wait and retry.\r\n\r\nUse separate accounts on each device. In Profile's team/connection access, create an invitation and join from your partner's account. Core teams support up to three members. Connected circles are separate teams with read/copy/encourage privileges. Use only the controls for your intended team; never share passwords or private invitation codes publicly.\r\n\r\nLocal-workspace exploration is separate from cloud accounts. Earlier local databases and browser data are not automatically uploaded or migrated.\r\n\r\n## What changed\r\n\r\n0.5.14 packages the existing responsive interface as a Windows Electron desktop app and standalone signed Android release APK. The public service address is built into both. The hosted API remains compatible version **0.5.13**, on Render Free with persistent Supabase Free PostgreSQL. No goal rules, scoring, logo, or interface redesign is introduced by this packaging release.\r\n\r\nThe app retains personal/shared SMART goals, four editable planning steps, dated/recurring actions, calendars and .ics export, working notes, monthly reflections, Daily/Weekly/Monthly/Annual progress, XP/levels, team synchronization, connected circles, section-level privacy, encouragement, avatars and light/dark appearance.\r\n\r\n## Test checklist\r\n\r\n- Register/sign in; invite a partner; confirm the same shared goal and edits appear on both devices.\r\n- Create a goal and check its four suggested steps. Edit/remove/restore eligible steps and adjust dates.\r\n- Check and reopen an action/step; XP must be reversible rather than duplicated. Completing all planning steps completes the goal.\r\n- Check calendar dates/events and .ics export. Calendar copies are snapshots, not automatic synchronization.\r\n- Save working notes and a monthly reflection; close/reopen and check persistence.\r\n- Connect a separate circle. Hide steps/actions/reflections and confirm they are absent from that circle. Working notes remain private.\r\n- Test light/dark appearance, keyboard/text sizing, phone/tablet layouts and rotation.\r\n- On Android, explicitly apply a device reminder and test permission denial and scheduling. Saving preferences alone does not schedule notifications.\r\n- Reopen the app, test network interruption/reconnection, and confirm no duplicate XP or lost edits.\r\n\r\n## Validation and limitations\r\n\r\n- The actual Windows NSIS installer completed a silent installation into a path containing spaces in a Windows GitHub runner. The installed app launched with the correct title/version, `app://tandem` origin, and no renderer Node access. The installed renderer also reached the live API and completed a user-initiated clipboard write after the scoped permission correction. Personal-PC and interactive wizard acceptance remain open.\r\n- Android compiled and passed release-signature/package/permission checks. The exact retained APK installed and launched in an Android 16 / API 36 x86_64 emulator; its sign-in form rendered after scrolling the compact welcome screen, with no recorded AndroidRuntime/ReactNativeJS errors. Minimum package SDK: 24 (Android 7.0); target: 36. Included ABIs: arm64-v8a, armeabi-v7a, x86_64. These package settings do not establish physical compatibility on every Android version.\r\n- Fresh Node 24 source checks: locked installations, TypeScript and release consistency passed; **66 tests passed, 0 failed, 1 skipped**. The skipped PostgreSQL integration fixture was not configured in this run. Earlier live hosted account/privacy/redeploy acceptance is separate evidence.\r\n- Independent Trivy 0.76.0 source/lockfile scan completed: 2 high vulnerability records (the same underlying advisory families), 0 detected secrets, and 1 Dockerfile configuration finding (default root user). License classifications include build tooling and names in historical notice files; complete component/notice review remains open. This is not a native binary or device security certification.\r\n- October 27 dependency audits: app/Expo tooling **4 high** findings; server **0**; desktop **0**. Findings include node-forge and an Expo CLI nested Zod dependency, with affected parent packages counted too. They are not cleared by passing tests; no forced incompatible framework downgrade was applied.\r\n- Physical Windows/Android phones/tablets, the full supported-OS matrix, hardware notification/calendar permission behavior and hardware offline replay remain open. Apple releases are deferred.\r\n- Android's local reminders require OS permission. Windows has in-app check-ins and .ics export, not native mobile notifications. Partner activity is synchronized in-app; remote push delivery is not provided.\r\n- **Password-recovery email is unavailable.** Use a password manager and disposable test credentials. Reset requests fail safely without exposing tokens.\r\n- Render Free can sleep; Supabase Free can pause or hit quotas. Service availability is conditional on free-tier limits. Off-service encrypted backup/restore remains unvalidated. Avoid sensitive or irreplaceable data during this pilot.\r\n- Windows session credentials follow the web session-storage model. Android uses SecureStore. No whole-workspace encryption or independent security certification is claimed.\r\n\r\nApplication source, signing keys/passwords, user databases and provider secrets are excluded from this public repository and its release assets. Android platform tooling has its own licenses; free tooling is not automatically open source.\r\n\r\n</details>\r\n",
+    "assets": [
+      {
+        "name": "android-launch.txt",
+        "digest": "sha256:20539a3ba2cc75aab04a16685927a91a0a1e38f4d76d8db353d20a57d7ef7a58",
+        "size": 250
+      },
+      {
+        "name": "android-package.txt",
+        "digest": "sha256:3f538045d8e8b3ac6288981df981f04bbe042b8b3bbd18374e8494b8526f2d58",
+        "size": 6360
+      },
+      {
+        "name": "android-permissions.txt",
+        "digest": "sha256:a9f8e7c3479c3893b6195449e2c0a0ab2e26c6d82b50e54421a294a614bca8bb",
+        "size": 2054
+      },
+      {
+        "name": "android-runtime-errors.txt",
+        "digest": "sha256:6d8d3a6811deebf09249e24534bd79a2fb40e8bd67895b7e1f76aa9742db734b",
+        "size": 110
+      },
+      {
+        "name": "android-signature.txt",
+        "digest": "sha256:de84b36cf14ee98f4b166cd97bb4155ec3728c7481eb17b61bf58279982094b4",
+        "size": 1019
+      },
+      {
+        "name": "android-ui.xml",
+        "digest": "sha256:df2dcb966057eec00ee841f319aa0ecfa43c9377e5af9de31cb138d62479fb82",
+        "size": 13064
+      },
+      {
+        "name": "LICENSE.txt",
+        "digest": "sha256:0ba45ee8091bca30feb19a6304155a55df117f4dc96aabb6a8ac747ac814b131",
+        "size": 1070
+      },
+      {
+        "name": "SHA256SUMS.txt",
+        "digest": "sha256:2b22fa0895b9054d0da9fc879d4bc428a660696a98fdc8e28658f8747474da4c",
+        "size": 1453
+      },
+      {
+        "name": "source-validation-0.5.14.json",
+        "digest": "sha256:f2fd90dc30d9a2a521510cf28ff15f6e2a15e62bb49e30beb49cc4d3c62f3bb3",
+        "size": 2839
+      },
+      {
+        "name": "Tandem_0.5.14_Android.apk",
+        "digest": "sha256:04ef5add28ee8cfb2a161c2aafa9f12e23bf58760db3ad2e4f1c940108767a33",
+        "size": 65809122
+      },
+      {
+        "name": "Tandem_0.5.14_Android.apk.sha256",
+        "digest": "sha256:b99f76479840009a194efb1ea5d8fabc085ceaf9963013fe8184752faa37d226",
+        "size": 92
+      },
+      {
+        "name": "Tandem_0.5.14_Windows_x64_Setup.exe",
+        "digest": "sha256:b2bc8634a9852dee29d25b9c3b6b1d08e2f0b2dcf837fdf3b406c4f669d5198b",
+        "size": 120964453
+      },
+      {
+        "name": "Tandem_0.5.14_Windows_x64_Setup.exe.sha256",
+        "digest": "sha256:a6942bd91588ecce74660614f53cdf12cb87dc98ccb52c0250e88bcc12956c80",
+        "size": 103
+      },
+      {
+        "name": "TESTING.md",
+        "digest": "sha256:c19e71ae77969c22b2254e95a9bd907e33053d11fb269c34ca381ce68b0a24e9",
+        "size": 9637
+      },
+      {
+        "name": "windows-installation-smoke.json",
+        "digest": "sha256:f47e03354fedf9d907b34e03e535ca8da18ac80c379b2b561990074aa5c82200",
+        "size": 243
+      },
+      {
+        "name": "windows-renderer-check.json",
+        "digest": "sha256:e93a6c4223250f7b56ac8c5482b42066539516d10873d56bc6ce433d9fe10ab9",
+        "size": 168
+      },
+      {
+        "name": "windows-smoke.json",
+        "digest": "sha256:9eea62edfc1a565c0a2d8e5ca801e14a5dccfb314a56ff81af67553cd7d0aa91",
+        "size": 155
+      }
+    ]
+  }
+]
