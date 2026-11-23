@@ -42,10 +42,10 @@
       "SQLite"
     ],
     "featured": true,
-    "download_url": "https://github.com/ornbaumkeith/pairvoy-releases/releases/download/pairvoy-v0.5.16/Pairvoy_0.5.16_Windows_x64_Setup.exe",
+    "download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.19/Pairvoy_0.5.19_Windows_x64_Setup.exe",
     "demo_url": null,
     "source_url": null,
-    "android_download_url": "https://github.com/ornbaumkeith/pairvoy-releases/releases/download/pairvoy-v0.5.16/Pairvoy_0.5.16_Android.apk"
+    "android_download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.19/Pairvoy_0.5.19_Android.apk"
   },
   {
     "id": "claimfield",
