@@ -1,0 +1,129 @@
+.about-profile{--paper:#faf9fc;--white:#fff;--ink:#17171b;--muted:#5c5c68;--line:#dedce6;--green:#087443;--brand-green:#22b573;--purple:#6d28d9;--tint:#f0e9fc;--dark:#111114;--radius:20px}
+.about-profile *,.about-profile *::before,.about-profile *::after{box-sizing:border-box}
+.about-profile a{color:inherit;text-decoration:none}
+.about-profile a:hover{text-decoration:underline;text-underline-offset:4px}
+.about-profile a:focus-visible,.about-profile button:focus-visible,.about-profile summary:focus-visible{outline:3px solid var(--purple);outline-offset:4px}
+.about-profile button{font:inherit;cursor:pointer}
+.about-profile h1,.about-profile h2,.about-profile h3,.about-profile p,.about-profile figure,.about-profile dl{margin:0}
+.about-profile h1,.about-profile h2,.about-profile h3{font-family:Manrope,system-ui,sans-serif;line-height:1.15;letter-spacing:-.035em}
+.about-profile h1{font-size:clamp(2.55rem,6vw,5.1rem);max-width:14ch}
+.about-profile h2{font-size:clamp(1.8rem,4vw,2.85rem)}
+.about-profile h3{font-size:1.27rem}
+.about-profile img{display:block;width:100%;height:auto}
+.about-profile .mini-nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;font-size:.92rem;font-weight:650}
+.about-profile .mini-nav a{min-height:44px;display:inline-flex;align-items:center}
+.about-profile .mini-nav{border-block:1px solid var(--line);padding-block:5px}
+.about-profile .mini-nav a{color:var(--purple)}
+.about-profile .hero{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,.8fr);align-items:center;gap:clamp(30px,7vw,92px);padding:62px 0 35px}
+.about-profile .eyebrow{font-weight:800;font-size:.83rem;text-transform:uppercase;letter-spacing:.13em;color:var(--purple);display:flex;align-items:center;gap:8px}
+.about-profile .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--brand-green)}
+.about-profile .hero h1{margin:13px 0 19px}
+.about-profile .intro{font-size:clamp(1.16rem,2vw,1.35rem);max-width:42ch;color:var(--ink);line-height:1.45}
+.about-profile .body{color:var(--muted);margin-top:13px;max-width:70ch}
+.about-profile .portrait{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:white;max-width:310px;justify-self:end}
+.about-profile .portrait img{aspect-ratio:4/4.3;object-fit:cover;object-position:center 35%}
+.about-profile .portrait figcaption{padding:10px 17px;color:var(--muted);font-size:.92rem}
+.about-profile .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.about-profile .actions{margin-top:23px}
+.about-profile .primary,.about-profile .secondary{border-radius:100px;border:1px solid var(--purple);font-weight:740;min-height:45px;display:inline-flex;align-items:center;padding:8px 18px;font-size:.91rem}
+.about-profile .primary{background:var(--purple);color:white}
+.about-profile .primary:hover{background:#5422a8;text-decoration:none}
+.about-profile .secondary{background:white;color:var(--purple);border-color:#bfabe6}
+.about-profile .secondary:hover{background:var(--tint);text-decoration:none}
+.about-profile .stats{display:grid;grid-template-columns:repeat(3,1fr);margin:0 0 28px;border:1px solid var(--line);border-radius:var(--radius);background:white}
+.about-profile .stats div{padding:16px 24px}
+.about-profile .stats div+div{border-left:1px solid var(--line)}
+.about-profile .stats dt{font-size:1.5rem;font-weight:810;color:var(--purple);letter-spacing:-.04em}
+.about-profile .stats dd{margin:2px 0 0;color:var(--muted);font-size:.92rem}
+.about-profile .section{padding:43px 0 0}
+.about-profile .section>header{margin-bottom:23px}
+.about-profile .section>header p{color:var(--muted);margin-top:10px;max-width:70ch}
+.about-profile .grid{display:grid;gap:14px}
+.about-profile .skills{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.about-profile .skill{border:1px solid var(--line);border-radius:16px;background:white}
+.about-profile .skill summary{display:grid;grid-template-columns:auto 1fr auto;align-items:start;gap:12px;cursor:pointer;padding:18px;list-style:none}
+.about-profile .skill summary::-webkit-details-marker{display:none}
+.about-profile .skill summary::after{content:"+";font-size:1.2rem;font-weight:750;color:var(--purple)}
+.about-profile .skill[open] summary::after{content:"−"}
+.about-profile .skill summary strong{display:block;font-size:1.1rem}
+.about-profile .skill summary span.description{display:block;color:var(--muted);margin-top:4px;font-size:.94rem}
+.about-profile .skill-icon{display:grid;place-items:center;min-width:43px;height:40px;border-radius:8px;background:var(--tint);color:#5524ab;font-size:.77rem;font-weight:800}
+.about-profile .skill-body{padding:0 18px 18px 73px}
+.about-profile .skill-body p{margin-top:8px;color:var(--muted)}
+.about-profile .skill-body strong{color:var(--ink)}
+.about-profile .text-link{color:var(--green);text-decoration:underline;text-underline-offset:4px;font-weight:710}
+.about-profile .skill-body .text-link{display:inline-block;margin-top:11px}
+.about-profile .work{grid-template-columns:repeat(3,minmax(0,1fr))}
+.about-profile .project{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:white;display:flex;flex-direction:column;min-width:0}
+.about-profile .shot{display:block;width:100%;padding:0;border:0;border-bottom:1px solid var(--line);background:#24232b;position:relative}
+.about-profile .shot img{aspect-ratio:16/10;object-fit:contain}
+.about-profile .shot span{position:absolute;right:9px;bottom:9px;padding:3px 8px;border-radius:6px;background:white;color:var(--purple);font-size:.82rem;font-weight:750}
+.about-profile .shot:hover span{background:var(--tint)}
+.about-profile .project-copy{padding:15px 17px 17px;display:flex;flex-direction:column;gap:8px;flex:1}
+.about-profile .project-copy p{color:var(--muted);font-size:.93rem}
+.about-profile .project-copy a{margin-top:auto;min-height:32px;align-content:end}
+.about-profile .process{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(120deg,#e9f6ef,#f1ebfa);padding:23px}
+.about-profile .process h2{font-size:1.55rem}
+.about-profile .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:16px 0 0;padding:0;list-style:none}
+.about-profile .steps li{border-top:2px solid #af94e5;padding:10px 2px 0}
+.about-profile .steps li:nth-child(odd){border-color:#57ad88}
+.about-profile .steps strong{display:block}
+.about-profile .steps li span{display:block;color:var(--muted);font-size:.93rem}
+.about-profile .sector-list{margin-top:15px}
+.about-profile .pill{padding:4px 12px;border-radius:100px;background:#edf6f0;color:#126442;font-size:.87rem;font-weight:670}
+.about-profile .personal{display:grid;grid-template-columns:1fr 1fr;gap:26px;padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+.about-profile .personal h3{margin-bottom:7px}
+.about-profile .personal p{color:var(--muted);margin-bottom:10px}
+.about-profile .personal .row{margin-top:12px}
+.about-profile .section.last{padding-bottom:38px}
+.about-profile dialog{width:min(1040px,calc(100% - 24px));max-height:93vh;overflow:auto;background:white;color:var(--ink);border:1px solid var(--line);border-radius:15px;padding:15px}
+.about-profile dialog::backdrop{background:#17111ce0}
+.about-profile dialog .row{justify-content:space-between;margin-bottom:10px}
+.about-profile dialog img{max-height:73vh;object-fit:contain;background:#24232b}
+.about-profile dialog p{margin-top:9px;color:var(--muted)}
+
+@media(max-width:850px){.about-profile .work{grid-template-columns:repeat(2,minmax(0,1fr))}
+.about-profile .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+.about-profile .hero{gap:25px}
+.about-profile .portrait{max-width:270px}
+}
+@media(max-width:650px){.about-profile .hero{grid-template-columns:1fr;padding:29px 0 19px}
+.about-profile .portrait{width:min(190px,100%);justify-self:start}
+.about-profile .stats div{padding:10px 8px}
+.about-profile .stats dt{font-size:1.2rem}
+.about-profile .stats dd{font-size:.8rem;line-height:1.35}
+.about-profile .skills,.about-profile .work,.about-profile .personal{grid-template-columns:1fr}
+.about-profile .mini-nav{gap:4px 15px}
+.about-profile .hero h1{max-width:none}
+.about-profile .section{padding-top:30px}
+.about-profile .skill summary{padding:13px}
+.about-profile .skill-body{padding:0 14px 15px 14px}
+.about-profile .process,.about-profile .personal{padding:16px}
+}.about-profile{--charcoal:#24232b;--charcoal-deep:#1c1b22;--charcoal-line:#50465f;--on-charcoal:#f8f5ff;--muted-on-charcoal:#ded7e8;--purple-light:#d6bbff}
+.about-profile .stats{background:var(--charcoal);color:var(--on-charcoal);border-color:var(--charcoal-line)}
+.about-profile .stats div+div{border-color:var(--charcoal-line)}
+.about-profile .stats dt{color:var(--purple-light)}
+.about-profile .stats dd{color:var(--muted-on-charcoal)}
+.about-profile .skill{background:var(--charcoal);border-color:var(--charcoal-line);color:var(--on-charcoal)}
+.about-profile .skill summary{border-radius:inherit}
+.about-profile .skill summary:hover{background:#302838}
+.about-profile .skill summary span.description,.about-profile .skill-body p{color:var(--muted-on-charcoal)}
+.about-profile .skill summary::after,.about-profile .skill-body .text-link{color:var(--purple-light)}
+.about-profile .skill-body strong{color:var(--on-charcoal)}
+.about-profile .skill-icon{background:#3c2c50;color:#ecdcff}
+.about-profile .skill summary:focus-visible,.about-profile .skill .text-link:focus-visible{outline-color:var(--purple-light)}
+.about-profile .portrait{border-color:var(--charcoal-line);background:var(--charcoal)}
+.about-profile .portrait figcaption{color:var(--on-charcoal)}
+.about-profile .process{color:var(--on-charcoal);background:var(--charcoal-deep);border-color:var(--charcoal-line)}
+.about-profile .steps li,.about-profile .steps li:nth-child(odd){border-color:#ae86e8}
+.about-profile .steps li span{color:var(--muted-on-charcoal)}
+.about-profile .personal{grid-template-columns:repeat(3,minmax(0,1fr));background:white;gap:22px}
+.about-profile .personal article{min-width:0;border-top:2px solid #b69ae5;padding-top:12px}
+.about-profile .personal article:nth-child(2){border-color:#61aa8c}
+
+@media(max-width:800px){.about-profile .personal{grid-template-columns:1fr}
+}
+
+.about-profile h2,.about-profile h3{margin-block:0}
+.about-profile{padding-bottom:0}
+.about-profile .body{margin-top:13px}
