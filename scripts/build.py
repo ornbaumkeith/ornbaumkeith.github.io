@@ -19,18 +19,33 @@ def page(title, description, content, active='home', depth=0):
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="{link('index.html')}"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation">{nav}<a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
 <main id="main" class="wrap{' pairvoy-page' if title == 'Pairvoy' else ' claimfield-page' if title == 'ClaimField' else ''}" tabindex="-1">{content}</main><footer class="footer"><div class="wrap footer-inner"><span>© 2026 Keith Ornbaum. Built with purpose.</span><div class="footer-links"><a href="{link('projects/index.html')}">Explore projects</a><a href="https://github.com/ornbaumkeith">GitHub ↗</a></div></div></footer></body></html>'''
 
+PROJECT_TILE_ROWS = {
+    'clearworth': [('Income', 'Plan ahead'), ('Expenses', 'Stay organized'), ('Goals', 'Track progress')],
+    'pairvoy': [('Goals', 'Plan together'), ('Habits', 'Build momentum'), ('Progress', 'Celebrate wins')],
+    'claimfield': [('Land review', 'Check records'), ('Fieldwork', 'Plan crew tracks'), ('Filing', 'Prepare drafts')],
+    'study-companions': [('Study', 'Review exam topics'), ('Practice', 'Quiz yourself'), ('Progress', 'Pick up where you left off')],
+}
+
+def project_tile_art(project):
+    rows = PROJECT_TILE_ROWS.get(project['id'])
+    if rows is None:
+        return f'<div class="abstract"><div class="mark">{esc(project["name"])}</div><p>{esc(project["category"])}</p></div>'
+    name = esc(project['name'])
+    if project['id'] == 'clearworth':
+        name = name.replace('ClearWorthPlanner', 'ClearWorth<wbr>Planner')
+    details = ''.join(f'<div class="row"><span>{esc(label)}</span><b>{esc(action)}</b></div>' for label, action in rows)
+    return (f'<div class="abstract"><div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
+            f'{name}<span style="color:#81ba93" aria-hidden="true">.</span></div>{details}</div>')
+
 def cards(prefix=''):
     out=[]
     for p in projects:
         if p['id'] == 'claimfield':
-            out.append((ROOT / 'content/claimfield-card.html').read_text().replace('__PREFIX__', prefix))
+            out.append((ROOT / 'content/claimfield-card.html').read_text().replace('__PREFIX__', prefix).replace('__PROJECT_TILE_ART__', project_tile_art(p)))
             continue
         path=f"{prefix}projects/{p['id']}/index.html"
         chips=''.join(f'<span class="pill">{esc(t)}</span>' for t in p['tags'])
-        # Editorial product illustration, never represented as an application screenshot.
-        art = '<div class="abstract" role="img" aria-label="ClearWorthPlanner concept illustration: income, expenses, and goals"><div class="mark">ClearWorthPlanner<span style="color:#81ba93">.</span></div><div class="row"><span>Income</span><b>Plan ahead</b></div><div class="row"><span>Expenses</span><b>Stay organized</b></div><div class="row"><span>Goals</span><b>Track progress</b></div><p class="visual-label">Product concept · not an app screenshot</p></div>' if p['id']=='clearworth' else f'<div class="abstract"><div class="mark">{esc(p["name"])}</div><p>{esc(p["category"])}</p></div>'
-        if p['id'] == 'pairvoy':
-            art = f'<div class="abstract"><img src="{prefix}assets/pairvoy/pairvoy-logo-dark.svg" width="900" height="220" alt="Pairvoy" style="width:100%;height:auto"><p>{esc(p["category"])}</p></div>'
+        art = project_tile_art(p)
         search=esc(' '.join([p['name'],p['summary'],p['category'],*p['tags'],*p['stack']]).lower())
         links=f'<a class="button" href="{path}">Explore project <span aria-hidden="true">↗</span></a>'
         for field,label in [('demo_url','Live demo'),('download_url','Download'),('source_url','Source')]:
@@ -105,4 +120,3 @@ for r in resources:
 html=(ROOT/'content/resources.html').read_text(encoding='utf-8').replace('<!-- RESOURCE_CARDS -->','<div class="docs resource-collection">'+''.join(cards)+'</div>')
 folder=ROOT/'resources';folder.mkdir(parents=True,exist_ok=True)
 (folder/'index.html').write_text(page('Excel templates & resources','Personal Finance Planner: automatically updating monthly metrics, dashboard, income and expense tracking.',html,'resources',1),encoding='utf-8')
-
