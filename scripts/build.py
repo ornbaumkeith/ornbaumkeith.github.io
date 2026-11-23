@@ -44,17 +44,15 @@ PROJECT_TILE_ROWS = {
     'study-companions': [('Study', 'Review exam topics'), ('Practice', 'Quiz yourself'), ('Progress', 'Pick up where you left off')],
 }
 
-def project_tile_art(project, prefix=''):
+def project_tile_art(project):
     rows = PROJECT_TILE_ROWS.get(project['id'])
     if rows is None:
         return f'<div class="abstract"><div class="mark">{esc(project["name"])}</div><p>{esc(project["category"])}</p></div>'
     name = esc(project['name'])
     if project['id'] == 'clearworth':
         name = name.replace('ClearWorthPlanner', 'ClearWorth<wbr>Planner')
-    logo = (f'<img src="{prefix}assets/pairvoy-family/logo.png" width="64" height="64" alt="" loading="lazy">'
-            if project['id'] == 'pairvoy-family' else '')
     details = ''.join(f'<div class="row"><span>{esc(label)}</span><b>{esc(action)}</b></div>' for label, action in rows)
-    return (f'<div class="abstract" style="box-shadow:none">{logo}<div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
+    return (f'<div class="abstract" style="box-shadow:none"><div class="mark" style="font-size:clamp(26px,3vw,32px);line-height:1.2">'
             f'{name}<span style="color:#81ba93" aria-hidden="true">.</span></div>{details}</div>')
 
 def cards(prefix=''):
@@ -65,7 +63,7 @@ def cards(prefix=''):
             continue
         path=f"{prefix}projects/{p['id']}/index.html"
         chips=''.join(f'<span class="pill">{esc(t)}</span>' for t in p['tags'])
-        art = project_tile_art(p, prefix)
+        art = project_tile_art(p)
         search=esc(' '.join([p['name'],p['summary'],p['category'],*p['tags'],*p['stack']]).lower())
         links=f'<a class="button" href="{path}">Explore project <span aria-hidden="true">↗</span></a>'
         for field,label in [('demo_url','Live demo'),('download_url','Download'),('source_url','Source')]:
