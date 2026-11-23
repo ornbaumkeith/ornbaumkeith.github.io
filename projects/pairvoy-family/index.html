@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pairvoy for Family | Keith Ornbaum</title><meta name="description" content="Plan personal and shared family goals, give everyone a next step, and celebrate progress together. The 0.1.3 preview stores family profiles and progress on one device."><meta name="theme-color" content="#111114"><link rel="icon" href="../../assets/pairvoy-family/logo.png" type="image/png"><link rel="stylesheet" href="../../assets/style.css?v=20261024-pairvoy-compact"><link rel="stylesheet" href="../../assets/pairvoy-family/project.css"><link rel="canonical" href="https://keithornbaum.com/projects/pairvoy-family/index.html"><meta property="og:type" content="website"><meta property="og:title" content="Pairvoy for Family"><meta property="og:description" content="Plan personal and shared family goals, give everyone a next step, and celebrate progress together. The 0.1.3 preview stores family profiles and progress on one device."><meta property="og:url" content="https://keithornbaum.com/projects/pairvoy-family/index.html"><meta property="og:image" content="https://keithornbaum.com/assets/pairvoy-family/orbit-home.webp"><meta property="og:image:alt" content="The Pairvoy for Family workspace with example goals and tasks."><script src="../../assets/app.js?v=20261022-a11y2" defer></script></head><body>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pairvoy for Family | Keith Ornbaum</title><meta name="description" content="Plan personal and shared family goals, give everyone a next step, and celebrate progress together. The 0.1.4 preview stores family profiles and progress on one device."><meta name="theme-color" content="#111114"><link rel="icon" href="../../assets/pairvoy-family/logo.png" type="image/png"><link rel="stylesheet" href="../../assets/style.css?v=20261024-pairvoy-compact"><link rel="stylesheet" href="../../assets/pairvoy-family/project.css?v=0.1.4"><link rel="canonical" href="https://keithornbaum.com/projects/pairvoy-family/index.html"><meta property="og:type" content="website"><meta property="og:title" content="Pairvoy for Family"><meta property="og:description" content="Plan personal and shared family goals, give everyone a next step, and celebrate progress together. The 0.1.4 preview stores family profiles and progress on one device."><meta property="og:url" content="https://keithornbaum.com/projects/pairvoy-family/index.html"><meta property="og:image" content="https://keithornbaum.com/assets/pairvoy-family/orbit-home.webp"><meta property="og:image:alt" content="The Pairvoy for Family workspace with example goals and tasks."><script src="../../assets/app.js?v=20261022-a11y2" defer></script></head><body>
 <a class="skip" href="#main">Skip to content</a><header class="header"><div class="wrap nav"><a class="brand" href="../../index.html"><span class="monogram" aria-hidden="true">KO</span>Keith Ornbaum<span style="font-weight:400;color:var(--muted)"> / Projects</span></a><nav class="nav-links" aria-label="Main navigation"><a href="../../index.html">Home</a><a href="../../projects/index.html" aria-current="page">Projects</a><a href="../../resources/index.html">Resources</a><a href="../../blog/index.html">Blog</a><a href="../../about/index.html">About</a><a class="external" href="https://github.com/ornbaumkeith">GitHub <span aria-hidden="true">↗</span></a></nav></div></header>
 <main id="main" class="wrap" tabindex="-1"><div class="crumb"><a href="../index.html">Projects</a> / Pairvoy for Family</div>
 
@@ -50,9 +50,44 @@
 
 <section id="beta" class="section family-section family-beta" aria-labelledby="family-beta-title">
   <h2 id="family-beta-title">Public beta coming soon</h2>
-  <p><strong>Current preview · 0.1.3</strong></p>
-  <p>This update brings the new family emblem to the sidebar, compact header, and app icon. Beta access details will be posted here when testing opens.</p>
-  <p>The current preview stores goals, actions, and profiles locally. Everyone using the workspace shares one device. Separate sign-ins, invitations, and cross-device sync are planned for a future release.</p>
+  <p><strong>Current development version · 0.1.4</strong></p>
+  <p>Version 0.1.4 adds editable profiles, avatar and photo options, persistent light and dark settings, and a choice of date-entry styles. Reminder preferences can be saved locally. Automatic notifications are planned for a future release.</p>
+  <p>Goals, actions, and profiles live on the device. Use sample data during testing, especially for child profiles. Separate sign-ins, invitations, and cross-device sync are planned for a future release.</p>
+  <p>Beta access details will be posted here when testing opens.</p>
   <a class="text-link" href="../pairvoy/index.html">Explore the original Pairvoy for couples</a>
+</section>
+
+<section id="build-details" class="section family-section family-build" aria-labelledby="family-build-title">
+  <h2 id="family-build-title">Build details and dependencies</h2>
+  <p>Pairvoy for Family uses the same ORBIT interface across its configured builds. A shared rules engine validates changes to goals, milestones, and profiles before saving them to the device.</p>
+  <dl class="family-platforms">
+    <div>
+      <dt>Web</dt>
+      <dd>Expo and Metro produce a static web build. React Native Web displays the ORBIT interface in an isolated iframe. The browser can download a JSON snapshot and an iCalendar file for visible goals and tasks.</dd>
+    </div>
+    <div>
+      <dt>Windows x64</dt>
+      <dd>Electron wraps the static web build. The packaging configuration targets a per-user NSIS setup executable.</dd>
+    </div>
+    <div>
+      <dt>Android</dt>
+      <dd>Expo renders ORBIT in a native WebView. The testing profile targets an internal APK with Android SDK 36 configured for compilation and targeting. The Android export action sends text to the system share sheet.</dd>
+    </div>
+  </dl>
+  <table class="family-dependencies">
+    <caption>Key dependencies declared for version 0.1.4</caption>
+    <thead><tr><th scope="col">Dependency</th><th scope="col">Version</th><th scope="col">Role</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Expo</th><td>~57.0.27</td><td>Development tooling and web and Android builds</td></tr>
+      <tr><th scope="row">React and React DOM</th><td>19.2.3</td><td>App components and browser rendering</td></tr>
+      <tr><th scope="row">React Native / Web</th><td>0.86.3 / ^0.21.0</td><td>Shared app shell and browser support</td></tr>
+      <tr><th scope="row">TypeScript</th><td>~6.0.3</td><td>Compile-time type checking</td></tr>
+      <tr><th scope="row">AsyncStorage</th><td>2.2.0</td><td>On-device workspace and preferences</td></tr>
+      <tr><th scope="row">React Native WebView</th><td>13.16.1</td><td>ORBIT rendering on Android</td></tr>
+      <tr><th scope="row">Electron / electron-builder</th><td>45.0.0 / 26.18.0</td><td>Windows runtime and installer packaging</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Build environment.</strong> The project declares Node.js 24 or 26. Its Node.js 24 quality workflow passed for 0.1.4, covering automated tests, TypeScript checks, the web export, and the npm audit step. Windows installer and Android device acceptance are separate checks.</p>
+  <p><strong>Project facts.</strong> Pairvoy for Family is developed separately from Pairvoy for couples and has its own local data store. It supports nine goal categories, including Health, Learning, Home, and Finance. The source is maintained in a private repository with an MIT license file.</p>
 </section>
 </main><footer class="footer"><div class="wrap footer-inner"><span>© 2026 Keith Ornbaum. Built with purpose.</span><div class="footer-links"><a href="../../projects/index.html">Explore projects</a><a href="https://github.com/ornbaumkeith">GitHub ↗</a></div></div></footer></body></html>
