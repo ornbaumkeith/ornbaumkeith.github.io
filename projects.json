@@ -25,8 +25,8 @@
     "id": "pairvoy",
     "name": "Pairvoy",
     "category": "Goal-planning application",
-    "status": "0.5.20 web · 0.5.19 installers",
-    "summary": "Pairvoy helps couples plan personal and shared goals, track goal and weekly action progress independently, and celebrate milestone rewards. Version 0.5.20 is live in the browser; Windows and Android 0.5.19 downloads remain available until the new installers are published.",
+    "status": "0.5.20 · Windows and Android testing",
+    "summary": "Pairvoy helps couples plan personal and shared goals, track goal and weekly action progress independently, and celebrate milestone rewards. Version 0.5.20 is available for Windows x64, Android and the web.",
     "tags": [
       "Windows & Android",
       "SMART goals",
@@ -42,10 +42,10 @@
       "SQLite"
     ],
     "featured": true,
-    "download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.19/Pairvoy_0.5.19_Windows_x64_Setup.exe",
+    "download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.20/Pairvoy_0.5.20_Windows_x64_Setup.exe",
     "demo_url": null,
     "source_url": null,
-    "android_download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.19/Pairvoy_0.5.19_Android.apk"
+    "android_download_url": "https://github.com/ornbaumkeith/ornbaumkeith.github.io/releases/download/pairvoy-v0.5.20/Pairvoy_0.5.20_Android.apk"
   },
   {
     "id": "pairvoy-family",

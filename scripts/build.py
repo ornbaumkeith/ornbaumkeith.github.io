@@ -45,6 +45,8 @@ PROJECT_TILE_ROWS = {
 }
 
 def project_tile_art(project):
+    if project["id"] == "pairvoy":
+        return '<img src="../assets/pairvoy/0.5.20/home-dark.png" width="1280" height="800" alt="Pairvoy Home with dual progress rings" loading="lazy" style="display:block;width:100%;height:auto;border-radius:12px">'
     rows = PROJECT_TILE_ROWS.get(project['id'])
     if rows is None:
         return f'<div class="abstract"><div class="mark">{esc(project["name"])}</div><p>{esc(project["category"])}</p></div>'
