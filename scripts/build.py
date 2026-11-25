@@ -20,7 +20,7 @@ def page(title, description, content, active='home', depth=0):
     if title == 'Pairvoy for Family':
         canonical = 'https://keithornbaum.com/projects/pairvoy-family/index.html'
         family_head = (
-            f'<link rel="stylesheet" href="{link("assets/pairvoy-family/project.css?v=layout")}">'
+            f'<link rel="stylesheet" href="{link("assets/pairvoy-family/project.css?v=layout-20261124-compact")}">'
             f'<link rel="canonical" href="{canonical}">'
             f'<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">'
             f'<meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{canonical}">'

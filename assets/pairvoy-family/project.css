@@ -87,3 +87,53 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Family project page: compact rhythm, balanced galleries, shared release layout. */
+.family-page .pairvoy-hero{gap:16px;padding:34px 0 26px}
+.family-page .pairvoy-hero h1{gap:2px}
+.family-page .pairvoy-intro{font-size:18px;line-height:1.65}
+.family-page>.section{padding:28px 0}
+.family-page>.section-nav{gap:8px 20px;padding:12px 0}
+.family-page .section-head{margin-bottom:14px}
+.family-page .section-head .eyebrow{margin-bottom:8px}
+.family-page .section-head h2{margin-bottom:0}
+.family-page .gallery-intro{margin:0 0 16px}
+.family-page .detail-grid{align-items:start;gap:24px}
+.family-page .feature-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px;align-items:start}
+.family-page .feature{min-width:0;padding:16px 0}
+.family-page .feature h3{margin-bottom:8px}
+.family-page .feature p{margin:0;line-height:1.65}
+.family-gallery-lead{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:16px;align-items:stretch;margin-bottom:16px}
+.family-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:stretch}
+.family-page .family-capture{margin:0;min-width:0;display:flex;flex-direction:column}
+.family-page .family-capture>a{display:flex;justify-content:center;align-items:center;background:#151419;overflow:hidden}
+.family-page .family-capture img{width:100%;height:auto;object-fit:contain}
+.family-page .family-gallery-grid .family-capture>a{aspect-ratio:1600/763}
+.family-page .family-gallery-grid .family-capture img{height:100%;width:100%}
+.family-page .family-gallery-lead .family-capture>a{flex:1}
+.family-page .family-gallery-lead .family-mobile img{max-height:400px;max-width:100%;width:auto}
+.family-page .family-capture figcaption{padding:12px 16px;line-height:1.5}
+.family-page .family-capture figcaption strong{margin-bottom:3px}
+.family-page #getting-started ol{margin:8px 0 0;padding-left:24px}
+.family-page #getting-started li+li{margin-top:5px}
+.family-page .family-platforms{margin:16px 0;gap:12px}
+.family-page .family-platforms div{padding:16px;min-width:0}
+.family-page .family-dependencies{margin-bottom:18px}
+.family-page .family-release{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);padding:26px;gap:24px}
+.family-page .family-release h3{margin:0 0 10px}
+.family-page .family-release p,.family-page .family-release ul{margin:0 0 16px}
+.family-page .family-release .release-status{align-self:start;gap:12px}
+.family-page .family-release .release-status .button{width:100%;text-align:center;line-height:1.5}
+.family-page .family-release .release-status button[disabled]{opacity:.65;cursor:not-allowed}
+.family-page .family-release .release-status .family-download-note{font-size:13px;line-height:1.6;margin:0;color:var(--muted)}
+.family-page .family-release .family-platform-heading{margin-top:10px;padding-top:16px;border-top:1px solid var(--line);width:100%}
+.family-page .family-release .family-release-note{font-size:13px;margin-bottom:0;color:var(--muted)}
+.family-page #downloads .back{margin:18px 0 0}
+@media(max-width:700px){
+ .family-page .pairvoy-hero{padding:24px 0 20px;gap:14px}
+ .family-page>.section{padding:22px 0}
+ .family-page .feature-grid,.family-gallery-grid,.family-gallery-lead,.family-page .family-release{grid-template-columns:minmax(0,1fr)}
+ .family-page .family-release{padding:20px;gap:18px}
+ .family-page .family-release .release-status{border-left:0;border-top:1px solid var(--line);padding:18px 0 0}
+ .family-page .family-gallery-lead .family-mobile img{max-height:420px}
+}
