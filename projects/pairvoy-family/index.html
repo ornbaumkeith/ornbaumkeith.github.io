@@ -10,16 +10,17 @@
   <p class="pairvoy-intro">Give everyone in the family a goal to work toward and a way to help. Pick a goal, break it into small steps, and make time to see how far you’ve come together.</p>
   <div class="actions">
     <a class="button" href="#workspace">See the workspace</a>
-    <a class="button secondary" href="#beta">Beta details</a>
+    <a class="button secondary" href="#downloads">Windows &amp; Android downloads</a>
   </div>
   <div class="chips"><span class="pill">Personal &amp; shared goals</span><span class="pill">Local family profiles</span><span class="pill">Light &amp; dark modes</span></div>
   <p class="pairvoy-update">Pairvoy for Family 0.1.10 · Windows beta candidate</p>
 </header>
 
 <nav class="section-nav" aria-label="Pairvoy for Family page sections">
-  <a href="#overview">Overview</a>
+  <a href="#overview">Why Pairvoy?</a>
   <a href="#features">Features</a>
-  <a href="#workspace">Screenshot</a>
+  <a href="#workspace">Workspace</a>
+  <a href="#downloads">Downloads</a>
   <a href="#build-details">Technology</a>
   <a href="#privacy">Privacy</a>
   <a href="#beta">Beta details</a>
@@ -41,6 +42,15 @@
   </aside>
 </section>
 
+<section class="section" id="why" aria-labelledby="why-title">
+<h2 id="why-title">Small steps. Stronger families.</h2>
+<p>Family life gets busy. Good intentions can disappear between school, work, sports and household responsibilities. Pairvoy for Family gives parents and children a simple place to turn those intentions into everyday actions, check in with each other, and celebrate what they achieve.</p>
+<div class="feature-grid">
+<article class="feature"><h3>Build responsibility</h3><p>Give each family member age-appropriate commitments and a clear next step, without comparing siblings by workload.</p></article>
+<article class="feature"><h3>Make time for connection</h3><p>Work toward shared experiences, establish healthy routines and reflect on what matters together.</p></article>
+<article class="feature"><h3>Keep big goals manageable</h3><p>Break reading, savings, fitness, schoolwork and household goals into small dated actions.</p></article>
+<article class="feature"><h3>Celebrate effort, not perfection</h3><p>Use shared quests, achievements and experience rewards to recognize participation. A missed task is an opportunity to adjust, not a reason to compete.</p></article>
+</div></section>
 <section class="section" id="features" aria-labelledby="family-features">
   <h2 id="family-features">What your family can do</h2>
   <div class="feature-grid">
@@ -60,8 +70,13 @@
       <h3>Celebrate effort together</h3>
       <p>Earn XP, explore eight achievement types, and customize experience rewards such as movie nights and family outings. Participation reflects each person’s own planned commitments for the week.</p>
     </article>
-  </div>
+  <article class="feature"><h3>Make it personal</h3><p>Customize local profile colors, emoji, initials, icons, male or female characters, hair, eyes and skin colors. Choose light or dark appearance.</p></article>
+<article class="feature"><h3>Explore together</h3><p>Open the interactive circular Orbit to see visible upcoming commitments. Use All, Mine and Ours filters to focus on the relevant goals.</p></article>
+<article class="feature"><h3>Keep a personal journal</h3><p>Add task notes and weekly reflections. These are scoped to local preview profiles, not authenticated private accounts.</p></article>
+<article class="feature"><h3>Try a fictional family</h3><p>Enter an isolated five-person demo with 182 historical days, five scheduled tasks a day across the household, and two weeks of upcoming commitments. Reset or exit the demo without replacing the normal workspace.</p></article>
+</div>
 </section>
+<section class="section" id="getting-started"><h2>How to get started</h2><ol><li>Create local family profiles.</li><li>Choose a personal or shared goal and define its SMART plan.</li><li>Add one-time or recurring daily actions.</li><li>Check Today's Moves and the shared family quest.</li><li>Celebrate milestones and review the weekly recap together.</li></ol></section>
 
 <section id="workspace" class="section" aria-labelledby="workspace-title">
   <h2 id="workspace-title">Inside the family workspace</h2>
@@ -104,7 +119,7 @@
     </tbody>
   </table>
   <p><strong>Build environment.</strong> The project declares Node.js 24 or 26. The 0.1.10 GitHub workflow passed unit tests, TypeScript, web export, npm audit, Playwright, Trivy and unsigned Windows x64 packaging. Actual Windows upgrade and Android device acceptance remain separate checks.</p>
-  <p><strong>Project facts.</strong> Pairvoy for Family is developed separately from Pairvoy for couples and has its own local data store. It supports nine goal categories, including Health, Learning, Home, and Finance. The source is maintained in a private repository with an MIT license file.</p>
+  <p><strong>Project facts.</strong> Pairvoy for Family is developed separately from Pairvoy for couples and has its own local data store. It includes nine built-in goal categories, including Health, Learning, Home, and Finance, plus adult-managed custom categories. The source is maintained in a private repository with an MIT license file.</p>
 </section>
 
 <section id="privacy" class="section" aria-labelledby="family-privacy-title">
@@ -112,6 +127,14 @@
   <p>Goals, actions, and profiles live on the device. Use sample data during testing, especially for child profiles. Separate sign-ins, invitations, and cross-device sync are planned for a future release.</p>
 </section>
 
+<section id="downloads" class="section" aria-labelledby="downloads-title">
+<h2 id="downloads-title">Download Pairvoy for Family</h2>
+<p>Version 0.1.10 is a device-local testing candidate. Choose your platform below.</p>
+<div class="feature-grid">
+<article class="feature"><h3>Windows x64</h3><p>Windows desktop setup (.exe), built with Electron and NSIS. Automated quality checks and packaging passed. The unsigned test installer is distributed as a private GitHub Actions ZIP artifact, not a public release.</p><p><a class="button" href="https://github.com/ornbaumkeith/Pairvoyforfamily/actions/runs/45522990217/artifacts/14981482491">Download Windows test artifact</a></p><p>Authorized GitHub testers only; artifact availability is temporary. Public setup downloads are pending an actual in-place upgrade test. Use the same Windows account and installation scope; back up important local data first. The setup is designed to preserve existing records, but upgrade retention is not yet certified.</p></article>
+<article class="feature"><h3>Android</h3><p>Android APK testing build is configured through Expo. A signed, downloadable APK and device acceptance results have not yet been verified.</p><p><button class="button secondary" type="button" disabled aria-disabled="true">Download Android APK (not yet available)</button></p><p>Android SDK 36 is the configured compile/target SDK, not a minimum OS requirement. No Google Play release is currently confirmed.</p></article>
+</div><p><strong>Testing notice:</strong> No cloud sync or authenticated family accounts are available in this edition. Use fictional data during testing. Do not uninstall or clear existing app data to perform an upgrade.</p>
+</section>
 <section id="beta" class="section" aria-labelledby="family-beta-title">
   <h2 id="family-beta-title">Windows beta candidate</h2>
   <div class="release-panel">
