@@ -61,3 +61,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .blog-page .toc a:hover{text-decoration:underline}
 .blog-page .archive-tools select{min-width:135px}
 .blog-page .conversation .btn{color:var(--purple-hover);text-decoration:none}
+
+/* Editorial covers: preserve the complete artwork within the established blog frames. */
+.blog-feature .cover:is([src$="financial-health-is-freedom/cover.webp"],[src$="success-is-built-with-intention/cover.webp"]){aspect-ratio:1.91 !important;object-fit:contain !important;background:#fbf7ed}
+.card .cover:is([src$="financial-health-is-freedom/cover.webp"],[src$="success-is-built-with-intention/cover.webp"]){aspect-ratio:2.02 !important;object-fit:contain !important;background:#fbf7ed}
