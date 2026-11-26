@@ -62,6 +62,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .blog-page .archive-tools select{min-width:135px}
 .blog-page .conversation .btn{color:var(--purple-hover);text-decoration:none}
 
-/* Editorial covers: preserve the complete artwork within the established blog frames. */
-.blog-feature .cover:is([src$="financial-health-is-freedom/cover.webp"],[src$="success-is-built-with-intention/cover.webp"]){aspect-ratio:1.91 !important;object-fit:contain !important;background:#fbf7ed}
-.card .cover:is([src$="financial-health-is-freedom/cover.webp"],[src$="success-is-built-with-intention/cover.webp"]){aspect-ratio:2.02 !important;object-fit:contain !important;background:#fbf7ed}
+/* Full-width editorial artwork for the financial health and personal goals posts. */
+.blog-feature .editorial-wide,.card .editorial-wide{display:block;width:100%;aspect-ratio:9/4 !important;object-fit:cover !important;object-position:center;background:#fbf7ed}
+.blog-page .post-figure img.editorial-wide{display:block;width:100%;height:auto;max-height:none;object-fit:contain;background:#fbf7ed}
